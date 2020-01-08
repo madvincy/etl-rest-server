@@ -20,7 +20,7 @@ export class SlackService {
                 name: message.name,
                 location: message.location,
                 phone: message.phone,
-                department:message.department,
+                medicalService:message.medicalService,
                 message: message.message   
             },
             json: true 
@@ -59,7 +59,7 @@ export class SlackService {
                 name: message.name,
                 location: message.location,
                 phone: message.phone,
-                department:message.department,
+                medicalService:message.medicalService,
                 message: message.message,
                 channel: channel
             },
@@ -86,7 +86,7 @@ export class SlackService {
                     name: message.name,
                     location: message.location,
                     phone: message.phone,
-                    department:message.department,
+                    medicalService:message.medicalService,
                     message: message.message,
                     group: group
             },

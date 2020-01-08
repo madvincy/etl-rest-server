@@ -1,17 +1,17 @@
 version: '2'
 services:
-    eid-services:
-      container_name: eid-services
-      image: 10.50.80.56:5005/eid-services
+    etl-rest-api:
+      container_name: etl-rest-api
+      image: 192.168.10.78:5000/etl-rest-server
       environment:
         - NODE_TLS_REJECT_UNAUTHORIZED=0
         - TZ=Africa/Nairobi
       dns:
-        - 10.50.80.150
+        - 192.168.10.5
         - 8.8.8.8
 
       volumes:
-        - /Users/achachiez/Code/AmpathWorkSpace/etl-rest-server/conf:/opt/etl/conf
+        - /etc/etl-rest-server/conf/:/opt/etl/conf
         # deploy:
         #   mode: replicated
         #   replicas: 1
@@ -19,4 +19,4 @@ services:
         #     constraints:
         #      - node.hostname == upgrade1
       ports:
-        - 8004:8004
+        - 8002:8002

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 const eidOrderMapV2 = require('../../../service/eid/mappings/eid-order-mappings-v2');
 const eidOrderMapv1 = require('../../../service/eid/mappings/eid-order-mappings-v1');
-const version = require('../../../conf/eid-regimen-config');
+const version = require('');
 
 
 const currentConfig = version.eid_regimen_config[0];

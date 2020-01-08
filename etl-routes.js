@@ -25,6 +25,7 @@ var patientProgramService = require('./programs/patient-program-base.service.js'
 var resolveClinicDashboardFilterParams = require('./resolve-program-visit-encounter-Ids/resolve-program-visit-encounter-Ids');
 var departmentProgramsService = require('./departments/departments-programs.service');
 var enrollmentService = require('./service/enrollment.service');
+var medicalServiceProgramsService = require('./services-offered/services-offered-programs.service');
 var resolveLocationUuidToId = require('./location/resolve-location-uuid-to-id');
 var resolveProgramEnrollmentFilterParams = require('./resolve-program-visit-encounter-Ids/resolve-program-visit-encounter-idsv2');
 var programVisitEncounterResolver = require('./resolve-program-visit-encounter-Ids/resolve-program-visit-encounter-idsv2');
@@ -87,12 +88,62 @@ module.exports = function () {
 
                         console.log('default rote', request.path);
 
-                        reply('Welcome to Ampath ETL service.');
+                        reply('Welcome to International Cancer Institute ETL service.');
                         //return reply(Boom.forbidden('Not this end point bruh'));
                     },
                     description: 'Home',
                     notes: 'Returns a message that shows ETL service is running.',
                     tags: ['api'],
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/medicalservicesoffered-programs-config',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+                        reply(medicalServiceProgramsService.getAllMedicalServicesConfig());
+                    },
+                    description: 'Get a list of Medical Services and their programs ',
+                    notes: 'Returns a  list of Medical Services and their programs',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/medical-service-programs',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+                        let medicalService = request.query.medical_service;
+                        let medicalServicePrograms = medicalServiceProgramsService.getMedicalServicesPrograms(medicalService)
+                            .then((response) => {
+                                reply(response);
+                            })
+                            .catch((error) => {
+                                console.error('ERROR : MedicalServicePrograms Error', error);
+                                reply(error);
+                            });
+                    },
+                    description: 'Get a list of Programs for a Medical services',
+                    notes: 'Returns a  list of Programs for a   Medical services',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+                        }
+                    }
                 }
             },
             {
