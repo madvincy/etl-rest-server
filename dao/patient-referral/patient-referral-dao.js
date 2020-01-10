@@ -156,11 +156,11 @@ function getPatientReferral(patientReferralId) {
                     .field('pr.notification_status') 
 					.field('pr.referral_reason')  
                     .from('etl.patient_referral', 'pr')
-                    // .join('amrs.encounter', 'u', 'pr.encounter_id = u.encounter_id')
-                    .join('amrs.provider', 'ap', 'ap.provider_id = pr.provider_id')
-                    .join('amrs.location', 'lr', 'pr.referred_to_location_id = lr.location_id')
-                    .join('amrs.location', 'lt', 'pr.referred_from_location_id = lt.location_id')
-                    .join('amrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
+                    // .join('openmrs.encounter', 'u', 'pr.encounter_id = u.encounter_id')
+                    .join('openmrs.provider', 'ap', 'ap.provider_id = pr.provider_id')
+                    .join('openmrs.location', 'lr', 'pr.referred_to_location_id = lr.location_id')
+                    .join('openmrs.location', 'lt', 'pr.referred_from_location_id = lt.location_id')
+                    .join('openmrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
                     .where('pr.patient_referral_id = ?', patientReferralId)
                     .toString();
 
@@ -203,11 +203,11 @@ function getPatientReferralByEnrollmentUuid(locationUuid, enrollmentUuid) {
                   .field('lf.uuid as referred_from_location_uuid')
                   .field('p.uuid as patient_program_uuid')
                   .from('etl.patient_referral', 'pr')
-                    .join('amrs.provider', 'ap', 'ap.provider_id = pr.provider_id')
-                    .join('amrs.location', 'lt', 'pr.referred_to_location_id = lt.location_id')
-                  .join('amrs.encounter', 'e', 'e.encounter_id = pr.encounter_id')
-                  .join('amrs.location', 'lf', 'pr.referred_from_location_id = lf.location_id')
-                    .join('amrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
+                    .join('openmrs.provider', 'ap', 'ap.provider_id = pr.provider_id')
+                    .join('openmrs.location', 'lt', 'pr.referred_to_location_id = lt.location_id')
+                  .join('openmrs.encounter', 'e', 'e.encounter_id = pr.encounter_id')
+                  .join('openmrs.location', 'lf', 'pr.referred_from_location_id = lf.location_id')
+                    .join('openmrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
                     .where('lt.uuid = ?', locationUuid)
                   .where('p.uuid = ?', enrollmentUuid)
                     .toString();
@@ -392,11 +392,11 @@ function findPatientReferral(encounterId, providerId,referredToLocationId,referr
                         .field('pr.notification_status') 
                         .field('pr.referral_reason') 
                         .from('etl.patient_referral', 'pr')
-                        .join('amrs.encounter', 'u', 'pr.encounter_id = u.encounter_id')
-                        .join('amrs.provider', 'apr', 'apr.provider_id = pr.provider_id')
-                        .join('amrs.location', 'lr', 'pr.referred_to_location_id = lr.location_id')
-                        .join('amrs.location', 'lt', 'pr.referred_from_location_id = lt.location_id')
-                        .join('amrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
+                        .join('openmrs.encounter', 'u', 'pr.encounter_id = u.encounter_id')
+                        .join('openmrs.provider', 'apr', 'apr.provider_id = pr.provider_id')
+                        .join('openmrs.location', 'lr', 'pr.referred_to_location_id = lr.location_id')
+                        .join('openmrs.location', 'lt', 'pr.referred_from_location_id = lt.location_id')
+                        .join('openmrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
                         .where('pr.provider_id = ?', providerId)
                         .where('pr.encounter_id = ?', encounterId)
                         .where('pr.referred_to_location_id = ?', referredToLocationId)
@@ -438,12 +438,12 @@ function getPatientReferralStats(providerId,startDate,endDate) {
                     .field('pr.notification_status') 
                     .field('pr.referral_reason') 
                     .from('etl.patient_referral', 'pr')
-                    .join('amrs.encounter', 'u', 'pr.encounter_id = u.encounter_id')
-                    .join('amrs.provider', 'apr', 'apr.provider_id = pr.provider_id')
-                    .join('amrs.location', 'lr', 'pr.referred_to_location_id = lr.location_id')
-                    .join('amrs.location', 'lt', 'pr.referred_from_location_id = lt.location_id')
-                    .join('amrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
-                    .join('amrs.program_workflow_state', 'ps', 'pr.program_workflow_state_id = ps.program_workflow_state_id')
+                    .join('openmrs.encounter', 'u', 'pr.encounter_id = u.encounter_id')
+                    .join('openmrs.provider', 'apr', 'apr.provider_id = pr.provider_id')
+                    .join('openmrs.location', 'lr', 'pr.referred_to_location_id = lr.location_id')
+                    .join('openmrs.location', 'lt', 'pr.referred_from_location_id = lt.location_id')
+                    .join('openmrs.patient_program', 'p', 'pr.patient_program_id = p.patient_program_id')
+                    .join('openmrs.program_workflow_state', 'ps', 'pr.program_workflow_state_id = ps.program_workflow_state_id')
                     .where('pr.provider_id = ?', providerId)
                     .where('pr.encounter_id = ?', encounterId)
                     .where('pr.referred_to_location_id = ?', referredToLocationId)
@@ -480,7 +480,7 @@ function getPatientReferralStats(providerId,startDate,endDate) {
                 .then(function (conn) {
                     var query = squel.select()
                         .field('u.encounter_id')
-                        .from('amrs.encounter', 'u')
+                        .from('openmrs.encounter', 'u')
                         .where('u.uuid = ?', encounterUuid)
                         .toString();
     
@@ -510,7 +510,7 @@ function getPatientReferralStats(providerId,startDate,endDate) {
                 .then(function (conn) {
                     var query = squel.select()
                         .field('u.patient_program_id')
-                        .from('amrs.patient_program', 'u')
+                        .from('openmrs.patient_program', 'u')
                         .where('u.uuid = ?', patientProgramUuid)
                         .toString();
     
@@ -543,7 +543,7 @@ function getProviderId(providerUuid) {
             .then(function (conn) {
                 var query = squel.select()
                     .field('u.provider_id')
-                    .from('amrs.provider', 'u')
+                    .from('openmrs.provider', 'u')
                     .where('u.uuid = ?', providerUuid)
                     .toString();
 
@@ -573,7 +573,7 @@ function getWorkFlowState(workFlowStateUuid) {
             .then(function (conn) {
                 var query = squel.select()
                     .field('u.program_workflow_state_id')
-                    .from('amrs.program_workflow_state', 'u')
+                    .from('openmrs.program_workflow_state', 'u')
                     .where('u.uuid = ?', workFlowStateUuid)
                     .toString();
 
@@ -603,7 +603,7 @@ function getLocation(locationUuid) {
             .then(function (conn) {
                 var query = squel.select()
                     .field('u.location_id')
-                    .from('amrs.location', 'u')
+                    .from('openmrs.location', 'u')
                     .where('u.uuid = ?', locationUuid)
                     .toString();
 
@@ -629,7 +629,7 @@ function getLocation(locationUuid) {
 
 function getCurrentUserIdSquel() {
     return squel.select().field('MAX(user_id)')
-        .from('amrs.users').where('uuid = ?', authorizer.getUser().uuid);
+        .from('openmrs.users').where('uuid = ?', authorizer.getUser().uuid);
 }
 
 function checkResolvedReferralFields(newPatientReferralPayload) {

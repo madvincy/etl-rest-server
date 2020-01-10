@@ -71,10 +71,10 @@ describe('ANALYTICS LEVEL ETL-SERVER TESTS', function () {
                 expect(queryParts.table).to.equal('etl.flat_hiv_summary');
                 expect(queryParts.where).to.include("date(encounter_datetime) >= ? and date(encounter_datetime) <= ?");
                 expect(queryParts.joins).to.be.an('array');
-                expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.location');
+                expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.location');
                 expect(queryParts.joins).to.have.deep.property('[0][1]', 't2');
                 expect(queryParts.joins).to.have.deep.property('[0][2]', 't1.location_uuid = t2.uuid');
-                expect(queryParts.joins).to.have.deep.property('[1][0]', 'amrs.person');
+                expect(queryParts.joins).to.have.deep.property('[1][0]', 'openmrs.person');
                 expect(queryParts.joins).to.have.deep.property('[1][1]', 't3');
 
             });

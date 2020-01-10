@@ -1,10 +1,10 @@
 var moduleDefinition = {
     getEidViralLoad: getEidViralLoad,
-    getAmrsViralLoadObs: getAmrsViralLoadObs,
+    getopenmrsViralLoadObs: getopenmrsViralLoadObs,
     getEidDnaPcr: getEidDnaPcr,
-    getAmrsEidPcrObs: getAmrsEidPcrObs,
+    getopenmrsEidPcrObs: getopenmrsEidPcrObs,
     getEidCd4Panel: getEidCd4Panel,
-    getAmrsCd4PanelObs: getAmrsCd4PanelObs
+    getopenmrsCd4PanelObs: getopenmrsCd4PanelObs
 };
 
 module.exports = moduleDefinition;
@@ -15,8 +15,8 @@ function getEidViralLoad() {
         "PatientID": "000910191-6",
         "ProviderID": "1289-8",
         "MFLCode": "15204",
-        "AMRslocationID": "14",
-        "AMRslocation": "MTRH Module 3",
+        "openmrslocationID": "14",
+        "openmrslocation": "MTRH Module 3",
         "PatientNames": "Test Patient",
         "DateCollected": "26-May-2016",
         "DateReceived": "26-May-2016",
@@ -27,7 +27,7 @@ function getEidViralLoad() {
     };
 }
 
-function getAmrsViralLoadObs() {
+function getopenmrsViralLoadObs() {
     return {
         "uuid": "64ec8c62-783b-4932-a2ae-5f1e4a9864e8",
         "display": "HIV VIRAL LOAD, QUANTITATIVE: 4064.0",
@@ -44,11 +44,11 @@ function getAmrsViralLoadObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a940d9ca-1350-11df-a1f1-0026b9348838"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a940d9ca-1350-11df-a1f1-0026b9348838"
                     },
                     {
                         "rel": "full",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a940d9ca-1350-11df-a1f1-0026b9348838?v=full"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a940d9ca-1350-11df-a1f1-0026b9348838?v=full"
                     }
                 ],
                 "resourceVersion": "1.9"
@@ -59,7 +59,7 @@ function getAmrsViralLoadObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -69,7 +69,7 @@ function getAmrsViralLoadObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -83,7 +83,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a940d9ca-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a940d9ca-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -93,7 +93,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a956dbbc-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a956dbbc-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -103,7 +103,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a95b5c50-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a95b5c50-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -113,7 +113,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a952ea52-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a952ea52-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -123,7 +123,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a956daea-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a956daea-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -133,7 +133,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a956d4fa-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/name/a956d4fa-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -145,7 +145,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/description/a8fdeafc-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/description/a8fdeafc-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -157,7 +157,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/mapping/07ac4e30-df0a-45a1-9795-5ae89766a8be"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/mapping/07ac4e30-df0a-45a1-9795-5ae89766a8be"
                         }
                     ]
                 },
@@ -167,7 +167,7 @@ function getAmrsViralLoadObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/mapping/17c33c09-e09c-4be0-87c1-99c5e31e9d9b"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838/mapping/17c33c09-e09c-4be0-87c1-99c5e31e9d9b"
                         }
                     ]
                 }
@@ -177,11 +177,11 @@ function getAmrsViralLoadObs() {
             "links": [
                 {
                     "rel": "self",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838"
                 },
                 {
                     "rel": "full",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838?v=full"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8982474-1350-11df-a1f1-0026b9348838?v=full"
                 }
             ],
             "resourceVersion": "1.11"
@@ -204,7 +204,7 @@ function getAmrsViralLoadObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                     }
                 ]
             },
@@ -219,7 +219,7 @@ function getAmrsViralLoadObs() {
         "links": [
             {
                 "rel": "self",
-                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/64ec8c62-783b-4932-a2ae-5f1e4a9864e8"
+                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/64ec8c62-783b-4932-a2ae-5f1e4a9864e8"
             }
         ],
         "resourceVersion": "1.11"
@@ -232,8 +232,8 @@ function getEidDnaPcr() {
         "PatientID": "277850056-7",
         "ProviderID": "1438-1",
         "MFLCode": "15204",
-        "AMRslocationID": "15",
-        "AMRslocation": "MTRH Module 4",
+        "openmrslocationID": "15",
+        "openmrslocation": "MTRH Module 4",
         "PatientNames": "Test Patient",
         "DateCollected": "17-May-2016",
         "DateReceived": "18-May-2016",
@@ -244,7 +244,7 @@ function getEidDnaPcr() {
     };
 }
 
-function getAmrsEidPcrObs() {
+function getopenmrsEidPcrObs() {
     return {
         "uuid": "2c8954b9-f842-40b2-8a30-41eb5bfb6fc5",
         "display": "HIV DNA POLYMERASE CHAIN REACTION, QUALITATIVE: NEGATIVE",
@@ -261,11 +261,11 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a941afc6-1350-11df-a1f1-0026b9348838"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a941afc6-1350-11df-a1f1-0026b9348838"
                     },
                     {
                         "rel": "full",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a941afc6-1350-11df-a1f1-0026b9348838?v=full"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a941afc6-1350-11df-a1f1-0026b9348838?v=full"
                     }
                 ],
                 "resourceVersion": "1.9"
@@ -276,7 +276,7 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a48b6-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -286,7 +286,7 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -300,7 +300,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a956da0e-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a956da0e-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -310,7 +310,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a941afc6-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a941afc6-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -320,7 +320,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a95267e4-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a95267e4-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -330,7 +330,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a956ce2e-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a956ce2e-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -340,7 +340,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a956cc76-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/name/a956cc76-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -352,7 +352,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/description/a8feb20c-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/description/a8feb20c-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -364,7 +364,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/mapping/1a010ec8-2308-4947-becc-9e09c405c481"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/mapping/1a010ec8-2308-4947-becc-9e09c405c481"
                         }
                     ]
                 },
@@ -374,7 +374,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/mapping/c9fb8d29-e61e-48a9-af3d-14da09287256"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838/mapping/c9fb8d29-e61e-48a9-af3d-14da09287256"
                         }
                     ]
                 }
@@ -386,7 +386,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89a7ae4-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89a7ae4-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -396,7 +396,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -406,7 +406,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896f3a6-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896f3a6-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -416,7 +416,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c3d8e-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c3d8e-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -426,7 +426,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a899ea48-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a899ea48-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -435,11 +435,11 @@ function getAmrsEidPcrObs() {
             "links": [
                 {
                     "rel": "self",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838"
                 },
                 {
                     "rel": "full",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838?v=full"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fe80-1350-11df-a1f1-0026b9348838?v=full"
                 }
             ],
             "resourceVersion": "1.11"
@@ -462,7 +462,7 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                     }
                 ]
             },
@@ -483,11 +483,11 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a93f5e24-1350-11df-a1f1-0026b9348838"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a93f5e24-1350-11df-a1f1-0026b9348838"
                     },
                     {
                         "rel": "full",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a93f5e24-1350-11df-a1f1-0026b9348838?v=full"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a93f5e24-1350-11df-a1f1-0026b9348838?v=full"
                     }
                 ],
                 "resourceVersion": "1.9"
@@ -498,7 +498,7 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -508,7 +508,7 @@ function getAmrsEidPcrObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d492774-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d492774-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -522,7 +522,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a952f5ce-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a952f5ce-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -532,7 +532,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a9587fc6-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a9587fc6-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -542,7 +542,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a952fcae-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a952fcae-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -552,7 +552,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a93f5e24-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/name/a93f5e24-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -564,7 +564,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/description/a8f78b08-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/description/a8f78b08-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -576,7 +576,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/mapping/5efd601b-edbf-4faf-9cd6-25911ff71a11"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/mapping/5efd601b-edbf-4faf-9cd6-25911ff71a11"
                         }
                     ]
                 },
@@ -586,7 +586,7 @@ function getAmrsEidPcrObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/mapping/65c48593-1fb5-4d63-893b-b1a15725b311"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838/mapping/65c48593-1fb5-4d63-893b-b1a15725b311"
                         }
                     ]
                 }
@@ -596,11 +596,11 @@ function getAmrsEidPcrObs() {
             "links": [
                 {
                     "rel": "self",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838"
                 },
                 {
                     "rel": "full",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838?v=full"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896d2cc-1350-11df-a1f1-0026b9348838?v=full"
                 }
             ],
             "resourceVersion": "1.11"
@@ -611,7 +611,7 @@ function getAmrsEidPcrObs() {
         "links": [
             {
                 "rel": "self",
-                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/2c8954b9-f842-40b2-8a30-41eb5bfb6fc5"
+                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/2c8954b9-f842-40b2-8a30-41eb5bfb6fc5"
             }
         ],
         "resourceVersion": "1.11"
@@ -624,8 +624,8 @@ function getEidCd4Panel() {
         "PatientID": "000981160-5",
         "ProviderID": "",
         "MFLCode": "15753",
-        "AMRslocationID": "3",
-        "AMRslocation": "Turbo",
+        "openmrslocationID": "3",
+        "openmrslocation": "Turbo",
         "PatientNames": "Test Patient",
         "DateCollected": "02-Jun-2016",
         "DateReceived": "06-Jun-2016",
@@ -640,7 +640,7 @@ function getEidCd4Panel() {
     };
 }
 
-function getAmrsCd4PanelObs() {
+function getopenmrsCd4PanelObs() {
     return {
         "uuid": "7e55fc57-05a7-4cfa-938d-58e0aa3aeb97",
         "display": "CD4 PANEL: 26.29, 81.49, 1644.03, 1339.69, 432.28",
@@ -657,11 +657,11 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a93f5320-1350-11df-a1f1-0026b9348838"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a93f5320-1350-11df-a1f1-0026b9348838"
                     },
                     {
                         "rel": "full",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a93f5320-1350-11df-a1f1-0026b9348838?v=full"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a93f5320-1350-11df-a1f1-0026b9348838?v=full"
                     }
                 ],
                 "resourceVersion": "1.9"
@@ -672,7 +672,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4c94-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -682,7 +682,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d492026-c2cc-11de-8d13-0010c6dffd0f"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d492026-c2cc-11de-8d13-0010c6dffd0f"
                     }
                 ]
             },
@@ -696,7 +696,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a93f5320-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a93f5320-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -706,7 +706,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a957a664-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/name/a957a664-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -718,7 +718,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/description/a8f782f2-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/description/a8f782f2-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -730,7 +730,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/mapping/66cdb436-97dd-4c44-a82e-ca8e76d6b6f6"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/mapping/66cdb436-97dd-4c44-a82e-ca8e76d6b6f6"
                         }
                     ]
                 },
@@ -740,7 +740,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/mapping/0bfe1fc1-2cd7-4d2d-843a-5d8e2a699efb"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/mapping/0bfe1fc1-2cd7-4d2d-843a-5d8e2a699efb"
                         }
                     ]
                 },
@@ -750,7 +750,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/mapping/28af76e2-0eee-445b-aa43-1d55a3262496"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838/mapping/28af76e2-0eee-445b-aa43-1d55a3262496"
                         }
                     ]
                 }
@@ -763,7 +763,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -773,7 +773,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -783,7 +783,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -793,7 +793,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89821e0-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89821e0-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -803,7 +803,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -813,7 +813,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fbf6-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fbf6-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -823,7 +823,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 },
@@ -833,7 +833,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89822bc-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89822bc-1350-11df-a1f1-0026b9348838"
                         }
                     ]
                 }
@@ -841,11 +841,11 @@ function getAmrsCd4PanelObs() {
             "links": [
                 {
                     "rel": "self",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
                 },
                 {
                     "rel": "full",
-                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838?v=full"
+                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838?v=full"
                 }
             ],
             "resourceVersion": "1.11"
@@ -872,11 +872,11 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a93fc4ae-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a93fc4ae-1350-11df-a1f1-0026b9348838"
                             },
                             {
                                 "rel": "full",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a93fc4ae-1350-11df-a1f1-0026b9348838?v=full"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a93fc4ae-1350-11df-a1f1-0026b9348838?v=full"
                             }
                         ],
                         "resourceVersion": "1.9"
@@ -887,7 +887,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -897,7 +897,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -911,7 +911,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a95ab692-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a95ab692-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -921,7 +921,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a93fc4ae-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a93fc4ae-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -931,7 +931,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a954a96e-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a954a96e-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -941,7 +941,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a954a2ca-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a954a2ca-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -951,7 +951,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a9523e18-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a9523e18-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -961,7 +961,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a954a89c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/name/a954a89c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -973,7 +973,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/description/a8f7f5d4-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/description/a8f7f5d4-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -985,7 +985,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/mapping/cfa573db-a23f-48ae-9925-96d5fe2bc994"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/mapping/cfa573db-a23f-48ae-9925-96d5fe2bc994"
                                 }
                             ]
                         },
@@ -995,7 +995,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/mapping/4f257118-6537-4fa0-9145-8740abf6af02"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838/mapping/4f257118-6537-4fa0-9145-8740abf6af02"
                                 }
                             ]
                         }
@@ -1005,11 +1005,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -1026,7 +1026,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
                             }
                         ]
                     },
@@ -1045,7 +1045,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1058,7 +1058,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1076,11 +1076,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1094,7 +1094,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1107,7 +1107,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1125,11 +1125,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1143,7 +1143,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1156,7 +1156,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1174,11 +1174,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1192,7 +1192,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1205,7 +1205,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1223,11 +1223,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1241,7 +1241,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1254,7 +1254,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1272,11 +1272,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1294,11 +1294,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -1317,7 +1317,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                             }
                         ]
                     },
@@ -1332,7 +1332,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
                     }
                 ],
                 "resourceVersion": "1.11"
@@ -1353,11 +1353,11 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9438396-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9438396-1350-11df-a1f1-0026b9348838"
                             },
                             {
                                 "rel": "full",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9438396-1350-11df-a1f1-0026b9348838?v=full"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9438396-1350-11df-a1f1-0026b9348838?v=full"
                             }
                         ],
                         "resourceVersion": "1.9"
@@ -1368,7 +1368,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -1378,7 +1378,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -1392,7 +1392,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a958e204-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a958e204-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1402,7 +1402,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9523c74-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9523c74-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1412,7 +1412,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9549f6e-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9549f6e-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1422,7 +1422,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a954a11c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a954a11c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1432,7 +1432,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9438396-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a9438396-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1442,7 +1442,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a954a04a-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/name/a954a04a-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -1454,7 +1454,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/description/a9006d18-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/description/a9006d18-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -1466,7 +1466,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/mapping/16e79b3b-af28-450a-9ebd-230b01625cbf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/mapping/16e79b3b-af28-450a-9ebd-230b01625cbf"
                                 }
                             ]
                         },
@@ -1476,7 +1476,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/mapping/fb823cff-b089-4f7b-ab89-9d7325bb3dcf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838/mapping/fb823cff-b089-4f7b-ab89-9d7325bb3dcf"
                                 }
                             ]
                         }
@@ -1486,11 +1486,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -1507,7 +1507,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
                             }
                         ]
                     },
@@ -1526,7 +1526,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1539,7 +1539,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1557,11 +1557,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1575,7 +1575,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1588,7 +1588,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1606,11 +1606,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1624,7 +1624,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1637,7 +1637,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1655,11 +1655,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1673,7 +1673,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1686,7 +1686,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1704,11 +1704,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1722,7 +1722,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -1735,7 +1735,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -1753,11 +1753,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -1775,11 +1775,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -1798,7 +1798,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                             }
                         ]
                     },
@@ -1813,7 +1813,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
                     }
                 ],
                 "resourceVersion": "1.11"
@@ -1834,11 +1834,11 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9438b0c-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9438b0c-1350-11df-a1f1-0026b9348838"
                             },
                             {
                                 "rel": "full",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9438b0c-1350-11df-a1f1-0026b9348838?v=full"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9438b0c-1350-11df-a1f1-0026b9348838?v=full"
                             }
                         ],
                         "resourceVersion": "1.9"
@@ -1849,7 +1849,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -1859,7 +1859,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -1873,7 +1873,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9531d38-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9531d38-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1883,7 +1883,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a957a4c0-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a957a4c0-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1893,7 +1893,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a957a592-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a957a592-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1903,7 +1903,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9438b0c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9438b0c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1913,7 +1913,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a954ab1c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a954ab1c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -1923,7 +1923,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9528378-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/name/a9528378-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -1935,7 +1935,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/description/a9006e9e-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/description/a9006e9e-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -1947,7 +1947,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/mapping/90eefc4c-9e93-46ea-881c-34e469504035"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/mapping/90eefc4c-9e93-46ea-881c-34e469504035"
                                 }
                             ]
                         },
@@ -1957,7 +1957,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/mapping/973fb281-68af-4c05-85a3-4f32fe4b147c"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838/mapping/973fb281-68af-4c05-85a3-4f32fe4b147c"
                                 }
                             ]
                         }
@@ -1967,11 +1967,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -1988,7 +1988,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
                             }
                         ]
                     },
@@ -2007,7 +2007,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2020,7 +2020,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2038,11 +2038,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2056,7 +2056,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2069,7 +2069,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2087,11 +2087,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2105,7 +2105,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2118,7 +2118,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2136,11 +2136,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2154,7 +2154,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2167,7 +2167,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2185,11 +2185,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2203,7 +2203,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2216,7 +2216,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2234,11 +2234,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2256,11 +2256,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -2279,7 +2279,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                             }
                         ]
                     },
@@ -2294,7 +2294,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
                     }
                 ],
                 "resourceVersion": "1.11"
@@ -2315,11 +2315,11 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a941ae22-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a941ae22-1350-11df-a1f1-0026b9348838"
                             },
                             {
                                 "rel": "full",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a941ae22-1350-11df-a1f1-0026b9348838?v=full"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a941ae22-1350-11df-a1f1-0026b9348838?v=full"
                             }
                         ],
                         "resourceVersion": "1.9"
@@ -2330,7 +2330,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -2340,7 +2340,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -2354,7 +2354,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9523ba2-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9523ba2-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2364,7 +2364,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9549e9c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9549e9c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2374,7 +2374,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9531e00-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9531e00-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2384,7 +2384,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a954a1f8-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a954a1f8-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2394,7 +2394,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a941ae22-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a941ae22-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2404,7 +2404,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9549cee-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a9549cee-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2414,7 +2414,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a95ab4da-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/name/a95ab4da-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -2426,7 +2426,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/description/a8feaf50-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/description/a8feaf50-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -2438,7 +2438,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/mapping/9d65337b-5a54-4e2e-8100-1df76cbc133b"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/mapping/9d65337b-5a54-4e2e-8100-1df76cbc133b"
                                 }
                             ]
                         },
@@ -2448,7 +2448,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/mapping/525971db-70d9-42ec-a30a-871ddf7ad0f0"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838/mapping/525971db-70d9-42ec-a30a-871ddf7ad0f0"
                                 }
                             ]
                         }
@@ -2458,11 +2458,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -2479,7 +2479,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
                             }
                         ]
                     },
@@ -2489,7 +2489,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                             }
                         ]
                     },
@@ -2507,7 +2507,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2517,7 +2517,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -2529,7 +2529,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2547,11 +2547,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2565,7 +2565,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2575,7 +2575,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -2587,7 +2587,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2605,11 +2605,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2623,7 +2623,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2633,7 +2633,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -2645,7 +2645,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2663,11 +2663,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2681,7 +2681,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2691,7 +2691,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -2703,7 +2703,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2721,11 +2721,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2739,7 +2739,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -2749,7 +2749,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -2761,7 +2761,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -2779,11 +2779,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -2801,11 +2801,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -2824,7 +2824,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                             }
                         ]
                     },
@@ -2839,7 +2839,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
                     }
                 ],
                 "resourceVersion": "1.11"
@@ -2860,11 +2860,11 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a94b37ee-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a94b37ee-1350-11df-a1f1-0026b9348838"
                             },
                             {
                                 "rel": "full",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a94b37ee-1350-11df-a1f1-0026b9348838?v=full"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a94b37ee-1350-11df-a1f1-0026b9348838?v=full"
                             }
                         ],
                         "resourceVersion": "1.9"
@@ -2875,7 +2875,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptdatatype/8d4a4488-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -2885,7 +2885,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/conceptclass/8d4907b2-c2cc-11de-8d13-0010c6dffd0f"
                             }
                         ]
                     },
@@ -2899,7 +2899,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a9531630-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a9531630-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2909,7 +2909,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a954a39c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a954a39c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2919,7 +2919,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a954a61c-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a954a61c-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2929,7 +2929,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a9523d46-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a9523d46-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2939,7 +2939,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a94b37ee-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a94b37ee-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2949,7 +2949,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a954a7ca-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a954a7ca-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         },
@@ -2959,7 +2959,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a95ab5b6-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/name/a95ab5b6-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -2971,7 +2971,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/description/a90763d4-1350-11df-a1f1-0026b9348838"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/description/a90763d4-1350-11df-a1f1-0026b9348838"
                                 }
                             ]
                         }
@@ -2983,7 +2983,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/mapping/c9687a91-3201-4591-9e4b-f2d5471e0b25"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/mapping/c9687a91-3201-4591-9e4b-f2d5471e0b25"
                                 }
                             ]
                         },
@@ -2993,7 +2993,7 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/mapping/4822eba1-807e-4242-9585-97e389a36f37"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838/mapping/4822eba1-807e-4242-9585-97e389a36f37"
                                 }
                             ]
                         }
@@ -3003,11 +3003,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -3018,7 +3018,7 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                         }
                     ]
                 },
@@ -3033,7 +3033,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a896cce6-1350-11df-a1f1-0026b9348838"
                             }
                         ]
                     },
@@ -3043,7 +3043,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                             }
                         ]
                     },
@@ -3061,7 +3061,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8970a26-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -3071,7 +3071,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -3083,7 +3083,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -3101,11 +3101,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f8cd76dc-6afa-4fca-8764-6c1a3d52d699?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -3119,7 +3119,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4220-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -3129,7 +3129,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -3141,7 +3141,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -3159,11 +3159,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/1a57c4b7-3b4f-42c5-a7ea-b372d11c3adf?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -3177,7 +3177,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89c4914-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -3187,7 +3187,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -3199,7 +3199,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -3217,11 +3217,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7b51e86f-fada-46af-819f-c2134d2c35ae?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -3235,7 +3235,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a898fcd2-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -3245,7 +3245,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -3257,7 +3257,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -3275,11 +3275,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/f5744e2b-f678-48cc-ada6-d6d6213f4ccd?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -3293,7 +3293,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a8a8bb18-1350-11df-a1f1-0026b9348838"
                                     }
                                 ]
                             },
@@ -3303,7 +3303,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/patient/bb4d8538-e986-47bd-a44b-4bffa6e39c22"
                                     }
                                 ]
                             },
@@ -3315,7 +3315,7 @@ function getAmrsCd4PanelObs() {
                                 "links": [
                                     {
                                         "rel": "self",
-                                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                                     }
                                 ]
                             },
@@ -3333,11 +3333,11 @@ function getAmrsCd4PanelObs() {
                             "links": [
                                 {
                                     "rel": "self",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
                                 },
                                 {
                                     "rel": "full",
-                                    "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
+                                    "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1?v=full"
                                 }
                             ],
                             "resourceVersion": "1.11"
@@ -3355,11 +3355,11 @@ function getAmrsCd4PanelObs() {
                     "links": [
                         {
                             "rel": "self",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
                         },
                         {
                             "rel": "full",
-                            "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
+                            "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97?v=full"
                         }
                     ],
                     "resourceVersion": "1.11"
@@ -3378,7 +3378,7 @@ function getAmrsCd4PanelObs() {
                         "links": [
                             {
                                 "rel": "self",
-                                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                             }
                         ]
                     },
@@ -3393,7 +3393,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/511ed043-3868-45bf-9770-605de9a7a5a1"
                     }
                 ],
                 "resourceVersion": "1.11"
@@ -3411,7 +3411,7 @@ function getAmrsCd4PanelObs() {
                 "links": [
                     {
                         "rel": "self",
-                        "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
+                        "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB"
                     }
                 ]
             },
@@ -3426,7 +3426,7 @@ function getAmrsCd4PanelObs() {
         "links": [
             {
                 "rel": "self",
-                "uri": "https://amrs.ampath.or.ke:8443/amrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
+                "uri": "https://openmrs.ampath.or.ke:8443/openmrs/ws/rest/v1/obs/7e55fc57-05a7-4cfa-938d-58e0aa3aeb97"
             }
         ],
         "resourceVersion": "1.11"

@@ -10,7 +10,7 @@
             "alias": "hmsd"
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "ps",
             "join": {
                 "type": "INNER",

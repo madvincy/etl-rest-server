@@ -2,56 +2,56 @@
   {
     "name": "patient-flow-report",
     "table": {
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "visit",
       "alias": "t1"
     },
     "joins": [
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "encounter",
         "alias": "t4",
         "joinExpression": "t1.visit_id=t4.visit_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t2",
         "joinExpression": "t1.patient_id  = t2.person_id and (t2.voided is null || t2.voided = 0)"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_identifier",
         "alias": "t3",
         "joinExpression": "t1.patient_id  = t3.patient_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t5",
         "joinExpression": "t1.patient_id = t5.person_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "encounter_provider",
         "alias": "t6",
         "joinExpression": "t4.encounter_id=t6.encounter_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "provider",
         "alias": "t7",
         "joinExpression": "t7.provider_id = t6.provider_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "encounter_type",
         "alias": "t9",
         "joinExpression": "t9.encounter_type_id=t4.encounter_type"
@@ -65,28 +65,28 @@
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t8",
         "joinExpression": "t7.person_id  = t8.person_id and (t8.voided is null || t8.voided = 0)"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "users",
         "alias": "t10",
         "joinExpression": "t1.creator  = t10.user_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t11",
         "joinExpression": "t10.person_id  = t11.person_id and (t11.voided is null || t11.voided = 0)"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "location",
         "alias": "t12",
         "joinExpression": "t1.location_id  = t12.location_id"

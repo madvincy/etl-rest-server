@@ -11,7 +11,7 @@
             "alias": "t1"
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "t2",
             "join": {
                 "type": "INNER",
@@ -19,7 +19,7 @@
             }
         },
         {
-            "table": "amrs.person_name",
+            "table": "openmrs.person_name",
             "alias": "t3",
             "join": {
                 "type": "INNER",
@@ -27,7 +27,7 @@
             }
         },        
         {
-            "table": "amrs.encounter_type",
+            "table": "openmrs.encounter_type",
             "alias": "t4",
             "join": {
                 "type": "INNER",

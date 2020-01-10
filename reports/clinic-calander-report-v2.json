@@ -9,7 +9,7 @@
         "joins": [
             {
                 "joinType": "INNER JOIN",
-                "schema": "amrs",
+                "schema": "openmrs",
                 "tableName": "visit",
                 "alias": "t2",
                 "joinExpression": "t1.visit_id  = t2.visit_id"
@@ -142,7 +142,7 @@
             },
              {
                 "joinType": "INNER JOIN",
-                "schema": "amrs",
+                "schema": "openmrs",
                 "tableName": "visit",
                 "alias": "t2",
                 "joinExpression": "t1.visit_id  = t2.visit_id"
@@ -333,7 +333,7 @@
         "joins": [
              {
                 "joinType": "INNER JOIN",
-                "schema": "amrs",
+                "schema": "openmrs",
                 "tableName": "visit",
                 "alias": "t2",
                 "joinExpression": "t1.visit_id  = t2.visit_id"

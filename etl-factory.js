@@ -794,21 +794,21 @@ module.exports = function () {
             if (report.name === queryParams.reportName) {
                 var join = joinsToSql(report.joins, queryParams) || [];
                 join.push({
-                    schema: 'amrs',
+                    schema: 'openmrs',
                     tableName: 'person_name',
                     alias: 'person_name',
                     joinExpression: 't1.person_id = person_name.person_id and (person_name.voided is null || person_name.voided = 0)',
                     joinType: 'INNER JOIN'
                 });
                 join.push({
-                    schema: 'amrs',
+                    schema: 'openmrs',
                     tableName: 'patient_identifier',
                     alias: 'id',
                     joinExpression: 't1.person_id = id.patient_id',
                     joinType: 'LEFT OUTER JOIN'
                 });
                 join.push({
-                    schema: 'amrs',
+                    schema: 'openmrs',
                     tableName: 'person',
                     alias: 'person',
                     joinExpression: 't1.person_id = person.person_id',

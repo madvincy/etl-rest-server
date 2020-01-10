@@ -10,7 +10,7 @@
             "alias": "t2"
         },
         {
-            "table": "amrs.program",
+            "table": "openmrs.program",
             "alias": "pr",
             "join": {
                 "type": "LEFT",

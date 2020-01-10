@@ -2,7 +2,7 @@
   {
     "name": "cohort-report",
     "table": {
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "cohort",
       "alias": "t1"
     },
@@ -16,7 +16,7 @@
       },
       {
         "joinType": "JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "users",
         "alias": "t3",
         "joinExpression": "t1.creator = t3.user_id or t2.user_id = t3.user_id"

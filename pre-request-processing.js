@@ -24,7 +24,7 @@ function resolveLocationIdsToLocationUuids(request, callback) {
     if (asyncRequests === 0)
         callback();
     if (request.query.locationUuids) {
-        dao.getIdsByUuidAsyc('amrs.location', 'location_id', 'uuid', request.query.locationUuids,
+        dao.getIdsByUuidAsyc('openmrs.location', 'location_id', 'uuid', request.query.locationUuids,
             function (results) {
                 request.query.locations = results;
             }).onResolved = onResolvedPromise;

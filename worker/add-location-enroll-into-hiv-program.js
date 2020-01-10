@@ -46,7 +46,7 @@ var s = fs.createReadStream(input_file)
         try {
             if (line && line !== '') {
                 console.log('Updating existing enrollment to have location: ', line);
-                var openmrsAppName = config.openmrs.applicationName || 'amrs';
+                var openmrsAppName = config.openmrs.applicationName || 'openmrs';
                 let payload = createPayload(line);
 
                 var protocol = config.openmrs.https ? 'https' : 'http';
@@ -113,13 +113,13 @@ var s = fs.createReadStream(input_file)
  t4.name AS locationName,
  MAX(t3.encounter_datetime) AS encounterDate
  FROM
- amrs.patient_program `t1`
+ openmrs.patient_program `t1`
  LEFT OUTER JOIN
- amrs.program `t2` ON (t1.program_id = t2.program_id)
+ openmrs.program `t2` ON (t1.program_id = t2.program_id)
  LEFT OUTER JOIN
- amrs.encounter `t3` ON (t1.patient_id = t3.patient_id)
+ openmrs.encounter `t3` ON (t1.patient_id = t3.patient_id)
  LEFT OUTER JOIN
- amrs.location `t4` ON (t3.location_id = t4.location_id)
+ openmrs.location `t4` ON (t3.location_id = t4.location_id)
  WHERE
  t1.date_completed IS NULL
  AND t1.location_id IS NULL

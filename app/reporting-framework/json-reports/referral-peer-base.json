@@ -8,7 +8,7 @@
     "sources": [
 
         {
-            "table": "amrs.patient_program",
+            "table": "openmrs.patient_program",
             "alias": "t3"
         },
         {
@@ -20,7 +20,7 @@
             }
         },
         {
-            "table": "amrs.program",
+            "table": "openmrs.program",
             "alias": "t5",
             "join": {
                 "type": "INNER",
@@ -28,7 +28,7 @@
             }
         },
         {
-            "table": "amrs.location",
+            "table": "openmrs.location",
             "alias": "t9",
             "join": {
                 "type": "INNER",
@@ -36,7 +36,7 @@
             }
         },
         {
-            "table": "amrs.location",
+            "table": "openmrs.location",
             "alias": "location",
             "join": {
                 "type": "INNER",

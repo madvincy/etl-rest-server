@@ -28,7 +28,7 @@
                             "sampletype": payload.sampleType ? payload.sampleType : 1,
                             "justification": getTestOrderJustification(payload) || 0,
                             "pmtct": 3,
-                            "amrs_location": getLocation(payload, 'mrsId')
+                            "openmrs_location": getLocation(payload, 'mrsId')
                         };
                         break;
                     case 'DNAPCR':
@@ -50,7 +50,7 @@
                             "order_no": payload.orderNumber,
                             "ccc_no": "",
                             "lab": "",
-                            "amrs_location": getLocation(payload, 'mrsId')
+                            "openmrs_location": getLocation(payload, 'mrsId')
                         };
                         break;
                     case 'CD4':
@@ -63,7 +63,7 @@
                             "patient_name": payload.patientName,
                             "medicalrecordno": payload.patientIdentifier,
                             "order_no": payload.orderNumber,
-                            "amrs_location": getLocation(payload, 'mrsId'),
+                            "openmrs_location": getLocation(payload, 'mrsId'),
                             "provider_identifier": payload.providerIdentifier
                         };
                         break;

@@ -213,7 +213,7 @@ describe('CLINIC LEVEL ETL-SERVER TESTS', function () {
         expect(queryParts.columns).to.equal('t1.*,t3.given_name,t3.middle_name,t3.family_name,group_concat(identifier) as identifiers');
         expect(queryParts.where).to.include('t1.location_uuid = ? and date(t1.rtc_date) between ? and ? and next_clinical_datetime_hiv is null');
         expect(queryParts.joins).to.be.an('array');
-        //expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.person_name');
+        //expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.person_name');
         // expect(queryParts.joins).to.have.deep.property('[0][1]', 't3');
 
         expect(queryParts.group).to.be.an('array');
@@ -439,10 +439,10 @@ describe('CLINIC LEVEL ETL-SERVER TESTS', function () {
         // if fields is null output all columns
         expect(queryParts.columns).to.equal("t1.*,t2.gender,round(datediff(t1.encounter_datetime,t2.birthdate)/365) as age,group_concat(identifier) as identifiers");
         expect(queryParts.joins).to.be.an('array');
-        expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.person');
+        expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.person');
         expect(queryParts.joins).to.have.deep.property('[0][1]', 't2');
         expect(queryParts.joins).to.have.deep.property('[0][2]', 't1.person_id = t2.person_id');
-        expect(queryParts.joins).to.have.deep.property('[1][0]', 'amrs.patient_identifier');
+        expect(queryParts.joins).to.have.deep.property('[1][0]', 'openmrs.patient_identifier');
         expect(queryParts.joins).to.have.deep.property('[1][1]', 't3');
 
 
@@ -527,7 +527,7 @@ describe('CLINIC LEVEL ETL-SERVER TESTS', function () {
         // if fields is null output all columns
         expect(queryParts.columns).to.equal("t1.*,t3.given_name,t3.middle_name,t3.family_name,group_concat(identifier) as identifiers");
         expect(queryParts.joins).to.be.an('array');
-        expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.person_name');
+        expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.person_name');
         expect(queryParts.joins).to.have.deep.property('[0][1]', 't3');
 
         expect(queryParts.group).to.be.an('array');
@@ -606,7 +606,7 @@ describe('CLINIC LEVEL ETL-SERVER TESTS', function () {
         // if fields is null output all columns
         expect(queryParts.columns).to.equal("t1.*,t3.given_name,t3.middle_name,t3.family_name,group_concat(identifier) as identifiers");
         expect(queryParts.joins).to.be.an('array');
-        expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.person_name');
+        expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.person_name');
         expect(queryParts.joins).to.have.deep.property('[0][1]', 't3');
 
         expect(queryParts.group).to.be.an('array');

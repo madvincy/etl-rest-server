@@ -23,7 +23,7 @@ function getVisitTypes() {
                     .field('vt.visit_type_id')
                     .field('vt.name')
                     .field('vt.uuid')
-                    .from('amrs.visit_type', 'vt')
+                    .from('openmrs.visit_type', 'vt')
                     .toString();
                 conn.query(query, {}, function (err, rows, fields) {
                     if (err) {

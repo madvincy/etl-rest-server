@@ -467,13 +467,13 @@ function _getSynchronizedPatientLabResults(server, patientUuId) {
     .then(function (obsResponse) {
       var missingResult = comparison.findAllMissingEidResults(mergedEidResults, obsResponse);
       var conflicts =
-        comparison.findConflictingEidAmrsViralLoadResults(mergedEidResults.viralLoad, obsResponse);
+        comparison.findConflictingEidopenmrsViralLoadResults(mergedEidResults.viralLoad, obsResponse);
       if (conflicts.length > 0) {
         // console.log('conflicts', JSON.stringify(conflicts));
         fields[0].conflicts = JSON.stringify(conflicts);
       }
-      console.log("posting obs to AMRS", missingResult);
-      return obsService.postAllObsToAMRS(missingResult, patientUuId);
+      console.log("posting obs to openmrs", missingResult);
+      return obsService.postAllObsToopenmrs(missingResult, patientUuId);
     })
     .then(function (postResponse) {
 

@@ -31,9 +31,9 @@ function getCohortUsersByCohortUuid(cohortUuid) {
                     .field('case when cu.role is null or cu.user_id != u.user_id then "admin" else cu.role end as role')
                     .field('case when cu.role is null or cu.user_id != u.user_id  then  "null" else cu.cohort_user_id end as cohort_user_id')
                     .field('case when cu.role is null or cu.user_id != u.user_id  then  0 else cu.voided end as voided')
-                    .from('amrs.cohort', 'c')
+                    .from('openmrs.cohort', 'c')
                     .left_join('etl.cohort_user', 'cu', 'c.cohort_id = cu.cohort_id and cu.voided = 0 ')
-                    .join('amrs.users', 'u', squel.expr().or('cu.user_id = u.user_id').or('c.creator = u.user_id'))
+                    .join('openmrs.users', 'u', squel.expr().or('cu.user_id = u.user_id').or('c.creator = u.user_id'))
                     .where('c.uuid = ?', cohortUuid)
                     .where('c.voided = 0')
                     .group('u.username')
@@ -65,8 +65,8 @@ function getCohortUser(cohortUserId) {
                     .field('u.username')
                     .field('cu.voided')
                     .from('etl.cohort_user', 'cu')
-                    .join('amrs.users', 'u', 'cu.user_id = u.user_id')
-                    .join('amrs.cohort', 'c', 'c.cohort_id = cu.cohort_id')
+                    .join('openmrs.users', 'u', 'cu.user_id = u.user_id')
+                    .join('openmrs.cohort', 'c', 'c.cohort_id = cu.cohort_id')
                     .where('cu.cohort_user_id = ?', cohortUserId)
                     .toString();
 
@@ -229,8 +229,8 @@ function findCohortUser(userId, cohortId, voided) {
                     .field('u.username')
                     .field('cu.voided')
                     .from('etl.cohort_user', 'cu')
-                    .join('amrs.users', 'u', 'cu.user_id = u.user_id')
-                    .join('amrs.cohort', 'c', 'c.cohort_id = cu.cohort_id')
+                    .join('openmrs.users', 'u', 'cu.user_id = u.user_id')
+                    .join('openmrs.cohort', 'c', 'c.cohort_id = cu.cohort_id')
                     .where('cu.cohort_id = ?', cohortId)
                     .where('cu.user_id = ?', userId)
                     .where('cu.voided = ?', voided)
@@ -280,7 +280,7 @@ function getUserId(userUuid) {
             .then(function (conn) {
                 var query = squel.select()
                     .field('u.user_id')
-                    .from('amrs.users', 'u')
+                    .from('openmrs.users', 'u')
                     .where('u.uuid = ?', userUuid)
                     .toString();
 
@@ -310,7 +310,7 @@ function getCohortId(cohortUuid) {
             .then(function (conn) {
                 var query = squel.select()
                     .field('u.cohort_id')
-                    .from('amrs.cohort', 'u')
+                    .from('openmrs.cohort', 'u')
                     .where('u.uuid = ?', cohortUuid)
                     .toString();
 
@@ -449,7 +449,7 @@ function hasRequireFields(newCohortUserPayload) {
 
 function getCurrentUserIdSquel() {
     return squel.select().field('MAX(user_id)')
-        .from('amrs.users').where('uuid = ?', authorizer.getUser().uuid);
+        .from('openmrs.users').where('uuid = ?', authorizer.getUser().uuid);
 }
 
 

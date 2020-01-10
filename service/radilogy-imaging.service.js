@@ -171,5 +171,5 @@ function getImagesFromWado(studyUID,objectUID,seriesUID) {
 
 function getCurrentUserIdSquel() {
     return squel.select().field('MAX(user_id)')
-        .from('amrs.users').where('uuid = ?', authorizer.getUser().uuid);
+        .from('openmrs.users').where('uuid = ?', authorizer.getUser().uuid);
 }

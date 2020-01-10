@@ -10,28 +10,28 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t2",
         "joinExpression": "t1.person_id  = t2.person_id and (t2.voided is null || t2.voided = 0)"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_identifier",
         "alias": "t3",
         "joinExpression": "t1.person_id  = t3.patient_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t4",
         "joinExpression": "t1.person_id  = t4.person_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "visit",
         "alias": "t5",
         "joinExpression": "t1.visit_id  = t5.visit_id"
@@ -183,28 +183,28 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t2",
         "joinExpression": "t1.person_id  = t2.person_id and (t2.voided is null || t2.voided = 0)"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_identifier",
         "alias": "t3",
         "joinExpression": "t1.person_id  = t3.patient_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t4",
         "joinExpression": "t1.person_id  = t4.person_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "visit",
         "alias": "t5",
         "joinExpression": "t1.visit_id  = t5.visit_id"
@@ -405,35 +405,35 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t3",
         "joinExpression": "t1.person_id  = t3.person_id and (t3.voided is null || t3.voided = 0)"
       },
        {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "encounter_type",
         "alias": "t9",
         "joinExpression": "t1.encounter_type  = t9.encounter_type_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_identifier",
         "alias": "t4",
         "joinExpression": "t3.person_id  = t4.patient_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t5",
         "joinExpression": "t1.person_id  = t5.person_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_attribute",
         "alias": "t6",
         "joinExpression": "t1.person_id = t6.person_id AND t6.person_attribute_type_id = 10 AND t6.voided = 0"
@@ -454,7 +454,7 @@
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "visit",
         "alias": "t10",
         "joinExpression": "t1.visit_id  = t10.visit_id"

@@ -62,11 +62,11 @@ export class DQAChartAbstractionDAO {
                 IF(condoms_provided_date = encounter_datetime, 1, 0) AS condom_provided_this_visit
         FROM
             etl.flat_hiv_summary_v15b h
-        INNER JOIN amrs.person t1 ON (h.person_id = t1.person_id)
-        INNER JOIN amrs.person_name person_name ON (t1.person_id = person_name.person_id
+        INNER JOIN openmrs.person t1 ON (h.person_id = t1.person_id)
+        INNER JOIN openmrs.person_name person_name ON (t1.person_id = person_name.person_id
             AND (person_name.voided IS NULL
             || person_name.voided = 0))
-        LEFT JOIN amrs.patient_identifier id ON (t1.person_id = id.patient_id
+        LEFT JOIN openmrs.patient_identifier id ON (t1.person_id = id.patient_id
             AND (id.voided IS NULL || id.voided = 0))
         WHERE
             is_clinical_encounter = 1

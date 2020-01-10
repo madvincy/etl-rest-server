@@ -10,7 +10,7 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "location",
         "alias": "t2",
         "joinExpression": "t1.location_uuid = t2.uuid"

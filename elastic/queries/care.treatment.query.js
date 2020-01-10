@@ -6,7 +6,7 @@ module.exports = (function(){
     var ADULTRET = 2;
     var PEADINIT = 3;
     var PEADRET = 4;
-    var index = 'amrs';
+    var index = 'openmrs';
     var type = 'obs'; 
     
     var _ = require('lodash');

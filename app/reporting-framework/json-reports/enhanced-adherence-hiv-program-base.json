@@ -32,7 +32,7 @@
             }
         },
         {
-            "table": "amrs.patient_program",
+            "table": "openmrs.patient_program",
             "alias": "pp",
             "join": {
                 "type": "LEFT",

@@ -4,7 +4,7 @@
            "table":{"schema":"etl","tableName":"flat_hiv_summary_v15b","alias":"t1", "indexExpression":"FORCE INDEX (person_uuid)"},
            "joins":[
              {"joinType":"LEFT OUTER JOIN","schema":"etl","tableName":"flat_labs_and_imaging","alias":"t2","joinExpression":"date(t1.encounter_datetime) = date(t2.test_datetime)"},
-             {"joinType":"INNER JOIN","schema":"amrs","tableName":"person","alias":"t5","joinExpression":"t5.person_id = t1.person_id"},
+             {"joinType":"INNER JOIN","schema":"openmrs","tableName":"person","alias":"t5","joinExpression":"t5.person_id = t1.person_id"},
              {"joinType":"LEFT OUTER JOIN","schema":"","alias":"t3","joinExpression":"t3.person_uuid = t1.uuid",
                "dynamicDataset":"labs_and_imaging_dataset"}
            ],

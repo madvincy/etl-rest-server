@@ -33,7 +33,7 @@ var s = fs.createReadStream(input_file)
         try {
             if (line && line !== '') {
                 console.log('voiding obs: ', line);
-                var openmrsAppName = config.openmrs.applicationName || 'amrs';
+                var openmrsAppName = config.openmrs.applicationName || 'openmrs';
                 var protocol = config.etl.tls ? 'https' : 'http';
                 var url = protocol + '://' + config.openmrs.host + ':' + config.openmrs.port + '/' + openmrsAppName + '/ws/rest/v1/obs/' + line + '?!purge';
 

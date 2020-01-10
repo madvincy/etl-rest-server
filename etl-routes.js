@@ -1123,7 +1123,7 @@ module.exports = function () {
                 path: '/etl/patient-program-config',
                 config: {
                     auth: 'simple',
-                    plugins: {},
+                    plugins: {}, 
                     handler: function (request, reply) {
                         var requestParams = Object.assign({}, request.query);
                         if (!requestParams.patientUuid) {
@@ -3116,20 +3116,20 @@ module.exports = function () {
                             dao.getDataEntryIndicators(request.params.sub, request, reply);
 
                         if (request.query.formUuids) {
-                            dao.getIdsByUuidAsyc('amrs.form', 'form_id', 'uuid', request.query.formUuids,
+                            dao.getIdsByUuidAsyc('openmrs.form', 'form_id', 'uuid', request.query.formUuids,
                                 function (results) {
                                     request.query.formIds = results;
                                 }).onResolved = onResolvedPromise;
                         }
                         if (request.query.encounterTypeUuids) {
 
-                            dao.getIdsByUuidAsyc('amrs.encounter_type', 'encounter_type_id', 'uuid', request.query.encounterTypeUuids,
+                            dao.getIdsByUuidAsyc('openmrs.encounter_type', 'encounter_type_id', 'uuid', request.query.encounterTypeUuids,
                                 function (results) {
                                     request.query.encounterTypeIds = results;
                                 }).onResolved = onResolvedPromise;
                         }
                         if (request.query.locationUuids) {
-                            dao.getIdsByUuidAsyc('amrs.location', 'location_id', 'uuid', request.query.locationUuids,
+                            dao.getIdsByUuidAsyc('openmrs.location', 'location_id', 'uuid', request.query.locationUuids,
                                 function (results) {
                                     request.query.locationIds = results;
                                 }).onResolved = onResolvedPromise;

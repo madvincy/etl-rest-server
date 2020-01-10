@@ -10,7 +10,7 @@
             "alias": "t1"
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "t2",
             "join": {
                 "type": "INNER",

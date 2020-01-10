@@ -5,7 +5,7 @@
     "description": "Cohort Report",
     "sources": [
         {
-            "table": "amrs.cohort",
+            "table": "openmrs.cohort",
             "alias": "t1"
         },
         {
@@ -17,7 +17,7 @@
             }
         },
         {
-            "table": "amrs.users",
+            "table": "openmrs.users",
             "alias": "t3",
             "join": {
                 "type": "INNER",

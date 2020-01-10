@@ -17,7 +17,7 @@
             },
             {
                 "joinType": "LEFT OUTER JOIN",
-                "schema": "amrs",
+                "schema": "openmrs",
                 "tableName": "orders",
                 "alias": "orders",
                 "joinExpression": "orders.voided=0 and t1.encounter_id=orders.encounter_id"

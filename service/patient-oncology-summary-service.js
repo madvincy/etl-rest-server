@@ -7,14 +7,14 @@ function getOncMeds(request, medsFormat, encounterId) {
     if (medsFormat == 'summary') {
         queryParts = {
             columns: "t1.value_coded",
-            table: "amrs.obs",
+            table: "openmrs.obs",
             where: ["t2.uuid = ? and t1.concept_id in ? and t1.encounter_id = ? and t1.voided = ?", patientUuid, [9918], encounterId, 0],
             order: [{
                 column: 't1.obs_group_id',
                 asc: false
             }],
             joins: [
-                ['amrs.person', 't2', 't2.person_id=t1.person_id'],
+                ['openmrs.person', 't2', 't2.person_id=t1.person_id'],
             ],
             offset: request.startIndex,
             limit: request.limit
@@ -22,18 +22,18 @@ function getOncMeds(request, medsFormat, encounterId) {
     } else {
         queryParts = {
             columns: "t1.concept_id, t1.value_coded, t1.value_numeric, t1.obs_group_id, t1.encounter_id, t1.obs_datetime",
-            table: "amrs.obs",
+            table: "openmrs.obs",
             where: ["t2.uuid = ? and t5.programuuid = ? and t1.concept_id in ? and t1.voided = ?", patientUuid, programUuid, [9918, 8723, 1896, 7463, 1899, 9869], 0],
             order: [{
                 column: 't1.obs_group_id',
                 asc: false
             }],
             joins: [
-                ['amrs.person', 't2', 't2.person_id=t1.person_id'],
-                ['amrs.patient_program', 't3', 't3.patient_id=t2.person_id']
+                ['openmrs.person', 't2', 't2.person_id=t1.person_id'],
+                ['openmrs.patient_program', 't3', 't3.patient_id=t2.person_id']
             ],
             leftOuterJoins: [
-                ['(SELECT program_id, uuid as `programuuid` FROM amrs.program ) `t5` ON (t3.program_id = t5.program_id)']
+                ['(SELECT program_id, uuid as `programuuid` FROM openmrs.program ) `t5` ON (t3.program_id = t5.program_id)']
             ],
             offset: request.startIndex,
             limit: request.limit
@@ -85,9 +85,9 @@ function getPatientOncologyDiagnosis(request) {
             asc: false
         }],
         joins: [
-            ['amrs.person', 't2', 't2.person_id=t1.person_id']
+            ['openmrs.person', 't2', 't2.person_id=t1.person_id']
         ],
-        table: "amrs.obs",
+        table: "openmrs.obs",
         where: ["t2.uuid = ? and t1.concept_id in ? and t1.voided = ?", patientUuid, [9841, 9871, 6536, 9844, 6551, 9846, 6540, 9843], 0],
         offset: request.startIndex,
         limit: request.limit

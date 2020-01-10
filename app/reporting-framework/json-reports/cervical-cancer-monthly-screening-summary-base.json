@@ -8,7 +8,7 @@
             "alias": "fccs"
         },
         {
-            "table": "amrs.person_name",
+            "table": "openmrs.person_name",
             "alias": "p2",
             "join": {
                 "type": "INNER",
@@ -16,7 +16,7 @@
             }
         },
         {
-            "table": "amrs.patient_identifier",
+            "table": "openmrs.patient_identifier",
             "alias": "p3",
             "join": {
                 "type": "LEFT OUTER",
@@ -24,7 +24,7 @@
             }
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "p5",
             "join": {
                 "type": "INNER",
@@ -32,7 +32,7 @@
             }
         },
         {
-            "table": "amrs.location",
+            "table": "openmrs.location",
             "alias": "l",
             "join": {
                 "type": "INNER",
@@ -40,7 +40,7 @@
             }
         },
         {
-            "table": "amrs.person_attribute",
+            "table": "openmrs.person_attribute",
             "alias": "p4",
             "join": {
                 "type": "LEFT",

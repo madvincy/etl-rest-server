@@ -23,7 +23,7 @@ function getEncounterTypes() {
                     .field('et.encounter_type_id')
                     .field('et.name')
                     .field('et.uuid')
-                    .from('amrs.encounter_type', 'et')
+                    .from('openmrs.encounter_type', 'et')
                     .toString();
                 conn.query(query, {}, function (err, rows, fields) {
                     if (err) {

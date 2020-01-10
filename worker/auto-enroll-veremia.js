@@ -87,7 +87,7 @@ var App = {
 
     let date = moment().format('YYYY-MM-DD');
 
-    let openmrsAppName = config.openmrs.applicationName || 'amrs';
+    let openmrsAppName = config.openmrs.applicationName || 'openmrs';
     let payload = {
       dateCompleted: date,
       uuid: uuid
@@ -131,7 +131,7 @@ var App = {
 
     let dateEnrolled = moment().format('YYYY-MM-DD');
 
-    var openmrsAppName = config.openmrs.applicationName || 'amrs';
+    var openmrsAppName = config.openmrs.applicationName || 'openmrs';
     var payload = {
       program: program_uuid,
       patient: person_uuid,

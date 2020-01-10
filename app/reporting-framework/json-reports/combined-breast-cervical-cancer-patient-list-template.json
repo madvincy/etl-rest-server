@@ -5,11 +5,11 @@
     "description": "Combined Breast and Cervical Cancer patient list template",
     "sources": [
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "t1"
         },
         {
-            "table": "amrs.person_name",
+            "table": "openmrs.person_name",
             "alias": "person_name",
             "join": {
                 "type": "INNER",
@@ -17,7 +17,7 @@
             }
         },
         {
-            "table": "amrs.patient_identifier",
+            "table": "openmrs.patient_identifier",
             "alias": "id",
             "join": {
                 "type": "LEFT",

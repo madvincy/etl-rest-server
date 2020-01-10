@@ -8,7 +8,7 @@
             "alias": "flct"
         },
         {
-            "table": "amrs.person_name",
+            "table": "openmrs.person_name",
             "alias": "patient_name",
             "join": {
                 "type": "inner",
@@ -17,7 +17,7 @@
             }
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "pp",
             "join": {
                 "type": "inner",
@@ -26,7 +26,7 @@
             }
         },
         {
-            "table": "amrs.patient_identifier",
+            "table": "openmrs.patient_identifier",
             "alias": "patient_id",
             "join": {
                 "type": "inner",
@@ -36,7 +36,7 @@
 
         },
         {
-            "table": "amrs.patient_program",
+            "table": "openmrs.patient_program",
             "alias": "program",
             "join": {
                 "type": "inner",
@@ -46,7 +46,7 @@
 
         },
         {
-            "table": "amrs.location",
+            "table": "openmrs.location",
             "alias": "l",
             "join": {
                 "type": "inner",
@@ -64,7 +64,7 @@
             }
         },
         {
-            "table": "amrs.person_attribute",
+            "table": "openmrs.person_attribute",
             "alias": "p",
             "join": {
                 "type": "left",

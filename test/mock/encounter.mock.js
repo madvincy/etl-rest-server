@@ -667,7 +667,7 @@
                 "display": "START DRUGS",
                 "links": [
                   {
-                    "uri": "https://test1.ampath.or.ke:8443/amrs/ws/rest/v1/concept/a89b77aa-1350-11df-a1f1-0026b9348838",
+                    "uri": "https://test1.ampath.or.ke:8443/openmrs/ws/rest/v1/concept/a89b77aa-1350-11df-a1f1-0026b9348838",
                     "rel": "self"
                   }
                 ]

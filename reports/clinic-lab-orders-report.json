@@ -2,21 +2,21 @@
   {
     "name": "clinic-lab-orders-report",
     "table": {
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "orders",
       "alias": "t1"
     },
     "joins": [
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "encounter",
         "alias": "t2",
         "joinExpression": "t1.encounter_id=t2.encounter_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t3",
         "joinExpression": "t1.patient_id  = t3.person_id and (t3.voided is null || t3.voided = 0)"
@@ -24,77 +24,77 @@
 
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_identifier",
         "alias": "t4",
         "joinExpression": "t1.patient_id  = t4.patient_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "location",
         "alias": "t5",
         "joinExpression": "t2.location_id  = t5.location_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t6",
         "joinExpression": "t1.patient_id  = t6.person_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "obs",
         "alias": "t7",
         "joinExpression": "t1.order_id  = t7.order_id and (t7.voided is null || t7.voided = 0)"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept_name",
         "alias": "t8",
         "joinExpression": "t7.concept_id  = t8.concept_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept_name",
         "alias": "t9",
         "joinExpression": "t7.value_coded  = t9.concept_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "provider",
         "alias": "t10",
         "joinExpression": "t1.orderer  = t10.provider_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t11",
         "joinExpression": "t10.person_id  = t11.person_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept",
         "alias": "t13",
         "joinExpression": "t1.concept_id  = t13.concept_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept_name",
         "alias": "t12",
         "joinExpression": "t1.concept_id  = t12.concept_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_attribute",
         "alias": "contacts",
         "joinExpression": "t1.patient_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (10, 48)"
@@ -108,14 +108,14 @@
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "encounter_type",
         "alias": "et",
         "joinExpression": "fhs.encounter_type = et.encounter_type_id"
       },
       {
         "joinType": "LEFT OUTER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_address",
         "alias": "pa",
         "joinExpression": "t1.patient_id = pa.person_id"

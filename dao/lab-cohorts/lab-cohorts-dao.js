@@ -112,12 +112,12 @@ function getQueryParts(startDate, endDate, limit, offset) {
 
   var qParts = {
     columns: columns,
-    table: "amrs.patient",
+    table: "openmrs.patient",
     alias: 'p',
     where: ["e.date_created between ? and ?", startDate, endDate],
     leftOuterJoins: [
-      ["amrs.person", "pe", "pe.person_id = p.patient_id"],
-      ["amrs.encounter", "e", "e.patient_id = p.patient_id"]
+      ["openmrs.person", "pe", "pe.person_id = p.patient_id"],
+      ["openmrs.encounter", "e", "e.patient_id = p.patient_id"]
     ],
     offset: offset,
     limit: limit

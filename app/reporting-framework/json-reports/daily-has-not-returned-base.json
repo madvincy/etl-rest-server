@@ -32,7 +32,7 @@
             }
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "t10",
             "join": {
                 "type": "INNER",
@@ -40,7 +40,7 @@
             }
         },
         {
-            "table": "amrs.visit",
+            "table": "openmrs.visit",
             "alias": "t20",
             "join": {
                 "type": "INNER",
@@ -64,7 +64,7 @@
             }
         },
         {
-            "table": "amrs.program",
+            "table": "openmrs.program",
             "alias": "pr",
             "join": {
                 "type": "LEFT",

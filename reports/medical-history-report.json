@@ -9,7 +9,7 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t2",
         "joinExpression": "t1.person_id=t2.person_id"

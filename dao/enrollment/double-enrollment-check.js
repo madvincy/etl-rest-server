@@ -23,9 +23,9 @@ function getDoubleEnrollment(patientUuid,programUuid) {
             .then(function (conn) {
                    var query = squel.select()
                     .field('count(*) as count')
-                    .from('amrs.patient_program', 'pp')
-                    .join('amrs.person','p','pp.patient_id = p.person_id')
-                    .join('amrs.program','pr','pp.program_id = pr.program_id')
+                    .from('openmrs.patient_program', 'pp')
+                    .join('openmrs.person','p','pp.patient_id = p.person_id')
+                    .join('openmrs.program','pr','pp.program_id = pr.program_id')
                     .where('p.uuid = ?',patientUuid)
                     .where('pr.uuid = ?', programUuid)
                     .where('pp.date_completed IS NULL')
@@ -45,7 +45,7 @@ function getDoubleEnrollment(patientUuid,programUuid) {
             .catch(function (err) {
                 reject('Error establishing connection to MySql Server');
             });
-//amrs patient
+//openmrs patient
     });
 
 };

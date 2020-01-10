@@ -5,11 +5,11 @@
     "description": "Clinic Lab Orders Report",
     "sources": [
         {
-            "table": "amrs.orders",
+            "table": "openmrs.orders",
             "alias": "t1"
         },
         {
-            "table": "amrs.encounter",
+            "table": "openmrs.encounter",
             "alias": "t2",
             "join": {
                 "type": "LEFT OUTER",
@@ -17,7 +17,7 @@
             }
         },
         {
-            "table": "amrs.person_name",
+            "table": "openmrs.person_name",
             "alias": "t3",
             "join": {
                 "type": "LEFT OUTER",
@@ -25,7 +25,7 @@
             }
         },
         {
-            "table": "amrs.patient_identifier",
+            "table": "openmrs.patient_identifier",
             "alias": "t4",
             "join": {
                 "type": "LEFT OUTER",
@@ -33,7 +33,7 @@
             }
         },
         {
-            "table": "amrs.location",
+            "table": "openmrs.location",
             "alias": "t5",
             "join": {
                 "type": "LEFT OUTER",
@@ -41,7 +41,7 @@
             }
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "t6",
             "join": {
                 "type": "LEFT OUTER",

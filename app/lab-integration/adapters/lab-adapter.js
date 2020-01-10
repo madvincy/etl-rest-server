@@ -18,8 +18,8 @@ export default class LabAdapter {
     return _.mapKeys(result, (v, k) => {
       if (k === 'order_number')
         k = 'OrderNo';
-      if (k === 'AMRs_location')
-        k = 'AMRSLocation';
+      if (k === 'openmrs_location')
+        k = 'openmrsLocation';
       if (k === 'date_collected')
         k = 'DateCollected';
       if (k === 'result')

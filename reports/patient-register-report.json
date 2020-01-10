@@ -7,28 +7,28 @@
   },
   "joins": [{
       "joinType": "INNER JOIN",
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "location",
       "alias": "t2",
       "joinExpression": "t1.location_uuid = t2.uuid"
     },
     {
       "joinType": "INNER JOIN",
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "person_name",
       "alias": "t3",
       "joinExpression": "t1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)"
     },
     {
       "joinType": "LEFT OUTER JOIN",
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "patient_identifier",
       "alias": "t4",
       "joinExpression": "t1.person_id = t4.patient_id"
     },
     {
       "joinType": "INNER JOIN",
-      "schema": "amrs",
+      "schema": "openmrs",
       "tableName": "person",
       "alias": "t5",
       "joinExpression": "t1.person_id = t5.person_id"

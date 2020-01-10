@@ -22,7 +22,7 @@ function getConceptNames () {
           .field('cn.concept_id')
           .field('cn.name')
           .field('cn.uuid')
-          .from('amrs.concept_name', 'cn')
+          .from('openmrs.concept_name', 'cn')
           .toString();
         conn.query(query + ' where concept_name_type is not null', {}, function (err, rows, fields) {
           if (err) {

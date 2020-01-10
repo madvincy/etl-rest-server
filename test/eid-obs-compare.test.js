@@ -41,12 +41,12 @@ describe('EID-OBS COMPARE TESTS', function () {
             //expect(userSample).to.be.defined;
         });
 
-    it('should match eid and amrs viral load correctly when isViralLoadEquivalent',
+    it('should match eid and openmrs viral load correctly when isViralLoadEquivalent',
         function () {
 
             //CASE 1: EID result is not an error and is a number
             var eidResult = labDataSamples.getEidViralLoad();
-            var equivalentObs = labDataSamples.getAmrsViralLoadObs();
+            var equivalentObs = labDataSamples.getopenmrsViralLoadObs();
 
             var isEquivalent = eidObsCompare.isViralLoadEquivalent(eidResult, equivalentObs);
 
@@ -58,8 +58,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "26-May-2016",
                 "DateReceived": "26-May-2016",
@@ -86,8 +86,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "26-May-2016",
                 "DateReceived": "26-May-2016",
@@ -122,10 +122,10 @@ describe('EID-OBS COMPARE TESTS', function () {
 
         });
 
-    it('should match eid and amrs DNA PCR correctly when isDnaPcrEquivalent',
+    it('should match eid and openmrs DNA PCR correctly when isDnaPcrEquivalent',
         function () {
             var eidResult = labDataSamples.getEidDnaPcr();
-            var equivalentObs = labDataSamples.getAmrsEidPcrObs();
+            var equivalentObs = labDataSamples.getopenmrsEidPcrObs();
 
             var isEquivalent = eidObsCompare.isDnaPcrEquivalent(eidResult, equivalentObs);
 
@@ -133,11 +133,11 @@ describe('EID-OBS COMPARE TESTS', function () {
         });
 
 
-    it('should match eid and amrs CD4 Panel correctly when isCd4PanelEquivalent',
+    it('should match eid and openmrs CD4 Panel correctly when isCd4PanelEquivalent',
         function () {
             //CASE 1 EID result is valid
             var eidResult = labDataSamples.getEidCd4Panel();
-            var equivalentObs = labDataSamples.getAmrsCd4PanelObs();
+            var equivalentObs = labDataSamples.getopenmrsCd4PanelObs();
 
             var isEquivalent = eidObsCompare.isCd4PanelEquivalent(eidResult, equivalentObs);
 
@@ -149,8 +149,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "000981160-5",
                 "ProviderID": "",
                 "MFLCode": "15753",
-                "AMRslocationID": "3",
-                "AMRslocation": "Turbo",
+                "openmrslocationID": "3",
+                "openmrslocation": "Turbo",
                 "PatientNames": "XXXXXXXXXXXXXXXXXXXXXX",
                 "DateCollected": "02-Jun-2016",
                 "DateReceived": "06-Jun-2016",
@@ -388,8 +388,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "26-May-2016",
                 "DateReceived": "26-May-2016",
@@ -409,8 +409,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "000981160-5",
                 "ProviderID": "",
                 "MFLCode": "15753",
-                "AMRslocationID": "3",
-                "AMRslocation": "Turbo",
+                "openmrslocationID": "3",
+                "openmrslocation": "Turbo",
                 "PatientNames": "XXXXXXXXXXXXXXXXXXXXXX",
                 "DateCollected": "02-Jun-2016",
                 "DateReceived": "06-Jun-2016",
@@ -526,15 +526,15 @@ describe('EID-OBS COMPARE TESTS', function () {
         });
 
 
-    it('should find all conflicting EID and AMRS viral load results', () => {
+    it('should find all conflicting EID and openmrs viral load results', () => {
         var eidResults = [
             {
                 "LabID": "173545",
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "26-May-2016",
                 "DateReceived": "26-May-2016",
@@ -548,8 +548,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "5-May-2016",
                 "DateReceived": "26-May-2016",
@@ -563,8 +563,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "10-May-2016",
                 "DateReceived": "26-May-2016",
@@ -578,8 +578,8 @@ describe('EID-OBS COMPARE TESTS', function () {
                 "PatientID": "2524040",
                 "ProviderID": "1289-8",
                 "MFLCode": "15204",
-                "AMRslocationID": "14",
-                "AMRslocation": "MTRH Module 3",
+                "openmrslocationID": "14",
+                "openmrslocation": "MTRH Module 3",
                 "PatientNames": "XXXXXXX",
                 "DateCollected": "12-May-2016",
                 "DateReceived": "26-May-2016",
@@ -590,7 +590,7 @@ describe('EID-OBS COMPARE TESTS', function () {
             }
         ];
 
-        var amrsObs = [
+        var openmrsObs = [
             {
                 uuid: 'uuid1',
                 person: { uuid: 'c6e4e026-3b49-4b64-81de-05cf8bd18594' },
@@ -671,20 +671,20 @@ describe('EID-OBS COMPARE TESTS', function () {
         var conflicting = [
             {
                 eid: eidResults[0],
-                obs: [amrsObs[0]]
+                obs: [openmrsObs[0]]
             },
             {
                 eid: eidResults[1],
-                obs: [amrsObs[3]]
+                obs: [openmrsObs[3]]
             },
             {
                 eid: eidResults[2],
-                obs: [amrsObs[4]]
+                obs: [openmrsObs[4]]
             }
         ];
 
         var results =
-            eidObsCompare.findConflictingEidAmrsViralLoadResults(eidResults, amrsObs);
+            eidObsCompare.findConflictingEidopenmrsViralLoadResults(eidResults, openmrsObs);
 
         expect(results).to.deep.equal(conflicting);
 

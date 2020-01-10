@@ -285,14 +285,14 @@ describe('PATIENT LEVEL ETL-SERVER TESTS', function () {
 
         // console.log('body2  ++', stub.args[0][0]);
         var queryParts = stub.args[0][0];
-        expect(queryParts.table).to.equal('amrs.patient');
+        expect(queryParts.table).to.equal('openmrs.patient');
         // if fields is null output all columns
         expect(queryParts.columns).to.equal("t3.location_id,t3.name,count( distinct t1.patient_id) as total");
         expect(queryParts.joins).to.be.an('array');
-        expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.encounter');
+        expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.encounter');
         expect(queryParts.joins).to.have.deep.property('[0][1]', 't2');
         expect(queryParts.joins).to.have.deep.property('[0][2]', 't1.patient_id = t2.patient_id');
-        expect(queryParts.joins).to.have.deep.property('[1][0]', 'amrs.location');
+        expect(queryParts.joins).to.have.deep.property('[1][0]', 'openmrs.location');
         expect(queryParts.joins).to.have.deep.property('[1][1]', 't3');
 
         expect(queryParts.group).to.be.an('array');
@@ -364,14 +364,14 @@ describe('PATIENT LEVEL ETL-SERVER TESTS', function () {
 
         // console.log('body2  ++', stub.args[0][0]);
         var queryParts = stub.args[0][0];
-        expect(queryParts.table).to.equal('amrs.patient');
+        expect(queryParts.table).to.equal('openmrs.patient');
         // if fields is null output all columns
         expect(queryParts.columns).to.equal("distinct t4.uuid as patientUuid, t1.patient_id, t3.given_name, t3.middle_name, t3.family_name, t4.gender, extract(year from (from_days(datediff(now(),t4.birthdate)))) as age");
         expect(queryParts.joins).to.be.an('array');
-        expect(queryParts.joins).to.have.deep.property('[0][0]', 'amrs.encounter');
+        expect(queryParts.joins).to.have.deep.property('[0][0]', 'openmrs.encounter');
         expect(queryParts.joins).to.have.deep.property('[0][1]', 't2');
         expect(queryParts.joins).to.have.deep.property('[0][2]', 't1.patient_id = t2.patient_id');
-        expect(queryParts.joins).to.have.deep.property('[1][0]', 'amrs.person_name');
+        expect(queryParts.joins).to.have.deep.property('[1][0]', 'openmrs.person_name');
         expect(queryParts.joins).to.have.deep.property('[1][1]', 't3');
 
       });
@@ -554,8 +554,8 @@ describe('PATIENT LEVEL ETL-SERVER TESTS', function () {
           "PatientID": "2524040",
           "ProviderID": "1289-8",
           "MFLCode": "15204",
-          "AMRslocationID": "14",
-          "AMRslocation": "MTRH Module 3",
+          "openmrslocationID": "14",
+          "openmrslocation": "MTRH Module 3",
           "PatientNames": "XXXXXXX",
           "DateCollected": "26-May-2016",
           "DateReceived": "26-May-2016",
@@ -583,8 +583,8 @@ describe('PATIENT LEVEL ETL-SERVER TESTS', function () {
           "PatientID": "000981160-5",
           "ProviderID": "",
           "MFLCode": "15753",
-          "AMRslocationID": "3",
-          "AMRslocation": "Turbo",
+          "openmrslocationID": "3",
+          "openmrslocation": "Turbo",
           "PatientNames": "XXXXXXXXXXXXXXXXXXXXXX",
           "DateCollected": "02-Jun-2016",
           "DateReceived": "06-Jun-2016",

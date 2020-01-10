@@ -8,7 +8,7 @@ var moduleDefinition = {
     isDnaPcrEquivalent: isDnaPcrEquivalent,
     isCd4PanelEquivalent: isCd4PanelEquivalent,
     findAllMissingEidResults: findAllMissingEidResults,
-    findConflictingEidAmrsViralLoadResults: findConflictingEidAmrsViralLoadResults,
+    findConflictingEidopenmrsViralLoadResults: findConflictingEidopenmrsViralLoadResults,
 
     //helpers
     findEquivalentObject: findEquivalentObject,
@@ -64,7 +64,7 @@ function filterOutResultsWithoutDateCollected(resultsArray) {
     return results;
 }
 
-function findConflictingEidAmrsViralLoadResults(arrayOfEidResult, arrayOfObs) {
+function findConflictingEidopenmrsViralLoadResults(arrayOfEidResult, arrayOfObs) {
     var conflicting = [];
 
     _.each(arrayOfEidResult, function (eid) {
@@ -142,74 +142,74 @@ function mergeEidResults(arrayOfEidResults) {
 }
 
 
-function isViralLoadEquivalent(eidViralLoad, amrsViralLoadObs) {
+function isViralLoadEquivalent(eidViralLoad, openmrsViralLoadObs) {
     if (!isEidViralLoadError(eidViralLoad)) {
-        if (conceptDateComparer(eidViralLoad, amrsViralLoadObs,
+        if (conceptDateComparer(eidViralLoad, openmrsViralLoadObs,
             'a8982474-1350-11df-a1f1-0026b9348838')) {
-            return areViralLoadValuesEquivalent(eidViralLoad, amrsViralLoadObs);
+            return areViralLoadValuesEquivalent(eidViralLoad, openmrsViralLoadObs);
         } else {
             return false;
         }
     }
 
     //the eid result is an error at this point
-    if (!isObsViralLoadError(amrsViralLoadObs))
+    if (!isObsViralLoadError(openmrsViralLoadObs))
         return false;
 
-    //at this point the amrs obs is a viral load error
-    return _areDatesEqual(eidViralLoad.DateCollected, amrsViralLoadObs.obsDatetime);
+    //at this point the openmrs obs is a viral load error
+    return _areDatesEqual(eidViralLoad.DateCollected, openmrsViralLoadObs.obsDatetime);
 }
 
-function areViralLoadValuesEquivalent(eidViralLoad, amrsViralLoadObs) {
+function areViralLoadValuesEquivalent(eidViralLoad, openmrsViralLoadObs) {
 
     if (_hasNumbersOnly(eidViralLoad.FinalResult) &&
-        _hasNumbersOnly(amrsViralLoadObs.value + '')) {
-        return parseInt(eidViralLoad.FinalResult) === amrsViralLoadObs.value;
+        _hasNumbersOnly(openmrsViralLoadObs.value + '')) {
+        return parseInt(eidViralLoad.FinalResult) === openmrsViralLoadObs.value;
     }
 
     if ((_hasLessThanSymbol(eidViralLoad.FinalResult) || 
         eidViralLoad.FinalResult === 'Target Not Detected')  &&
-        _hasNumbersOnly(amrsViralLoadObs.value + '')) {
-        return amrsViralLoadObs.value === 0;
+        _hasNumbersOnly(openmrsViralLoadObs.value + '')) {
+        return openmrsViralLoadObs.value === 0;
     }
 
     return false;
 }
 
-function isDnaPcrEquivalent(eidDnaPcr, amrsEidPcrObs) {
-    return conceptDateComparer(eidDnaPcr, amrsEidPcrObs,
+function isDnaPcrEquivalent(eidDnaPcr, openmrsEidPcrObs) {
+    return conceptDateComparer(eidDnaPcr, openmrsEidPcrObs,
         'a898fe80-1350-11df-a1f1-0026b9348838');
 }
 
 
-function isCd4PanelEquivalent(eidCd4Panel, amrsCd4PanelObs) {
+function isCd4PanelEquivalent(eidCd4Panel, openmrsCd4PanelObs) {
     if (!isEidCD4PanelError(eidCd4Panel))
-        return conceptDateComparer(eidCd4Panel, amrsCd4PanelObs,
+        return conceptDateComparer(eidCd4Panel, openmrsCd4PanelObs,
             'a896cce6-1350-11df-a1f1-0026b9348838');
 
     //the eid result is an error at this point
-    if (!isObsCd4PanelError(amrsCd4PanelObs))
+    if (!isObsCd4PanelError(openmrsCd4PanelObs))
         return false;
 
-    //at this point the amrs obs is a cd4 load error
-    return _areDatesEqual(eidCd4Panel.DateCollected, amrsCd4PanelObs.obsDatetime);
+    //at this point the openmrs obs is a cd4 load error
+    return _areDatesEqual(eidCd4Panel.DateCollected, openmrsCd4PanelObs.obsDatetime);
 }
 
-function conceptDateComparer(eidResult, amrsObs, conceptUuid) {
+function conceptDateComparer(eidResult, openmrsObs, conceptUuid) {
 
-    if (!(eidResult && amrsObs)) {
+    if (!(eidResult && openmrsObs)) {
         return false;
     }
 
     //check Obs for result concept
-    if (!(amrsObs.concept &&
-        amrsObs.concept.uuid === conceptUuid)) {
+    if (!(openmrsObs.concept &&
+        openmrsObs.concept.uuid === conceptUuid)) {
         return false;
     }
 
 
     //check for dates equality
-    if (!_areDatesEqual(eidResult.DateCollected, amrsObs.obsDatetime)) {
+    if (!_areDatesEqual(eidResult.DateCollected, openmrsObs.obsDatetime)) {
         return false;
     }
 

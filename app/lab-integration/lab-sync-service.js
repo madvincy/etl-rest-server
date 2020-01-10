@@ -118,9 +118,9 @@ export class LabSyncService {
         labResultsPromises.push(that.processViralLoadResults(viralLoadResults.data || [], patientUuid).then((processedObs) => {
           const eidCompareOperator = new EidCompareOperator();
           let labVLObs = processedObs[0];
-          let amrsObs = [];
+          let openmrsObs = [];
           if (processedObs[1]) {
-            amrsObs = processedObs[1].map((obs) => {
+            openmrsObs = processedObs[1].map((obs) => {
               return {
                 person: obs.person.uuid,
                 obsDatetime: obs.obsDatetime,
@@ -129,7 +129,7 @@ export class LabSyncService {
               }
             });
           }
-          return eidCompareOperator.getAllResults(labVLObs, amrsObs);
+          return eidCompareOperator.getAllResults(labVLObs, openmrsObs);
         }).catch((error) => {
           console.error('ERROR : processViralLoadResults', error);
         }));
@@ -137,9 +137,9 @@ export class LabSyncService {
         labResultsPromises.push(that.processDNAPCRResults(dnaPCR.data || [], patientUuid).then((processedObs) => {
           const eidCompareOperator = new EidCompareOperator();
           let labDNAPCRObs = processedObs[0];
-          let amrsObs = [];
+          let openmrsObs = [];
           if (processedObs[1]) {
-            amrsObs = processedObs[1].map((obs) => {
+            openmrsObs = processedObs[1].map((obs) => {
               return {
                 person: obs.person.uuid,
                 obsDatetime: obs.obsDatetime,
@@ -148,7 +148,7 @@ export class LabSyncService {
               }
             });
           }
-          return eidCompareOperator.getAllResults(labDNAPCRObs, amrsObs);
+          return eidCompareOperator.getAllResults(labDNAPCRObs, openmrsObs);
         }).catch((error) => {
           console.error('ERROR : processDNAPCRResults', error);
         })
@@ -157,9 +157,9 @@ export class LabSyncService {
         labResultsPromises.push(that.processCD4Results(cd4Results.data || [], patientUuid).then((processedObs) => {
           const eidCompareOperator = new EidCompareOperator();
           let labCD4Obs = processedObs[0];
-          let amrsObs = [];
+          let openmrsObs = [];
           if (processedObs[1]) {
-            amrsObs = processedObs[1].map((obs) => {
+            openmrsObs = processedObs[1].map((obs) => {
               return {
                 person: obs.person.uuid,
                 obsDatetime: obs.obsDatetime,
@@ -169,7 +169,7 @@ export class LabSyncService {
             });
           }
 
-          return eidCompareOperator.getAllResults(labCD4Obs, amrsObs);
+          return eidCompareOperator.getAllResults(labCD4Obs, openmrsObs);
         }).catch((error) => {
           console.error('ERROR: processCD4Results', error);
         })
@@ -179,7 +179,7 @@ export class LabSyncService {
           const flatten = arr => arr.reduce(
             (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
           );
-          //return obsService.postObsToAMRS(obs[0].missingResults[0]);
+          //return obsService.postObsToopenmrs(obs[0].missingResults[0]);
           let flattenResult = flatten(obs);
           let combinedMissing = that.combineObs('missingResults', flattenResult);
           let combinedconflicting = that.combineObs('conflictingResults', flattenResult);
@@ -211,7 +211,7 @@ export class LabSyncService {
     const promises = [];
     const labExceptions = this.getLabExceptions();
     for (let obs of payload) {
-      promises.push(obsService.postObsToAMRS(obs));
+      promises.push(obsService.postObsToopenmrs(obs));
     }
     return promises;
   }

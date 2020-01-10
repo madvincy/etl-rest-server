@@ -27,8 +27,8 @@ module.exports = function () {
                 columns: request.query.fields || "t1.*,t2.gender,round(datediff(t1.encounter_datetime,t2.birthdate)/365) as age,group_concat(identifier) as identifiers",
                 table: "etl.flat_hiv_summary",
                 joins: [
-                    ['amrs.person', 't2', 't1.person_id = t2.person_id'],
-                    ['amrs.patient_identifier', 't3', 't1.person_id=t3.patient_id']
+                    ['openmrs.person', 't2', 't1.person_id = t2.person_id'],
+                    ['openmrs.patient_identifier', 't3', 't1.person_id=t3.patient_id']
                 ],
                 where: where,
                 group: ['person_id', 'encounter_id'],
@@ -84,8 +84,8 @@ module.exports = function () {
                 table: "etl.flat_hiv_summary",
                 joins: [
                     //  ['etl.derived_encounter', 't2', 't1.encounter_id = t2.encounter_id'],
-                    ['amrs.person_name', 't3', 't1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)'],
-                    ['amrs.patient_identifier', 't4', 't1.person_id=t4.patient_id']
+                    ['openmrs.person_name', 't3', 't1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)'],
+                    ['openmrs.patient_identifier', 't4', 't1.person_id=t4.patient_id']
                 ],
                 where: ["t1.location_uuid = ? and date(rtc_date) >= ? and date(rtc_date) <= ?", uuid, startDate, endDate],
                 group: ['person_id'],
@@ -116,8 +116,8 @@ module.exports = function () {
                 table: "etl.flat_hiv_summary",
                 joins: [
                     //    ['etl.derived_encounter', 't2', 't1.encounter_id = t2.encounter_id'],
-                    ['amrs.person_name', 't3', 't1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)'],
-                    ['amrs.patient_identifier', 't4', 't1.person_id=t4.patient_id']
+                    ['openmrs.person_name', 't3', 't1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)'],
+                    ['openmrs.patient_identifier', 't4', 't1.person_id=t4.patient_id']
                 ],
                 where: ["t1.location_uuid = ? and date(encounter_datetime) >= ? and date(encounter_datetime) <= ?", uuid, startDate, endDate],
                 group: ['person_id'],
@@ -147,8 +147,8 @@ module.exports = function () {
                 columns: request.query.fields || "t1.*,t3.given_name,t3.middle_name,t3.family_name,group_concat(identifier) as identifiers",
                 table: "etl.flat_hiv_summary",
                 joins: [
-                    ['amrs.person_name', 't3', 't1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)'],
-                    ['amrs.patient_identifier', 't4', 't1.person_id=t4.patient_id']
+                    ['openmrs.person_name', 't3', 't1.person_id = t3.person_id and (t3.voided is null || t3.voided = 0)'],
+                    ['openmrs.patient_identifier', 't4', 't1.person_id=t4.patient_id']
                 ],
                 where: ["t1.location_uuid = ? and date(t1.rtc_date) between ? and ? and next_clinical_datetime_hiv is null",
 
@@ -270,14 +270,14 @@ module.exports = function () {
             ],
                 table: "etl.flat_defaulters",
                 joins: [
-                    ['amrs.person', 't3', 't1.person_id = t3.person_id and t3.death_date is null']
+                    ['openmrs.person', 't3', 't1.person_id = t3.person_id and t3.death_date is null']
                 ],
                 leftOuterJoins: [
-                    ['amrs.patient_program', 't4', 't1.person_id = t4.patient_id AND t4.date_completed IS NULL'],
-                    ['(SELECT program_id, uuid as `programuuid` FROM amrs.program ) `t5` ON (t4.program_id = t5.program_id)'],
+                    ['openmrs.patient_program', 't4', 't1.person_id = t4.patient_id AND t4.date_completed IS NULL'],
+                    ['(SELECT program_id, uuid as `programuuid` FROM openmrs.program ) `t5` ON (t4.program_id = t5.program_id)'],
                     ['etl.flat_hiv_summary_v15b', 'fhs', 't1.person_id = fhs.person_id AND fhs.next_clinical_location_id IS NULL AND fhs.encounter_type NOT IN (99999)'],
-                    ['amrs.encounter_type', 'et', 'fhs.encounter_type = et.encounter_type_id'],
-                    ['amrs.person_address', 'pa', 't1.person_id = pa.person_id']
+                    ['openmrs.encounter_type', 'et', 'fhs.encounter_type = et.encounter_type_id'],
+                    ['openmrs.person_address', 'pa', 't1.person_id = pa.person_id']
                 ],
                 where: ["t1.location_uuid in (?) and programuuid in (?) and days_since_rtc >= ? " + maxDefaultPeriodFilter, uuids, programUuid, defaulterPeriod, maxPeriod],
                 order: order || [{
@@ -306,7 +306,7 @@ module.exports = function () {
                 columns: request.query.fields || ["*", "extract(year from (from_days(datediff(now(),t3.birthdate)))) as age"],
                 table: "etl.flat_defaulters",
                 joins: [
-                    ['amrs.person', 't3', 't1.person_id = t3.person_id ']
+                    ['openmrs.person', 't3', 't1.person_id = t3.person_id ']
                 ],
                 where: ["location_uuid = ? and days_since_rtc >= ?", uuid, defaulterPeriod],
                 order: order || [{

@@ -9,56 +9,56 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_program",
         "alias": "t4",
         "joinExpression": "t1.patient_program_id = t4.patient_program_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "program",
         "alias": "t2",
         "joinExpression": "t4.program_id = t2.program_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "program_workflow",
         "alias": "t3",
         "joinExpression": "t2.program_id = t3.program_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_state",
         "alias": "t5",
         "joinExpression": "t4.patient_program_id = t5.patient_program_id and t5.end_date is null"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "program_workflow_state",
         "alias": "t6",
         "joinExpression": "t3.program_workflow_id = t6.program_workflow_id and t5.state = t6.program_workflow_state_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "location",
         "alias": "t7",
         "joinExpression": "t4.location_id = t7.location_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept",
         "alias": "t8",
         "joinExpression": "t6.concept_id = t8.concept_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept_name",
         "alias": "t9",
         "joinExpression": "t6.concept_id = t9.concept_id and t9.voided = 0"
@@ -66,14 +66,14 @@
 
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t10",
         "joinExpression": "t4.patient_id = t10.person_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "provider",
         "alias": "t14",
         "joinExpression": "t14.provider_id = t1.provider_id"
@@ -249,77 +249,77 @@
     "joins": [
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_program",
         "alias": "t1",
         "joinExpression": "t10.patient_program_id  = t1.patient_program_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person_name",
         "alias": "t2",
         "joinExpression": "t1.patient_id  = t2.person_id and (t2.voided is null || t2.voided = 0)"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_identifier",
         "alias": "t3",
         "joinExpression": "t1.patient_id  = t3.patient_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "person",
         "alias": "t4",
         "joinExpression": "t1.patient_id  = t4.person_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "program",
         "alias": "t5",
         "joinExpression": "t1.program_id = t5.program_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "patient_state",
         "alias": "t6",
         "joinExpression": "t1.patient_program_id = t6.patient_program_id and t6.end_date is null"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "program_workflow_state",
         "alias": "t7",
         "joinExpression": "t6.state = t7.program_workflow_state_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept_name",
         "alias": "t8",
         "joinExpression": "t8.concept_id = t7.concept_id and t8.voided = 0"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "location",
         "alias": "t9",
         "joinExpression": "t1.location_id = t9.location_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "concept",
         "alias": "t11",
         "joinExpression": "t11.concept_id = t7.concept_id"
       },
       {
         "joinType": "INNER JOIN",
-        "schema": "amrs",
+        "schema": "openmrs",
         "tableName": "provider",
         "alias": "t14",
         "joinExpression": "t14.provider_id = t10.provider_id"

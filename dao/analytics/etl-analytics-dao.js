@@ -12,7 +12,7 @@ module.exports = function () {
         getCustomData: function getCustomData(request, callback) {
 
             var passed_params = request.params.userParams.split('/');
-            var table_ = "amrs." + passed_params[0];
+            var table_ = "openmrs." + passed_params[0];
             var column_name = passed_params[1];
             var column_value = passed_params[2];
 
@@ -36,7 +36,7 @@ module.exports = function () {
         resolveLocationUuidsToName: function resolveLocationUuidsToName(uuids, callback) {
             var queryParts = {
                 columns: 'name,uuid',
-                table: 'amrs.location',
+                table: 'openmrs.location',
                 where: ['uuid in ?', uuids],
                 offset: 0,
                 limit: 300
@@ -339,8 +339,8 @@ module.exports = function () {
                 table: "etl.flat_hiv_summary_v15b",
                 where: whereClause,
                 joins: [
-                    ['amrs.location', 't2', 't1.location_uuid = t2.uuid'],
-                    ['amrs.person', 't3', 't3.person_id=t1.person_id']
+                    ['openmrs.location', 't2', 't1.location_uuid = t2.uuid'],
+                    ['openmrs.person', 't3', 't3.person_id=t1.person_id']
                 ],
                 offset: request.query.startIndex,
                 limit: request.query.limit

@@ -1,12 +1,12 @@
 [
     {
      "name": "by-date-by-encounter-type",
-     "table":{"schema":"amrs","tableName":"encounter_provider","alias":"t1"},
+     "table":{"schema":"openmrs","tableName":"encounter_provider","alias":"t1"},
      "joins":[
-         {"joinType":"JOIN","schema":"amrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
-         {"joinType":"JOIN","schema":"amrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
-         {"joinType":"JOIN","schema":"amrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
-         {"joinType":"JOIN","schema":"amrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"}
+         {"joinType":"JOIN","schema":"openmrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
+         {"joinType":"JOIN","schema":"openmrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
+         {"joinType":"JOIN","schema":"openmrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
+         {"joinType":"JOIN","schema":"openmrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"}
      ],
      "parameters": [
          {"name":"startDate", "defaultValue":["01-01-1980"]},
@@ -92,12 +92,12 @@
  },
  {
   "name": "by-month-by-encounter-type",
-  "table":{"schema":"amrs","tableName":"encounter_provider","alias":"t1"},
+  "table":{"schema":"openmrs","tableName":"encounter_provider","alias":"t1"},
   "joins":[
-      {"joinType":"JOIN","schema":"amrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
-      {"joinType":"JOIN","schema":"amrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
-      {"joinType":"JOIN","schema":"amrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
-      {"joinType":"JOIN","schema":"amrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"}
+      {"joinType":"JOIN","schema":"openmrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
+      {"joinType":"JOIN","schema":"openmrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
+      {"joinType":"JOIN","schema":"openmrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
+      {"joinType":"JOIN","schema":"openmrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"}
   ],
   "parameters": [
       {"name":"startDate", "defaultValue":["01-01-1980"]},
@@ -194,14 +194,14 @@
 },
 {
  "name": "by-provider-by-encounter-type",
- "table":{"schema":"amrs","tableName":"encounter_provider","alias":"t1"},
+ "table":{"schema":"openmrs","tableName":"encounter_provider","alias":"t1"},
  "joins":[
-     {"joinType":"JOIN","schema":"amrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"person_name","alias":"t5","joinExpression":"t4.person_id = t5.person_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"person_name","alias":"t5","joinExpression":"t4.person_id = t5.person_id"},
      {"joinType":"JOIN","schema":"etl","tableName":"clinical_encounter_type_map","alias":"t6","joinExpression":"t6.encounter_type = t2.encounter_type"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"location","alias":"t7","joinExpression":"t2.location_id = t7.location_id"}
+     {"joinType":"JOIN","schema":"openmrs","tableName":"location","alias":"t7","joinExpression":"t2.location_id = t7.location_id"}
  ],
  "parameters": [
      {"name":"startDate", "defaultValue":["01-01-1980"]},
@@ -301,16 +301,16 @@
   },
 {
  "name": "by-creator-by-encounter-type",
- "table":{"schema":"amrs","tableName":"encounter_provider","alias":"t1"},
+ "table":{"schema":"openmrs","tableName":"encounter_provider","alias":"t1"},
  "joins":[
-     {"joinType":"JOIN","schema":"amrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"users","alias":"t5","joinExpression":"t2.creator = t5.user_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"person_name","alias":"t6","joinExpression":"t4.person_id = t6.person_id"},
-     {"joinType":"LEFT OUTER JOIN","schema":"amrs","tableName":"provider","alias":"t9","joinExpression":"t5.person_id = t9.person_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"users","alias":"t5","joinExpression":"t2.creator = t5.user_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"person_name","alias":"t6","joinExpression":"t4.person_id = t6.person_id"},
+     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"provider","alias":"t9","joinExpression":"t5.person_id = t9.person_id"},
      {"joinType":"JOIN","schema":"etl","tableName":"clinical_encounter_type_map","alias":"t7","joinExpression":"t7.encounter_type = t2.encounter_type"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"location","alias":"t8","joinExpression":"t2.location_id = t8.location_id"}
+     {"joinType":"JOIN","schema":"openmrs","tableName":"location","alias":"t8","joinExpression":"t2.location_id = t8.location_id"}
 
  ],
  "parameters": [
@@ -418,12 +418,12 @@
 },
 {
  "name": "patientList-encounter",
- "table":{"schema":"amrs","tableName":"encounter_provider","alias":"t1"},
+ "table":{"schema":"openmrs","tableName":"encounter_provider","alias":"t1"},
  "joins":[
-     {"joinType":"JOIN","schema":"amrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"users","alias":"t5","joinExpression":"t2.creator = t5.user_id"}
+     {"joinType":"JOIN","schema":"openmrs","tableName":"encounter","alias":"t2","joinExpression":"t1.encounter_id = t2.encounter_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"encounter_type","alias":"t3","joinExpression":"t3.encounter_type_id = t2.encounter_type"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"provider","alias":"t4","joinExpression":"t4.provider_id = t1.provider_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"users","alias":"t5","joinExpression":"t2.creator = t5.user_id"}
  ],
  "parameters": [
      {"name":"startDate", "defaultValue":["01-01-1980"]},
@@ -515,17 +515,17 @@
 },
 {
  "name": "patientList",
- "table":{"schema":"amrs","tableName":"person_name","alias":"t1"},
+ "table":{"schema":"openmrs","tableName":"person_name","alias":"t1"},
  "joins":[
-   {"joinType":"INNER JOIN","schema":"amrs","alias":"t2","joinExpression":"t2.patient_id = t1.person_id and (t1.voided is null || t1.voided = 0)",
+   {"joinType":"INNER JOIN","schema":"openmrs","alias":"t2","joinExpression":"t2.patient_id = t1.person_id and (t1.voided is null || t1.voided = 0)",
        "dynamicDataset":"patientList-encounter"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"person","alias":"t3","joinExpression":"t3.person_id = t2.patient_id"},
-     {"joinType":"JOIN","schema":"amrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"},
-     {"joinType":"LEFT OUTER JOIN","schema":"amrs","tableName":"patient_identifier","alias":"t4","joinExpression":"t4.patient_id = t2.patient_id"},
-     {"joinType":"LEFT OUTER JOIN","schema":"amrs","tableName":"person_attribute","alias":"contacts","joinExpression":"t3.person_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (10, 48)"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"person","alias":"t3","joinExpression":"t3.person_id = t2.patient_id"},
+     {"joinType":"JOIN","schema":"openmrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"},
+     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"patient_identifier","alias":"t4","joinExpression":"t4.patient_id = t2.patient_id"},
+     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"person_attribute","alias":"contacts","joinExpression":"t3.person_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (10, 48)"},
      {"joinType":"LEFT OUTER JOIN","schema":"etl","tableName":"flat_hiv_summary_v15b","alias":"fh","joinExpression":"t3.person_id = fh.person_id AND fh.next_clinical_location_id IS NULL AND fh.encounter_type NOT IN (99999) "},
-     {"joinType":"LEFT OUTER JOIN","schema":"amrs","tableName":"encounter_type","alias":"et","joinExpression":"fh.encounter_type = et.encounter_type_id"},
-     {"joinType":"LEFT OUTER JOIN","schema":"amrs","tableName":"person_address","alias":"pa","joinExpression":"t3.person_id = pa.person_id"}
+     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"encounter_type","alias":"et","joinExpression":"fh.encounter_type = et.encounter_type_id"},
+     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"person_address","alias":"pa","joinExpression":"t3.person_id = pa.person_id"}
      ],
  "parameters": [
    {"name":"groupByPatientId", "defaultValue":[

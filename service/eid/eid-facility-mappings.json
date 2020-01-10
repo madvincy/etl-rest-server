@@ -1165,7 +1165,7 @@
         "mrsDisplay": "Chebaiywa",
         "cityVillage": "",
         "county": "",
-        "description": "Used by CDM team and their forms being entered to AMRS",
+        "description": "Used by CDM team and their forms being entered to openmrs",
         "mflCode": "17243",
         "eidDisplay": ""
     },
@@ -1435,7 +1435,7 @@
         "mrsDisplay": "Laikipia",
         "cityVillage": null,
         "county": "Laikipia",
-        "description": "An amrs site in Laikipia County",
+        "description": "An openmrs site in Laikipia County",
         "mflCode": "",
         "eidDisplay": ""
     },

@@ -118,7 +118,7 @@
                 "patient_name": payload.patientName,
                 "medicalrecordno": payload.patientIdentifier,
                 "order_no": payload.orderNumber,
-                "amrs_location": getLocation(payload, 'mrsId'),
+                "openmrs_location": getLocation(payload, 'mrsId'),
                 "provider_identifier": payload.providerIdentifier
             };
             break;

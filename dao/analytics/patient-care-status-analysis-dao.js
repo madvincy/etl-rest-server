@@ -208,9 +208,9 @@ module.exports = function () {
                     "and next_state = '" + requestIndicators[1] + "' " +
                     " and date(to_month)=date('" + queryParams.endDate + "') " +
                     ") t1 " +
-                    " INNER JOIN amrs.person_name `person_name` ON (t1.p1p2 = person_name.person_id and (person_name.voided is null || person_name.voided = 0)) " +
-                    "LEFT OUTER JOIN amrs.patient_identifier `id` ON (t1.p1p2 = id.patient_id) " +
-                    "INNER JOIN amrs.person `person` ON (t1.p1p2 = person.person_id) "
+                    " INNER JOIN openmrs.person_name `person_name` ON (t1.p1p2 = person_name.person_id and (person_name.voided is null || person_name.voided = 0)) " +
+                    "LEFT OUTER JOIN openmrs.patient_identifier `id` ON (t1.p1p2 = id.patient_id) " +
+                    "INNER JOIN openmrs.person `person` ON (t1.p1p2 = person.person_id) "
                     + ' group by t1.p1p2 '
 
                 ;
@@ -306,9 +306,9 @@ module.exports = function () {
                     "having initial_state = '" + requestIndicators[0] + "' " +
                     "and next_state = '" + requestIndicators[1] + "' " +
                     ") t1 " +
-                    " INNER JOIN amrs.person_name `person_name` ON (t1.p1p2 = person_name.person_id and (person_name.voided is null || person_name.voided = 0)) " +
-                    "LEFT OUTER JOIN amrs.patient_identifier `id` ON (t1.p1p2 = id.patient_id) " +
-                    "INNER JOIN amrs.person `person` ON (t1.p1p2 = person.person_id) "
+                    " INNER JOIN openmrs.person_name `person_name` ON (t1.p1p2 = person_name.person_id and (person_name.voided is null || person_name.voided = 0)) " +
+                    "LEFT OUTER JOIN openmrs.patient_identifier `id` ON (t1.p1p2 = id.patient_id) " +
+                    "INNER JOIN openmrs.person `person` ON (t1.p1p2 = person.person_id) "
                     + ' group by t1.p1p2 '
 
                 ;

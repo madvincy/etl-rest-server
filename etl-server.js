@@ -32,7 +32,7 @@ try {
   // var Nes = require('nes');
   var server             = new Hapi.Server({
     connections: {
-      //routes: {cors:{origin:["https://amrs.ampath.or.ke:8443"]}}
+      //routes: {cors:{origin:["https://openmrs.ampath.or.ke:8443"]}}
       routes: {
         cors: {
           additionalHeaders: ['JSNLog-RequestId']
@@ -64,7 +64,7 @@ try {
   var validate = function (username, password, callback) {
     try {
       //Openmrs context
-      var openmrsAppName = config.openmrs.applicationName || 'amrs';
+      var openmrsAppName = config.openmrs.applicationName || 'openmrs';
       var authBuffer     = new Buffer(username + ":" + password).toString("base64");
       var options        = {
         hostname: config.openmrs.host,

@@ -45,7 +45,7 @@ var s = fs.createReadStream(input_file)
         try {
             if (line && line !== '') {
                 console.log('unerolling incompatible program: ', line);
-                var openmrsAppName = config.openmrs.applicationName || 'amrs';
+                var openmrsAppName = config.openmrs.applicationName || 'openmrs';
                 let payload = createPayload(line);
                 //JSON.stringify(createPayload(line));
                 var url = protocol + '://' + config.openmrs.host + ':' + config.openmrs.port + '/' + openmrsAppName + '/ws/rest/v1/programenrollment/' +

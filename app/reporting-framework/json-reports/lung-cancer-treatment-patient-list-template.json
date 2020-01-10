@@ -4,11 +4,11 @@
     "tag": "lung_cancer_treatment_patient_list_template",
     "description": "Lung Cancer Treatment patient list template",
     "sources": [{
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "t1"
         },
         {
-            "table": "amrs.person_name",
+            "table": "openmrs.person_name",
             "alias": "person_name",
             "join": {
                 "type": "INNER",
@@ -16,7 +16,7 @@
             }
         },
         {
-            "table": "amrs.person",
+            "table": "openmrs.person",
             "alias": "person",
             "join": {
                 "type": "inner",
@@ -25,7 +25,7 @@
             }
         },
         {
-            "table": "amrs.patient_identifier",
+            "table": "openmrs.patient_identifier",
             "alias": "id",
             "join": {
                 "type": "LEFT",

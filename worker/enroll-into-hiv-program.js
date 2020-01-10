@@ -44,7 +44,7 @@ var s = fs.createReadStream(input_file)
         try {
             if (line && line !== '') {
                 console.log('Enrolling a patient into Standard HIV Care Program: ', line);
-                var openmrsAppName = config.openmrs.applicationName || 'amrs';
+                var openmrsAppName = config.openmrs.applicationName || 'openmrs';
                 let payload = JSON.stringify(createPayload(line));
                 var protocol = config.openmrs.https ? 'https' : 'http';
                 var url = protocol + '://' + config.openmrs.host + ':' + config.openmrs.port + '/' + openmrsAppName + '/ws/rest/v1/programenrollment/';

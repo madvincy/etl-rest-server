@@ -96,8 +96,8 @@ var service = {
             if (config && config.emailNotification && config.emailNotification.sourceAddress) {
                 console.log('*********************************');
                 console.log('Sending email notification to maintainers..');
-                service.sendMail('There was an error sheduling the eid-amrs sync:  ' +
-                    JSON.stringify(service.errorQueue, null, 4), 'EID-AMRS sync error', 'ampath-developers@ampath.or.ke')
+                service.sendMail('There was an error sheduling the eid-openmrs sync:  ' +
+                    JSON.stringify(service.errorQueue, null, 4), 'EID-openmrs sync error', 'ampath-developers@ampath.or.ke')
                     .then(function (info) {
                         console.log('*********************************');
                         console.log('Exiting scheduler with status 1...');
@@ -151,7 +151,7 @@ var service = {
                     console.error('Error scheduling patients with missing vl', error);
                     service.logErrorWhenScheduling('Error scheduling patients with missing VL for date ' + startDateVlPending, error);
                     service.sendMail('Error scheduling patients with missing vl' + error,
-                        'Error Scheduling EID-AMRS Sync For patients with missing VL', 'ampath-developers@ampath.or.ke');
+                        'Error Scheduling EID-openmrs Sync For patients with missing VL', 'ampath-developers@ampath.or.ke');
 
                     console.info('*********************************');
                     console.log('Exiting scheduler...');
@@ -190,7 +190,7 @@ var service = {
                                     console.error('Error rescheduling patients in error queue', err);
                                     service.logErrorWhenScheduling('Error rescheduling patients in error queue ', err);
                                     service.sendMail('Error rescheduling patients in error queue' + err,
-                                        'Error Scheduling EID-AMRS Sync For patients in error queue', 'ampath-developers@ampath.or.ke');
+                                        'Error Scheduling EID-openmrs Sync For patients in error queue', 'ampath-developers@ampath.or.ke');
 
                                     console.info('*********************************');
                                     console.log('Exiting scheduler...');
@@ -201,7 +201,7 @@ var service = {
                             console.error('Error scheduling patients with pending vl orders', error);
                             service.logErrorWhenScheduling('Error scheduling patients with pending VL order for date ' + startDateVlPending, error);
                             service.sendMail('Error scheduling patients with pending vl orders' + error,
-                                'Error Scheduling EID-AMRS Sync For patients with pending VL', 'ampath-developers@ampath.or.ke');
+                                'Error Scheduling EID-openmrs Sync For patients with pending VL', 'ampath-developers@ampath.or.ke');
 
                             console.info('*********************************');
                             console.log('Exiting scheduler...');
@@ -401,7 +401,7 @@ var service = {
         }
         results = results.replace('[', "").replace(']', "");
 
-        var sql = 'replace into etl.eid_sync_queue(person_uuid) select distinct p.uuid from amrs.person p left join amrs.patient_identifier i on p.person_id = i.patient_id where identifier in (?)';
+        var sql = 'replace into etl.eid_sync_queue(person_uuid) select distinct p.uuid from openmrs.person p left join openmrs.patient_identifier i on p.person_id = i.patient_id where identifier in (?)';
         sql = sql.replace('?', results);
 
         var queryObject = {
@@ -420,7 +420,7 @@ var service = {
         });
     },
     schedulePatientsWithPendingOrders: function (startDate) {
-        var sql = "replace into  etl.eid_sync_queue(person_uuid) (select distinct uuid from (select t3.uuid, t1.patient_id, t1.order_id, t2.order_id as obs_order_id, t1.date_activated from amrs.orders t1  inner join amrs.person t3 on t3.person_id = t1.patient_id left outer join amrs.obs t2 on t1.order_id = t2.order_id having obs_order_id is null) t where t.date_activated > date('?'))";
+        var sql = "replace into  etl.eid_sync_queue(person_uuid) (select distinct uuid from (select t3.uuid, t1.patient_id, t1.order_id, t2.order_id as obs_order_id, t1.date_activated from openmrs.orders t1  inner join openmrs.person t3 on t3.person_id = t1.patient_id left outer join openmrs.obs t2 on t1.order_id = t2.order_id having obs_order_id is null) t where t.date_activated > date('?'))";
         sql = sql.replace('?', startDate);
         // console.log(sql);
 
