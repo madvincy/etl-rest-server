@@ -31,6 +31,9 @@ var resolveProgramEnrollmentFilterParams = require('./resolve-program-visit-enco
 var programVisitEncounterResolver = require('./resolve-program-visit-encounter-Ids/resolve-program-visit-encounter-idsv2');
 var imagingService = require('./service/radilogy-imaging.service');
 var oncologyReportsService = require('./oncology-reports/oncology-reports-service');
+var treatmentReportsService = require('./oncology-reports/treatment-reports/treatment-reports-service');
+var screeningReportsService = require('./oncology-reports/screening-reports/screening-reports-service');
+var researchReportsService = require('./oncology-reports/research-reports/research-reports-service');
 var pocEidPayloadHelper = require('./app/lab-integration/utils/poc-eid-payload-helper.js');
 import { LabSyncService } from './app/lab-integration/lab-sync-service';
 import { LabClient } from './app/lab-integration/utils/lab-client';
@@ -4124,6 +4127,204 @@ module.exports = function () {
                     },
                     description: 'Get a specific Oncology report',
                     notes: 'Returns a specific Oncology program report',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/treatment-reports',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+
+                        treatmentReportsService.getTreatmentReports()
+                            .then((result) => {
+                                reply(result);
+                            })
+                            .catch((error) => {
+                                reply(error);
+                            });
+                    },
+                    description: 'Get a list of Treatment reports ',
+                    notes: 'Returns a  list of Treatment program reports',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/treatment-report',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+
+                        if (request.query.reportUuid) {
+
+                            let reportUuid = request.query.reportUuid;
+                            treatmentReportsService.getSpecificTreatmentReport(reportUuid)
+                                .then((result) => {
+                                    reply(result);
+                                })
+                                .catch((error) => {
+                                    reply(error);
+                                });
+                        } else {
+                            reply('ERROR:Report uuid Undefined');
+                            console.error('ERROR:Report uuid Undefined');
+
+                        }
+                    },
+                    description: 'Get a specific Treatment report',
+                    notes: 'Returns a specific Treatment program report',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/screening-reports',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+
+                        screeningReportsService.getScreeningReports()
+                            .then((result) => {
+                                reply(result);
+                            })
+                            .catch((error) => {
+                                reply(error);
+                            });
+                    },
+                    description: 'Get a list of Screening reports ',
+                    notes: 'Returns a  list of Screening program reports',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/screening-report',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+
+                        if (request.query.reportUuid) {
+
+                            let reportUuid = request.query.reportUuid;
+                            screeningReportsService.getSpecificScreeningReport(reportUuid)
+                                .then((result) => {
+                                    reply(result);
+                                })
+                                .catch((error) => {
+                                    reply(error);
+                                });
+                        } else {
+                            reply('ERROR:Report uuid Undefined');
+                            console.error('ERROR:Report uuid Undefined');
+
+                        }
+                    },
+                    description: 'Get a specific Screening report',
+                    notes: 'Returns a specific Screening program report',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/research-reports',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+
+                        researchReportsService.getResearchReports()
+                            .then((result) => {
+                                reply(result);
+                            })
+                            .catch((error) => {
+                                reply(error);
+                            });
+                    },
+                    description: 'Get a list of Research reports ',
+                    notes: 'Returns a  list of Research program reports',
+                    tags: ['api'],
+                    validate: {
+                        options: {
+                            allowUnknown: true
+                        },
+                        params: {
+
+                        }
+                    }
+                }
+            },
+            {
+                method: 'GET',
+                path: '/etl/research-report',
+                config: {
+                    auth: 'simple',
+                    plugins: {},
+                    handler: function (request, reply) {
+
+                        if (request.query.reportUuid) {
+
+                            let reportUuid = request.query.reportUuid;
+                            researchReportsService.getSpecificResearchReport(reportUuid)
+                                .then((result) => {
+                                    reply(result);
+                                })
+                                .catch((error) => {
+                                    reply(error);
+                                });
+                        } else {
+                            reply('ERROR:Report uuid Undefined');
+                            console.error('ERROR:Report uuid Undefined');
+
+                        }
+                    },
+                    description: 'Get a specific Research report',
+                    notes: 'Returns a specific Research program report',
                     tags: ['api'],
                     validate: {
                         options: {
