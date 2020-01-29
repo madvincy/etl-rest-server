@@ -644,24 +644,6 @@
             "display": "SICKLECELLSCREENING"
           }
         ]
-      },
-      {
-        "uuid": "fe9c9cc2-5232-4255-be24-02eb975b03a8",
-        "name": "Lung Cancer Screening ",
-        "encounterTypes": [
-          {
-            "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
-            "display": "DEATHREPORT"
-          },
-          {
-            "uuid": "7c21df85-c928-4dc9-93d9-5dd1e8101d32",
-            "display": "LUNGCANCERSCREENING"
-          },
-          {
-            "uuid": "c01fba63-0c54-43c9-8769-af7f48aefb5c",
-            "display": "LUNGCANCERSCREENINGRESULT"
-          }
-        ]
       }
     ]
   }

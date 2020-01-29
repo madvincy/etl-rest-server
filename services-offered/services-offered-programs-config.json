@@ -27,20 +27,12 @@
                "name": "GENERAL ONCOLOGY PROGRAM"
            },
            {
-               "uuid":"e8bc5036-1462-44fa-bcfe-ced21eae2790",
-               "name": "LUNG CANCER TREATMENT PROGRAM"
-           },
-           {
                "uuid": "418fe011-a903-4862-93d4-5e7c84d9c253",
                "name": "ANTICOAGULATION TREATMENT PROGRAM"
            },
            {
              "uuid": "40677054-c402-4c56-a0e4-5dd7d799b52f",
              "name": "LYMPHOMA TREATMENT PROGRAM"
-           },
-           {
-               "uuid": "37ff4124-91fd-49e6-8261-057ccfb4fcd0",
-               "name": "ONCOLOGY SCREENING AND DIAGNOSIS PROGRAM"
            }
        ]
    },
@@ -49,7 +41,7 @@
        "programs":[
            {
                "uuid": "37ff4124-91fd-49e6-8261-057ccfb4fcd0",
-               "name": "ONCOLOGY SCREENING AND DIAGNOSIS PROGRAM"
+               "name": "EICI SCREENING AND DIAGNOSIS PROGRAM"
            }
        ]
    },
