@@ -290,6 +290,7 @@ module.exports = function () {
 
       console.log(q.text.replace("\\", ""));
       console.log(q.values);
+      server.log('info', 'Server running at: ' + s);
 
       var sql = q.text.replace("\\", "");
       var values = q.values;

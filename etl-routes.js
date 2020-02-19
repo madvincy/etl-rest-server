@@ -985,6 +985,8 @@ module.exports = function () {
                         }
                     },
                     handler: function (request, reply) {
+                        server.log('info', 'Server running at: ' + request);
+
                         dao.getPatientVitals(request, reply);
                     },
                     description: 'Get patient vitals',

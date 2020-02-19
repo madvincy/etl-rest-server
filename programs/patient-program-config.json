@@ -564,7 +564,7 @@
     "visitTypes": [
       {
         "uuid": "399408a3-e899-4901-81ba-edf132d749c1",
-        "name": "BSC & HTN-DM Screening",  
+        "name": "Breast/Cervical Cancer & HTN-DM Screening",  
         "encounterTypes": [
           {
             "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
@@ -578,18 +578,11 @@
             "uuid": "9bc0fa73-474e-45ab-bdac-7282e95d856f",
             "display": "ONCOLOGYDYSPLASIA"
           },
-          {
-            "uuid": "00da8227-e7da-43c2-99b2-a4f237dd3924",
-            "display": "GYNPATHOLOGYRESULTS "
-          },
+          
           {
             "uuid": "238625fc-8a25-44b2-aa5a-8bf48fa0e18d",
             "display": "ONCOLOGYVIA",
             "allowedIf": "gender === 'F'"
-          },
-          {
-            "uuid": "a4c4dacc-11ff-4301-99a4-88d52c1390d5",
-            "display": "ONCOLOGYCASEMANAGEMENT"
           },
           {
             "uuid": "f8e35989-74b7-4a18-87ac-31e98b8d9004",
@@ -618,8 +611,12 @@
             "display": "DEATHREPORT"
           },
           {
-            "uuid": "5bdb1b5d-9b2d-4c62-a4cd-752f203d6e5b",
-            "display": "CLINICALBREASTEXAM"
+            "uuid": "00da8227-e7da-43c2-99b2-a4f237dd3924",
+            "display": "GYNPATHOLOGYRESULTS "
+          },
+          {
+            "uuid": "a4c4dacc-11ff-4301-99a4-88d52c1390d5",
+            "display": "ONCOLOGYCASEMANAGEMENT"
           }
         ]
       },

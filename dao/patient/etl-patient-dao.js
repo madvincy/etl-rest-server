@@ -11,6 +11,7 @@ var Boom = require('boom'); //extends Hapi Error Reporting. Returns HTTP-friendl
 var helpers = require('../../etl-helpers');
 var patientReminderService = require('../../service/patient-reminder.service.js');
 import { getOncMeds } from '../../service/oncology/patient-oncology-summary-service';
+import { string } from 'joi';
 module.exports = function () {
     function getPatientHivSummary(request, callback) {
         var uuid = request.params.uuid;
@@ -169,7 +170,10 @@ module.exports = function () {
         };
 
         // Use promisified function instead
-        var promise = db.queryDb(queryParts);
+        // string.concat( "SELECT * FROM etl.flat_vitals `t1` WHERE  uuid =", uuid ,  "ORDER BY encounter_datetime DESC LIMIT", + 10 ,"OFFSET", + 0");
+        // var query = "SELECT * FROM etl.flat_vitals `t1` WHERE  uuid =", uuid , "ORDER BY encounter_datetime DESC LIMIT" + 10 ,"OFFSET", + 0";
+        var promise = Promise.promisify();
+         db.queryDb(queryParts);
 
         if (_.isFunction(callback)) {
             promise.then(function (result) {
