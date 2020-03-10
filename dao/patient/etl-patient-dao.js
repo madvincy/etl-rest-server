@@ -1,6 +1,8 @@
 /*jshint -W003, -W097, -W117, -W026 */
 'use strict';
-import {BaseMysqlReport} from '../../app/reporting-framework/base-mysql.report';
+import {
+    BaseMysqlReport
+} from '../../app/reporting-framework/base-mysql.report';
 
 var Promise = require('bluebird');
 var noteService = require('../../service/notes.service');
@@ -10,8 +12,7 @@ var _ = require('lodash');
 var Boom = require('boom'); //extends Hapi Error Reporting. Returns HTTP-friendly error objects: github.com/hapijs/boom
 var helpers = require('../../etl-helpers');
 var patientReminderService = require('../../service/patient-reminder.service.js');
-import { getOncMeds } from '../../service/oncology/patient-oncology-summary-service';
-import { string } from 'joi';
+
 module.exports = function () {
     function getPatientHivSummary(request, callback) {
         var uuid = request.params.uuid;
@@ -170,10 +171,7 @@ module.exports = function () {
         };
 
         // Use promisified function instead
-        // string.concat( "SELECT * FROM etl.flat_vitals `t1` WHERE  uuid =", uuid ,  "ORDER BY encounter_datetime DESC LIMIT", + 10 ,"OFFSET", + 0");
-        // var query = "SELECT * FROM etl.flat_vitals `t1` WHERE  uuid =", uuid , "ORDER BY encounter_datetime DESC LIMIT" + 10 ,"OFFSET", + 0";
-        var promise = Promise.promisify();
-         db.queryDb(queryParts);
+        var promise = db.queryDb(queryParts);
 
         if (_.isFunction(callback)) {
             promise.then(function (result) {
@@ -208,7 +206,8 @@ module.exports = function () {
             getPatientReminders(extendedRequest,
                 function (result) {
                     resolve(result);
-                }, function (error) {
+                },
+                function (error) {
                     reject(error);
                 });
         });
@@ -271,15 +270,15 @@ module.exports = function () {
         var patientVitals = getPatientVitals(request);
 
         Promise.all([patientEncounters, patientHivSummary, patientVitals]).then(function (data) {
-            var encounters = data[0];
-            var hivSummaries = data[1].result;
-            var vitals = data[2].result;
-            var notes = noteService.generateNotes(encounters, hivSummaries, vitals);
-            callback({
-                notes: notes,
-                status: 'notes generated'
-            });
-        })
+                var encounters = data[0];
+                var hivSummaries = data[1].result;
+                var vitals = data[2].result;
+                var notes = noteService.generateNotes(encounters, hivSummaries, vitals);
+                callback({
+                    notes: notes,
+                    status: 'notes generated'
+                });
+            })
             .catch(function (e) {
                 // Return empty json on error
                 callback({
@@ -408,8 +407,7 @@ module.exports = function () {
                 asc: false
             }],
             joins: [
-                ['openmrs.encounter', 't2', 't1.patient_id = t2.patient_id'], q
-                ['openmrs.person_name', 't3', 't3.person_id=t1.patient_id and (t3.voided is null || t3.voided = 0)'],
+                ['openmrs.encounter', 't2', 't1.patient_id = t2.patient_id'], q['openmrs.person_name', 't3', 't3.person_id=t1.patient_id and (t3.voided is null || t3.voided = 0)'],
                 ['openmrs.person', 't4', 't4.person_id=t1.patient_id']
             ],
             offset: request.query.startIndex,

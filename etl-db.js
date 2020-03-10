@@ -92,6 +92,7 @@ module.exports = function () {
     }
 
     function queryServer(queryParts, callback) {
+
         var result = {};
         var sql = queryParts.sql;
         var values = queryParts.values;
@@ -100,7 +101,7 @@ module.exports = function () {
             if (err) {
                 errorHandler('queryServer: Database connection error', err);
                 return;
-            }
+            } 
 
             connection.query(sql, values, function (err, rows, fields) {
                 if (err) {
@@ -288,10 +289,6 @@ module.exports = function () {
 
       var q = s.toParam();
 
-      console.log(q.text.replace("\\", ""));
-      console.log(q.values);
-      server.log('info', 'Server running at: ' + s);
-
       var sql = q.text.replace("\\", "");
       var values = q.values;
       return {query: sql, sqlParams: values, offset: queryParts['offset'] || queryOffset}
@@ -339,7 +336,7 @@ module.exports = function () {
     }
 
     function queryServer_testToPromisify(queryParts, callback) {
-        var sql = transformQueryPartsToSql(queryParts);
+        var sql = transformQueryPartsToSql(queryParts);  
         queryReportServer(sql, function (result) {
             callback(null,result);
         });
