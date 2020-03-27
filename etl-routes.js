@@ -1749,17 +1749,6 @@ module.exports = function () {
                 path: '/etl/patient-flow-data',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         preRequest.resolveLocationIdsToLocationUuids(request,
                             function () {
