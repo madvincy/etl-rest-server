@@ -41,7 +41,7 @@
             "alias": "p",
             "join": {
                 "type": "left",
-                "joinCondition": "fbcs.person_id = p.person_id and (p.voided is null || p.voided = 0 and (p.person_attribute_type_id = 10))"
+                "joinCondition": "fbcs.person_id = p.person_id and (p.voided is null || p.voided = 0 and (p.person_attribute_type_id = 11))"
 
             }
         }
@@ -57,7 +57,7 @@
             "alias": "person_name",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "concat(coalesce(patient_name.given_name, ''), ' ', coalesce(patient_name.middle_name, ''), ' ', coalesce(patient_name.family_name, ''))"
+                "expression": "any_value(concat(coalesce(patient_name.given_name, ''), ' ', coalesce(patient_name.middle_name, ''), ' ', coalesce(patient_name.family_name, '')))"
             }
         },
         {

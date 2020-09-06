@@ -37,7 +37,6 @@ function getActiveProgramEnrollmentSummary(requestParams){
 
    return new Promise(function (resolve, reject) {
 
-
    let report = new BaseMysqlReport('currentlyEnrolledPatientsAggregate', params);
 
    Promise.join(report.generateReport(),

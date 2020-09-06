@@ -12,7 +12,6 @@ var serviceDefinition = {
 module.exports = serviceDefinition;
 
 function getAllMedicalServicesConfig() {
-  console.log(medicalServicesConfig);
     return  JSON.parse(JSON.stringify(medicalServicesConfig));
 }
 function getMedicalServicesPrograms(medicalService){

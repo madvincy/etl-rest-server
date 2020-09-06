@@ -45,6 +45,7 @@ import { labOrdersService } from './service/lab-orders.service';
 import { hivComparativeOverviewService } from './service/hiv-comparative-overview.service';
 import { clinicalPatientCareStatusOverviewService } from './service/clinical-patient-care-status-overview';
 import { SlackService } from './service/slack-service';
+import { smsService } from './service/sms-service'
 import { PatientRegisterReportService } from './service/patient-register-report.service';
 import { HivSummaryIndicatorsService } from './app/reporting-framework/hiv/hiv-summary-indicators.service';
 import { HivSummaryMonthlyIndicatorsService } from './app/reporting-framework/hiv/hiv-summary-monthly-indicators.service';
@@ -127,7 +128,7 @@ module.exports = function () {
                     auth: 'simple',
                     plugins: {},
                     handler: function (request, reply) {
-                        let medicalService = request.query.medical_service;
+                        let medicalService = request.query.service;
                         let medicalServicePrograms = medicalServiceProgramsService.getMedicalServicesPrograms(medicalService)
                             .then((response) => {
                                 reply(response);
@@ -346,15 +347,6 @@ module.exports = function () {
                 path: '/etl/get-monthly-schedule',
                 config: {
                     plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
                     },
                     handler: function (request, reply) {
                         if (request.query.locationUuids) {
@@ -402,15 +394,6 @@ module.exports = function () {
                 path: '/etl/daily-appointments/{startDate}',
                 config: {
                     plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
                     },
                     handler: function (request, reply) {
                         if (request.query.locationUuids) {
@@ -985,8 +968,6 @@ module.exports = function () {
                         }
                     },
                     handler: function (request, reply) {
-                        server.log('info', 'Server running at: ' + request);
-
                         dao.getPatientVitals(request, reply);
                     },
                     description: 'Get patient vitals',
@@ -1751,17 +1732,6 @@ module.exports = function () {
                 path: '/etl/patient-flow-data',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         preRequest.resolveLocationIdsToLocationUuids(request,
                             function () {
@@ -3078,17 +3048,6 @@ module.exports = function () {
                 path: '/etl/data-entry-statistics/{sub}',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewDataEntryStats
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
 
                         if (request.params.sub === 'patientList' &&
@@ -3830,17 +3789,6 @@ module.exports = function () {
                 method: 'GET',
                 path: '/etl/patient-program-enrollments',
                 config: {
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         resolveLocationUuidToId.resolveLocationUuidsParamsToIds(request.query)
                             .then((result) => {
@@ -3925,17 +3873,6 @@ module.exports = function () {
                 method: 'GET',
                 path: '/etl/program-enrollment/patient-list',
                 config: {
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         resolveLocationUuidToId.resolveLocationUuidsParamsToIds(request.query)
                             .then((result) => {
@@ -4343,17 +4280,6 @@ module.exports = function () {
                 path: '/etl/breast-cancer-screening-numbers',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         request.query.reportName = 'breast-cancer-monthly-summary';
                         preRequest.resolveLocationIdsToLocationUuids(request,
@@ -4383,14 +4309,6 @@ module.exports = function () {
                 path: '/etl/breast-cancer-screening-numbers-patient-list',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         request.query.reportName = 'breast-cancer-monthly-screening-summary';
                         preRequest.resolveLocationIdsToLocationUuids(request,
@@ -4416,17 +4334,6 @@ module.exports = function () {
                 path: '/etl/combined-breast-cervical-cancer-screening-numbers',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         request.query.reportName = 'combined-breast-cervical-cancer-monthly-screening-summary';
                         preRequest.resolveLocationIdsToLocationUuids(request,
@@ -4489,17 +4396,6 @@ module.exports = function () {
                 path: '/etl/cervical-cancer-screening-numbers',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         request.query.reportName = 'cervical-cancer-monthly-screening-summary';
                         preRequest.resolveLocationIdsToLocationUuids(request,
@@ -4529,14 +4425,6 @@ module.exports = function () {
                 path: '/etl/cervical-cancer-screening-numbers-patient-list',
                 config: {
                     auth: 'simple',
-                    plugins: {
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
-                    },
                     handler: function (request, reply) {
                         request.query.reportName = 'cervical-cancer-monthly-screening-summary';
                         preRequest.resolveLocationIdsToLocationUuids(request,
@@ -5019,7 +4907,30 @@ module.exports = function () {
                     notes: 'Returns Retention Report Patient List',
                     tags: ['api'],
                 }
-            }
+            },
+            {
+                
+                method: 'POST',
+                path: '/sms',
+                config: {
+                    plugins: {
+                        'hapiAuthorization': false
+                    },
+                    auth: false,
+                    handler: function (request, reply) {
+                        var message = request.payload;
+                        let service = new smsService();
+                        service.postMessage(message).then((success) => {
+                            reply(success);
+                        }).catch((err) => {
+                            reply(Boom.badData(error));
+                        });
+                    },
+                    description: 'Endpoint that send message to patients',
+                    notes: 'Specify the number and message to send to either one or multiple patients',
+                    tags: ['api', 'africanstalkingapi'],
+                }
+            },
 
         ];
 

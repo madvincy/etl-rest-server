@@ -207,13 +207,13 @@ function _setCurrentUserPrivileges() {
     currentUserPrivileges = [];
     for (var i = 0; i < currentUser.privileges.length; i++) {
         //console.log('Adding privilege: ', currentUser.privileges[i].display);
-        currentUserPrivileges.push(currentUser.privileges[i].display);
+        currentUserPrivileges.push(currentUser.privileges[i].name);
     }
 }
 
 function _setCurrentUserRoles() {
     currentUserRoles = [];
     for (var i = 0; i < currentUser.roles.length; i++) {
-        currentUserRoles.push(currentUser.roles[i].display);
+        currentUserRoles.push(currentUser.roles[i].name);
     }
 }

@@ -122,7 +122,7 @@ function isInitialOncologyVisit(encounters, programUuid) {
     },
     {
       programUuid: '725b5193-3452-43fc-aca3-6a80432d9bfa', // General Oncology Program
-      initialEncounterUuid: 'd17b3adc-0837-4ac6-862b-0953fc664cb8' // General Oncology Initial
+      initialEncounterUuid: '41845242-9400-40d0-a139-4daeb5e89419' // General ICI Initial
     },
     {
       programUuid: '88566621-828f-4569-9af5-c54f8237750a', // Breast Cancer Treatment Program

@@ -27,6 +27,7 @@ module.exports = function () {
                 errorHandler('exports:Database connection error', err);
                 return connectHandler(err, null);
             }
+            console.log('connection passed');
             return connectHandler(null, connection);
         });
     };
@@ -290,7 +291,7 @@ module.exports = function () {
 
       console.log(q.text.replace("\\", ""));
       console.log(q.values);
-      server.log('info', 'Server running at: ' + s);
+    //   server.log('info', 'Server running at: ' + q);
 
       var sql = q.text.replace("\\", "");
       var values = q.values;
@@ -333,6 +334,7 @@ module.exports = function () {
 
     function queryServer_test(queryParts, callback) {
         var sql = transformQueryPartsToSql(queryParts);
+        console.log(sql, 'rhdkjdkd');
         queryReportServer(sql, function (result) {
             callback(result);
         });

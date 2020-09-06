@@ -2,12 +2,12 @@ version: '2'
 services:
     etl-rest-api:
       container_name: etl-rest-api
-      image: 192.168.10.78:5000/etl-rest-server
+      image: 10.20.10.78:5000/etl-rest-server
       environment:
         - NODE_TLS_REJECT_UNAUTHORIZED=0
         - TZ=Africa/Nairobi
       dns:
-        - 192.168.10.5
+        - 10.20.10.1
         - 8.8.8.8
 
       volumes:

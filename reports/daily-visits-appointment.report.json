@@ -3,7 +3,7 @@
     "name": "daily-appointments",
     "table": {
       "schema": "etl",
-      "tableName": "flat_hiv_summary",
+      "tableName": "flat_patient_summary",
       "alias": "t1",
       "indexExpression": "FORCE INDEX (location_id_rtc_date)"
     },
@@ -92,10 +92,6 @@
         "parameter": ""
       },
       {
-         "expression": "coalesce(t1.transfer_out) is null",
-         "processForce": true
-      },
-      {
         "expression": "t1.encounter_type in ?",
         "parameter": "encounterIds"
       },
@@ -176,7 +172,7 @@
     "name": "daily-attendance",
     "table": {
       "schema": "etl",
-      "tableName": "flat_hiv_summary",
+      "tableName": "flat_patient_summary",
       "alias": "t1",
       "indexExpression": "FORCE INDEX (location_id_rtc_date)"
     },
@@ -340,7 +336,7 @@
     "name": "daily-has-not-returned-cohort",
     "table": {
       "schema": "etl",
-      "tableName": "flat_hiv_summary",
+      "tableName": "flat_patient_summary",
       "alias": "t2"
     },
     "joins": [],
@@ -398,7 +394,7 @@
     "name": "daily-has-not-returned",
     "table": {
       "schema": "etl",
-      "tableName": "flat_hiv_summary",
+      "tableName": "flat_patient_summary",
       "alias": "t1",
       "indexExpression": "FORCE INDEX (location_id_rtc_date)"
     },
@@ -448,7 +444,7 @@
       {
         "joinType": "LEFT OUTER JOIN",
         "schema": "etl",
-        "tableName": "flat_hiv_summary",
+        "tableName": "flat_patient_summary",
         "alias": "t8",
         "joinExpression": "t1.person_id = t8.person_id and t8.encounter_type =116 and t1.encounter_datetime < t8.encounter_datetime"
       },

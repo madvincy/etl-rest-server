@@ -63,7 +63,7 @@ describe('ETL-AUTHORIZER TESTS', function() {
         //add super user role
         var superUserRole = {
             uuid:'some-uuid',
-            display: 'System Developer' //this is a super user role
+            name: 'System Developer' //this is a super user role
         };
         
         userWithSuperUserRole.roles.push(superUserRole);

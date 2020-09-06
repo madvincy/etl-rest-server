@@ -153,7 +153,7 @@ export class BaseMysqlReport {
     }
 
     generateReport() {
-        // 1. Fetch report schema
+        // 1. Fetch report schemas
         // 2. Generate report sql using json2sql
         // 3. Execute sql statement using sql generator
         const that = this;
@@ -171,7 +171,7 @@ export class BaseMysqlReport {
 
                             that.reportQuery = sqlQuery;
                             // run query
-                            // console.log('Query', sqlQuery);
+                            console.log('Query', that.reportQuery );
                             that.executeReportQuery(that.reportQuery)
                                 .then((result) => {
                                     return that.transFormResults(that.reportSchemas, result);

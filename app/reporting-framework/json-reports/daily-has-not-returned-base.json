@@ -24,14 +24,6 @@
             }
         },
         {
-            "table": "etl.flat_hiv_summary_v15b",
-            "alias": "t9",
-            "join": {
-                "type": "LEFT",
-                "joinCondition": "t9.encounter_id = t2.encounter_id"
-            }
-        },
-        {
             "table": "openmrs.person",
             "alias": "t10",
             "join": {
@@ -95,25 +87,15 @@
         },
         {
             "type": "simple_column",
-            "alias": "transfer_out",
-            "column": "t9.transfer_out"
-        },
-        {
-            "type": "simple_column",
             "alias": "location_id",
             "column": "t2.location_id"
-        },
-        {
-            "type": "simple_column",
-            "alias": "prev_location_id",
-            "column": "t9.prev_clinical_location_id"
         },
         {
             "type": "derived_column",
             "alias": "has_not_returned",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "if(date(t2.rtc_date) < DATE(NOW()) AND ((t2.department_id = t7.department_id) OR (t2.department_id is NULL AND t7.department_id is NULL)), 1 , NULL)"
+                "expression": "if(date(t2.rtc_date) < DATE(NOW()) AND ((t2.medical_service_id = t7.medical_service_id) OR (t2.medical_service_id is NULL AND t7.medical_service_id is NULL)), 1 , NULL)"
             }
         },
         {
@@ -170,7 +152,7 @@
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "t2.next_clinical_encounter_datetime IS NULL AND ((t2.department_id = t7.department_id) OR (t2.department_id is NULL and t7.department_id is NULL))",
+                "conditionExpression": "t2.next_clinical_encounter_datetime IS NULL AND ((t2.medical_service_id = t7.medical_service_id) OR (t2.medical_service_id is NULL and t7.medical_service_id is NULL))",
                 "parameterName": ""
             },
             {
@@ -191,21 +173,6 @@
             {
                 "filterType": "tableColumns",
                 "conditionExpression": "t10.dead = 0",
-                "parameterName": ""
-            },
-            {
-                "filterType": "tableColumns",
-                "conditionExpression": "t9.transfer_out is NULL || t9.transfer_out = 0",
-                "parameterName": ""
-            },
-            {
-              "filterType": "tableColumns",
-              "conditionExpression": "t9.out_of_care is NULL",
-              "parameterName": ""
-            },
-            {
-                "filterType": "tableColumns",
-                "conditionExpression": "t9.prev_clinical_location_id is NULL || t9.prev_clinical_location_id = t2.location_id || t9.transfer_in = 1",
                 "parameterName": ""
             }
         ]

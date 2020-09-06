@@ -28,8 +28,8 @@
         },
         {
           "type": "simple_column",
-          "alias": "department_id",
-          "column": "department_id"
+          "alias": "medical_service_id",
+          "column": "medical_service_id"
         },
         {
             "type": "simple_column",

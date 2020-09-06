@@ -170,10 +170,7 @@ module.exports = function () {
         };
 
         // Use promisified function instead
-        // string.concat( "SELECT * FROM etl.flat_vitals `t1` WHERE  uuid =", uuid ,  "ORDER BY encounter_datetime DESC LIMIT", + 10 ,"OFFSET", + 0");
-        // var query = "SELECT * FROM etl.flat_vitals `t1` WHERE  uuid =", uuid , "ORDER BY encounter_datetime DESC LIMIT" + 10 ,"OFFSET", + 0";
-        var promise = Promise.promisify();
-         db.queryDb(queryParts);
+        var promise = db.queryDb(queryParts);
 
         if (_.isFunction(callback)) {
             promise.then(function (result) {
@@ -295,13 +292,8 @@ module.exports = function () {
         var order = helpers.getSortOrder(request.query.order);
 
         var queryParts = {
-            columns: request.query.fields || "t1.*, t2.cur_arv_meds",
+            columns: request.query.fields,
             table: "etl.flat_labs_and_imaging",
-            leftOuterJoins: [
-                ['(select * from etl.flat_hiv_summary_v15b where is_clinical_encounter and uuid="' + uuid + '" group by date(encounter_datetime))',
-                    't2', 'date(t1.test_datetime) = date(t2.encounter_datetime)'
-                ]
-            ],
             where: ["t1.uuid = ?", uuid],
             order: order || [{
                 column: 'test_datetime',
