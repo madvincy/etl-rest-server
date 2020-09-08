@@ -1,14 +1,4 @@
 [
- 
-  {
-    "program": "Lung Cancer Treatment",
-    "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
-    "reports": [{
-      "name": "L1. Lung cancer treatment numbers",
-      "type": "lung-cancer-treatment-numbers",
-      "description": "Lung cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
-    }]
-  },
   {
     "program": "Breast Cancer Treatment",
     "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
@@ -28,12 +18,39 @@
     }]
   },
   {
-    "program": "Sickle Cell Treatment",
+    "program": "Cervical Cancer Treatment",
     "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
     "reports": [{
-      "name": "SC1. Sickle Cell treatment numbers",
-      "type": "Sickle-Cell-treatment-numbers",
-      "description": "Sickle Cell treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
+      "name": "C1. Cervical cancer treatment numbers",
+      "type": "Cervical-cancer-treatment-numbers",
+      "description": "Cervical cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
+    }]
+  },
+  {
+    "program": "General Cancer Treatment report",
+    "uuid": "725b5193-3452-43fc-aca3-6a80432d9bfa",
+    "reports": [{
+      "name": "G1. General Cancer Treatment  numbers",
+      "type": "general-cancer-treatment-numbers ",
+      "description": "General Cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
+    }]
+  },
+  {
+    "program": "Patient Vitals Reports",
+    "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
+    "reports": [{
+      "name": "C1. Cervical cancer treatment numbers",
+      "type": "Cervical-cancer-treatment-numbers",
+      "description": "Cervical cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
+    }]
+  },
+  {
+    "program": "Patient Social-History Reports",
+    "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
+    "reports": [{
+      "name": "C1. Cervical cancer treatment numbers",
+      "type": "Cervical-cancer-treatment-numbers",
+      "description": "Cervical cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
     }]
   }
 
