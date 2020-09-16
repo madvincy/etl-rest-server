@@ -13,7 +13,7 @@
             "alias": "fbcs",
             "join":{
                 "type":"left",
-                "joinCondition": "pp.patient_id = fbcs.person_id "
+                "joinCondition": "e.encounter_id = fbcs.encounter_id"
             }
         },
         {
@@ -37,7 +37,7 @@
             "alias": "patient_name",
             "join": {
                 "type": "inner",
-                "joinCondition": "pp.patient_id = patient_name.person_id and (patient_name.voided is null || patient_name.voided = 0)"
+                "joinCondition": "e.patient_id = patient_name.person_id and (patient_name.voided is null || patient_name.voided = 0)"
 
             }
         },
@@ -46,7 +46,7 @@
             "alias": "patient_id",
             "join": {
                 "type": "inner",
-                "joinCondition": "pp.patient_id = patient_id.patient_id and (patient_id.voided is null || patient_id.voided = 0)"
+                "joinCondition": "e.patient_id = patient_id.patient_id and (patient_id.voided is null || patient_id.voided = 0)"
 
             }
 
@@ -56,7 +56,7 @@
             "alias": "l",
             "join": {
                 "type": "inner",
-                "joinCondition": "pp.location_id = l.location_id"
+                "joinCondition": "e.location_id = l.location_id"
 
             }
         },
@@ -65,7 +65,7 @@
             "alias": "p",
             "join": {
                 "type": "left",
-                "joinCondition": "pp.patient_id = p.person_id and (p.voided is null || p.voided = 0 and (p.person_attribute_type_id = 10))"
+                "joinCondition": "e.patient_id = p.person_id and (p.voided is null || p.voided = 0 and (p.person_attribute_type_id = 10))"
 
             }
         },
@@ -74,7 +74,7 @@
             "alias": "person",
             "join": {
                 "type": "left",
-                "joinCondition": "pp.patient_id = person.person_id and (person.voided is null || person.voided = 0 )"
+                "joinCondition": "e.patient_id = person.person_id and (person.voided is null || person.voided = 0 )"
 
             }
         }
@@ -134,7 +134,7 @@
         {
             "type": "simple_column",
             "alias": "encounter_datetime",
-            "column": "DATE_FORMAT(en.encounter_datetime, '%Y-%m-%d')"
+            "column": "DATE_FORMAT(e.encounter_datetime, '%Y-%m-%d')"
         },
         {
             "type": "derived_column",
@@ -178,17 +178,17 @@
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "DATE(en.encounter_datetime) >= ?    ",
+                "conditionExpression": "DATE(e.encounter_datetime) >= ?    ",
                 "parameterName": "startDate"
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "DATE(en.encounter_datetime) <= ? ",
+                "conditionExpression": "DATE(e.encounter_datetime) <= ? ",
                 "parameterName": "endDate"
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "en.encounter_type in (86,69)"
+                "conditionExpression": "e.encounter_type in (86,69)"
             },
             {
                 "filterType": "tableColumns",
@@ -203,19 +203,15 @@
             {
                 "filterType": "tableColumns",
                 "conditionExpression": "l.location_id not in (195)"
-            },
-            {
-                "filterType": "tableColumns",
-                "conditionExpression": "pp.program_id  in (12, 13)"
             }
         ]
     },
     "groupBy": {
         "groupParam": "groupByParam",
         "columns": [
-            "person.person_id",
+            "e.encounter_id",
             "l.location_id",
-            "DATE_FORMAT(en.encounter_datetime, '%M-%Y')"
+            "DATE_FORMAT(e.encounter_datetime, '%M-%Y')"
         ]
     }
 }
