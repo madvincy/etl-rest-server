@@ -22,17 +22,6 @@
     ]
   },
   {
-    "program": "Lung Cancer Screening",
-    "uuid": "b2db2bdf-67e9-42c5-858c-c7e435742ef5",
-    "reports": [
-      {
-        "name": "L1. Lung cancer screening numbers",
-        "type": "lung-cancer-screening-numbers",
-        "description": "Lung cancer screening numbers contains the following indicators - total screened, walk-in, referred from clinic, cigarette smoking, tobacco smoking, chemical exposure, asbestos exposure, HIV positive, HIV negative, HIV status unknown, TB treatment received, no TB treatment, normal X-ray results, abnormal X-ray results, normal CT-scan results, indication of lung mass from CT findings, indication of mediastial mass from CT findings indication of pleural mass from CT findings, biopsy done, biopsy not done, non-respiratory disease, non-small-cell lung cancer, small-cell-lung cancer"
-      }
-    ]
-  },
-  {
     "program": "Breast and Cervical Cancer Screening",
     "uuid": "b2837614-e144-4bec-abc2-e9f5e3116bb9",
     "reports": [
@@ -40,6 +29,17 @@
         "name": "BC1. Breast and Cervical cancer screening numbers",
         "type": "combined-breast-cervical-cancer-screening-numbers",
         "description": "Combined breast and cervical cancer screening numbers contains the following indicators - total breast screened, total cervical screened, total breast and cervical screened"
+      }
+    ]
+  },
+  {
+    "program": "Prostate Cancer Screening",
+    "uuid": "cad71628-692c-4d8f-8dac-b2e20bece27f",
+    "reports": [
+      {
+        "name": "P1. prostate cancer screening numbers",
+        "type": "prostate-cancer-screening-numbers",
+        "description": "Prostate cancer screening numbers contains the following indicators - "
       }
     ]
   }

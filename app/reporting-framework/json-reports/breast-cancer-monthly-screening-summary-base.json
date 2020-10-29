@@ -327,14 +327,6 @@
             "type": "simple_column",
             "alias": "date_patient_informed_of_results",
             "column": "(select DATE_FORMAT(date_patient_informed_and_referred_for_management, '%d-%M-%Y') from etl.flat_breast_cancer_screening where encounter_type = 145 and (select date_patient_informed_and_referred_for_management from etl.flat_breast_cancer_screening where encounter_type = 145 and person_id = p.person_id order by encounter_datetime desc limit 1) > (select encounter_datetime from etl.flat_breast_cancer_screening where encounter_type = 86 and person_id = p.person_id order by encounter_datetime desc limit 1) and person_id = p.person_id order by encounter_datetime desc limit 1)"
-        },
-        {
-            "type": "derived_column",
-            "alias": "total_reffered_for_followup",
-            "expressionType": "simple_expression",
-            "expressionOptions": {
-                        "expression": "if(referrals_ordered = 1, 1, NULL)"
-                       }
         }
     ],
     "filters": {
@@ -376,7 +368,7 @@
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "fbcs.location_id not in (195)"
+                "conditionExpression": "fbcs.location_id not in (9)"
             }
         ]
     },

@@ -140,6 +140,28 @@
         ]
       },
       {
+        
+          "uuid": "17d5d1d8-8091-4f7a-beed-275f87692a32",
+          "name": "Prostate Cancer Screening",  
+          "allowedIf": "gender === 'M'",
+          "encounterTypes": [
+            {
+              "uuid": "f8e35989-74b7-4a18-87ac-31e98b8d9004",
+              "display": "ONCOLOGYSCREENINGTRIAGE"
+            },
+            {
+              "uuid": "2a501226-543c-4f64-8a7a-f1426d7109f8",
+              "display": "ICIPROSTATE",
+              "allowedIf": "gender === 'M'"
+            },
+            {
+              "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
+              "display": "DEATHREPORT"
+            }
+
+          ]
+      },
+      {
         "uuid": "3f00bd7a-fab4-4cbd-984b-9fcb5d38e070",
         "name": "Diagnosis",  
         "encounterTypes": [

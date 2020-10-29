@@ -361,7 +361,7 @@
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "fccs.location_id not in (195)"
+                "conditionExpression": "fccs.location_id not in (9)"
             }
         ]
     },

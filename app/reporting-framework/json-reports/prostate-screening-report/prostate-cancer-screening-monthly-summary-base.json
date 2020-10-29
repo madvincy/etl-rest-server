@@ -1,0 +1,234 @@
+{
+    "name": "prostateCancerScreeningMonthlySummaryBase",
+    "version": "1.0",
+    "tag": "prostate_cancer_screening_monthly_summary_base",
+    "uses": [],
+    "sources": [
+        {
+            "table": "etl.flat_prostate_cancer_screening",
+            "alias": "flct"
+        },
+        {
+            "table": "openmrs.person_name",
+            "alias": "patient_name",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = patient_name.person_id AND (patient_name.voided is null OR patient_name.voided = 0)"
+
+            }
+        },
+        {
+            "table": "openmrs.person",
+            "alias": "pp",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = pp.person_id AND (pp.voided is null OR pp.voided = 0)"
+
+            }
+        },
+        {
+            "table": "openmrs.patient_identifier",
+            "alias": "patient_id",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = patient_id.patient_id and (patient_id.voided is null OR patient_id.voided = 0)"
+
+            }
+
+        },
+        {
+            "table": "openmrs.patient_program",
+            "alias": "program",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = program.patient_id and (program.voided is null OR program.voided = 0)"
+
+            }
+
+        },
+        {
+            "table": "openmrs.location",
+            "alias": "l",
+            "join": {
+                "type": "inner",
+                "joinCondition": "l.location_id = flct.location_id"
+
+            }
+        },
+        {
+            "table": "etl.flat_appointment",
+            "alias": "fa",
+            "join": {
+                "type": "left",
+                "joinCondition": "fa.person_id = flct.person_id AND fa.next_clinical_encounter_datetime IS NULL"
+
+            }
+        },
+        {
+            "table": "openmrs.person_attribute",
+            "alias": "p",
+            "join": {
+                "type": "left",
+                "joinCondition": "flct.person_id = p.person_id and (p.voided is null OR p.voided = 0 and (p.person_attribute_type_id = 11))"
+
+            }
+        }
+    ],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "person_id",
+            "column": "distinct flct.person_id"
+        },
+        {
+            "type": "derived_column",
+            "alias": "person_name",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "concat(coalesce(patient_name.given_name, ''), ' ', coalesce(patient_name.middle_name, ''), ' ', coalesce(patient_name.family_name, ''))"
+            }
+        },
+        {
+            "type": "simple_column",
+            "alias": "phone_number",
+            "column": "p.value"
+        },
+        {
+            "type": "derived_column",
+            "alias": "identifiers",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "group_concat(distinct patient_id.identifier separator ', ')"
+            }
+        },
+        {
+            "type": "simple_column",
+            "alias": "gender",
+            "column": "flct.gender"
+        },
+        {
+            "type": "simple_column",
+            "alias": "age",
+            "column": "flct.age"
+        },
+        {
+            "type": "simple_column",
+            "alias": "deceased",
+            "column": "pp.dead"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_id",
+            "column": "flct.location_id"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "flct.location_uuid"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "l.name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "encounter_datetime",
+            "column": "DATE_FORMAT(flct.encounter_datetime, '%Y-%m-%d')"
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Negative",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(psa_test_results IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Positive",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(psa_test_results IN (2) , 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Unknown",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(psa_test_results IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Not_done",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(psa_test_results IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cur_visit_type_new",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cur_visit_type IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cur_visit_type_scheduled",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cur_visit_type IN (2), 1, NULL))"
+            }
+        }
+
+    ],
+    "filters": {
+        "conditionJoinOperator": "and",
+        "conditions": [{
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.age >= ?",
+                "parameterName": "startAge"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.age <= ?",
+                "parameterName": "endAge"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "DATE(flct.encounter_datetime) >= ?",
+                "parameterName": "startDate"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "DATE(flct.encounter_datetime) <= ?",
+                "parameterName": "endDate"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.encounter_type in ?",
+                "parameterName": "encounterTypes"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.location_uuid in ?",
+                "parameterName": "locationUuids"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.location_id not in (9)"
+            }
+        ]
+    },
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "flct.person_id",
+            "DATE_FORMAT(flct.encounter_datetime, '%M-%Y')"
+        ]
+    }
+}

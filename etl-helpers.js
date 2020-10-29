@@ -50,6 +50,14 @@ module.exports = function () {
                 }
 
             }
+            // format encounterTypes
+            var encounterTypes = [];
+            if (queryParams.encounterTypes) {
+                _.each(queryParams.encounterTypes.split(','), function (encT) {
+                    encounterTypes.push(Number(encT));
+                });
+                queryParams.encounterTypes = encounterTypes;
+            }
 
             // format programUuids
             var programUuids = [];

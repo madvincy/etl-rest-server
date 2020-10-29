@@ -1,0 +1,109 @@
+{
+    "name": "ProstateCancerScreeningMonthlySummaryAggregate",
+    "version": "1.0",
+    "tag": "prostate_cancer_screening_monthly_summary_aggregate",
+    "uses": [
+        {
+            "name": "prostateCancerScreeningMonthlySummaryBase",
+            "version": "1.0",
+            "type": "dataset_def"
+        }
+    ],
+    "sources": [
+        {
+            "dataSet": "prostateCancerScreeningMonthlySummaryBase",
+            "alias": "lct"
+        }
+    ],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "location_name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "location_uuid"
+        },
+        {
+            "type": "derived_column",
+            "alias": "encounter_datetime",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "date_format(lct.encounter_datetime, '%m-%Y')"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Negative",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(psa_test_results_Negative)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Positive",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(psa_test_results_Positive)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Unknown",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(psa_test_results_Unknown)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "psa_test_results_Not_done",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(psa_test_results_Not_done)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cur_visit_type_new",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cur_visit_type_new)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cur_visit_type_scheduled",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cur_visit_type_scheduled)"
+            }
+        }
+    ],
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "location_id",
+            "year(lct.encounter_datetime)",
+            "month(lct.encounter_datetime)"
+        ],
+        "excludeParam": "excludeParam"
+    },
+    "dynamicJsonQueryGenerationDirectives": {
+        "patientListGenerator": {
+            "useTemplate": "prostate_cancer_screening_patient_list_template",
+            "useTemplateVersion": "1.0",
+            "generatingDirectives": {
+                "joinDirectives": {
+                    "joinType": "INNER",
+                    "joinCondition": "<<base_column>> = <<template_column>>",
+                    "baseColumn": "person_id",
+                    "templateColumn": "person_id"
+                }
+            }
+        }
+    }
+}

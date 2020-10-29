@@ -85,11 +85,41 @@ import * as breast_cancer_monthly_screening_summary_aggregate from './json-repor
 import * as breast_cancer_monthly_screening_summary_base from './json-reports/breast-cancer-monthly-screening-summary-base.json';
 import * as breast_cancer_patient_list_template from './json-reports/breast-cancer-patient-list-template.json';
 
+import * as prostate_cancer_daily_screening_summary_aggregate from './json-reports/prostate-screening-report/prostate-cancer-screening-daily-summary-aggregate.json';
+import * as prostate_cancer_monthly_screening_summary_aggregate from './json-reports/prostate-screening-report/prostate-cancer-screening-monthly-summary-aggregate.json';
+import * as  prostate_cancer_screening_monthly_summary_base from './json-reports/prostate-screening-report/prostate-cancer-screening-monthly-summary-base.json';
+import * as prostate_cancer_patient_list_template from './json-reports/prostate-screening-report/prostate-cancer-screening-patient-list-template.json';
+
 import * as lung_cancer_treatment_monthly_summary_aggregate from './json-reports/lung-cancer-treatment-monthly-summary-aggregate.json';
 import * as lung_cancer_treatment_daily_summary_aggregate from './json-reports/lung-cancer-treatment-daily-summary-aggregate.json';
 import * as lung_cancer_treatment_summary_base from './json-reports/lung-cancer-treatment-summary-base.json';
 import * as lung_cancer_treatment_patient_list_template from './json-reports/lung-cancer-treatment-patient-list-template.json';
 import * as lung_cancer_treatment_monthly_summary_base from './json-reports/lung-cancer-treatment-monthly-summary-base.json';
+
+import * as general_cancer_treatment_monthly_summary_aggregate from './json-reports/treatment-report/general-cancer-treatment-monthly-summary-aggregate.json';
+import * as general_cancer_treatment_daily_summary_aggregate from './json-reports/treatment-report/general-cancer-treatment-daily-summary-aggregate.json';
+import * as general_cancer_treatment_summary_base from './json-reports/treatment-report/general-cancer-treatment-summary-base.json';
+import * as general_cancer_treatment_patient_list_template from './json-reports/treatment-report/general-cancer-treatment-patient-list-template.json';
+import * as general_cancer_treatment_monthly_summary_base from './json-reports/treatment-report/general-cancer-treatment-monthly-summary-base.json';
+
+import * as social_history_daily_summary_aggregate from './json-reports/social-history-report/social-history-daily-summary-aggregate.json';
+import * as social_history_monthly_summary_aggregate from './json-reports/social-history-report/social-history-monthly-summary-aggregate.json'
+import * as social_history_monthly_summary_base from './json-reports/social-history-report/social-history-monthly-summary-base.json';
+import * as social_history_patient_list_template from './json-reports/social-history-report/social-history-patient-list-template.json';
+import * as social_history_summary_base from './json-reports/social-history-report/social-history-summary-base.json'
+
+
+import * as patient_vitals_daily_summary_aggregate from './json-reports/vitals-report/patient-vitals-daily-summary-aggregate.json';
+import * as patient_vitals_monthly_summary_aggregate from './json-reports/vitals-report/patient-vitals-monthly-summary-aggregate.json'
+import * as patient_vitals_monthly_summary_base from './json-reports/vitals-report/patient-vitals-monthly-summary-base.json';
+import * as patient_vitals_patient_list_template from './json-reports/vitals-report/patient-vitals-patient-list-template.json';
+import * as patient_vitals_summary_base from './json-reports/vitals-report/patient-vitals-summary-base.json'
+
+import * as palliative_care_daily_summary_aggregate from './json-reports/palliative-care-report/palliative-care-daily-summary-aggregate.json';
+import * as palliative_care_monthly_summary_aggregate from './json-reports/palliative-care-report/palliative-care-monthly-summary-aggregate.json'
+import * as palliative_care_monthly_summary_base from './json-reports/palliative-care-report/palliative-care-monthly-summary-base.json';
+import * as palliative_care_patient_list_template from './json-reports/palliative-care-report/palliative-care-patient-list-template.json';
+import * as palliative_care_summary_base from './json-reports/palliative-care-report/palliative-care-summary-base.json'
 
 import * as cervical_cancer_daily_screening_summary_aggregate from './json-reports/cervical-cancer-daily-screening-summary-aggregate.json';
 import * as cervical_cancer_monthly_screening_summary_aggregate from './json-reports/cervical-cancer-monthly-screening-summary-aggregate.json';
@@ -439,6 +469,102 @@ export class BaseMysqlReport {
                         breastCancerMonthlySummaryBase: this.cloneJsonSchema(breast_cancer_monthly_screening_summary_base)
                     });
                     break;
+
+                    case 'prostateCancerDailySummaryAggregate':
+                        resolve({
+                            main: this.cloneJsonSchema(prostate_cancer_daily_screening_summary_aggregate),
+                            prostateCancerScreeningMonthlySummaryBase: this.cloneJsonSchema(prostate_cancer_screening_monthly_summary_base)
+                        });
+                    case 'prostateCancerMonthlySummaryAggregate':
+                        resolve({
+                            main: this.cloneJsonSchema(prostate_cancer_monthly_screening_summary_aggregate),
+                            prostateCancerScreeningMonthlySummaryBase: this.cloneJsonSchema(prostate_cancer_screening_monthly_summary_base)
+                        });
+                        break;
+
+
+                case 'generalCancerTreatmentMonthlySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(general_cancer_treatment_monthly_summary_aggregate),
+                        generalCancerTreatmentMonthlySummaryBase: this.cloneJsonSchema(general_cancer_treatment_monthly_summary_base)
+                    });
+                    break;
+                case 'generalCancerTreatmentDailySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(general_cancer_treatment_daily_summary_aggregate),
+                        generalCancerTreatmentSummaryBase: this.cloneJsonSchema(general_cancer_treatment_summary_base)
+                    });
+                    break;
+                case 'general_cancer_treatment_patient_list_template':
+                    resolve({
+                        main: this.cloneJsonSchema(general_cancer_treatment_patient_list_template)
+                    });
+                    break;
+                    
+
+
+                case 'socialHistoryMonthlySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(social_history_monthly_summary_aggregate),
+                        socialHistoryMonthlySummaryBase: this.cloneJsonSchema(social_history_monthly_summary_base)
+                    });
+                    break;
+                case 'socialHistoryDailySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(social_history_daily_summary_aggregate),
+                        socialHistorySummaryBase: this.cloneJsonSchema(social_history_summary_base)
+                    });
+                    break;
+                case 'social_history_patient_list_template':
+                    resolve({
+                        main: this.cloneJsonSchema(social_history_patient_list_template)
+                    });
+                    break;
+
+
+
+
+
+                    case 'patientVitalsMonthlySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(patient_vitals_monthly_summary_aggregate),
+                        patientVitalsMonthlySummaryBase: this.cloneJsonSchema(patient_vitals_monthly_summary_base)
+                    });
+                    break;
+                case 'patientVitalsDailySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(patient_vitals_daily_summary_aggregate),
+                        patientVitalsSummaryBase: this.cloneJsonSchema(patient_vitals_summary_base)
+                    });
+                    break;
+                case 'patient_vitals_patient_list_template':
+                    resolve({
+                        main: this.cloneJsonSchema(patient_vitals_patient_list_template)
+                    });
+                    break;
+
+
+
+
+                    case 'palliativeCareMonthlySummaryAggregate':
+                        resolve({
+                            main: this.cloneJsonSchema(palliative_care_monthly_summary_aggregate),
+                            palliativeCareMonthlySummaryBase: this.cloneJsonSchema(palliative_care_monthly_summary_base)
+                        });
+                        break;
+                    case 'palliativeCareDailySummaryAggregate':
+                        resolve({
+                            main: this.cloneJsonSchema(palliative_care_daily_summary_aggregate),
+                            palliativeCareSummaryBase: this.cloneJsonSchema(palliative_care_summary_base)
+                        });
+                        break;
+                    case 'palliative_care_patient_list_template':
+                        resolve({
+                            main: this.cloneJsonSchema(palliative_care_patient_list_template)
+                        });
+                        break;
+
+
                 case 'lungCancerTreatmentMonthlySummaryAggregate':
                     resolve({
                         main: this.cloneJsonSchema(lung_cancer_treatment_monthly_summary_aggregate),
@@ -470,6 +596,11 @@ export class BaseMysqlReport {
                 case 'breast_cancer_patient_list_template':
                     resolve({
                         main: this.cloneJsonSchema(breast_cancer_patient_list_template)
+                    });
+                    break;
+                    case 'prostate_cancer_patient_list_template':
+                    resolve({
+                        main: this.cloneJsonSchema(prostate_cancer_patient_list_template)
                     });
                     break;
                 case 'combined_breast_cervical_cancer_patient_list_template':

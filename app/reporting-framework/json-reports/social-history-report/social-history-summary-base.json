@@ -1,0 +1,863 @@
+{
+    "name": "socialHistorySummaryBase",
+    "version": "1.0",
+    "tag": "social_history_summary_base",
+    "uses": [],
+    "sources": [
+        {
+            "table": "etl.flat_Social_History",
+            "alias": "flct"
+        },
+        {
+            "table": "openmrs.person_name",
+            "alias": "patient_name",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = patient_name.person_id and (patient_name.voided is null OR patient_name.voided = 0)"
+            }
+        },
+        {
+            "table": "openmrs.person",
+            "alias": "pp",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = pp.person_id and (pp.voided is null OR pp.voided = 0)"
+            }
+        },
+        {
+            "table": "openmrs.patient_identifier",
+            "alias": "patient_id",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = patient_id.patient_id and (patient_id.voided is null OR patient_id.voided = 0)"
+            }
+        },
+        {
+            "table": "openmrs.patient_program",
+            "alias": "program",
+            "join": {
+                "type": "inner",
+                "joinCondition": "flct.person_id = program.patient_id and (program.voided is null OR program.voided = 0)"
+            }
+        },
+        {
+            "table": "openmrs.location",
+            "alias": "l",
+            "join": {
+                "type": "inner",
+                "joinCondition": "l.location_id = flct.location_id"
+            }
+        },
+        {
+            "table": "etl.flat_appointment",
+            "alias": "fa",
+            "join": {
+                "type": "left",
+                "joinCondition": "fa.person_id = flct.person_id AND fa.next_clinical_encounter_datetime IS NULL"
+            }
+        },
+        {
+            "table": "openmrs.person_attribute",
+            "alias": "p",
+            "join": {
+                "type": "left",
+                "joinCondition": "flct.person_id = p.person_id and (p.voided is null OR p.voided = 0 and (p.person_attribute_type_id = 10))"
+            }
+        }
+    ],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "person_id",
+            "column": "distinct flct.person_id"
+        },
+        {
+            "type": "derived_column",
+            "alias": "person_name",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "concat(coalesce(patient_name.given_name, ''), ' ', coalesce(patient_name.middle_name, ''), ' ', coalesce(patient_name.family_name, ''))"
+            }
+        },
+        {
+            "type": "simple_column",
+            "alias": "phone_number",
+            "column": "p.value"
+        },
+        {
+            "type": "derived_column",
+            "alias": "identifiers",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "group_concat(distinct patient_id.identifier separator ', ')"
+            }
+        },
+        {
+            "type": "simple_column",
+            "alias": "gender",
+            "column": "flct.gender"
+        },
+        {
+            "type": "simple_column",
+            "alias": "age",
+            "column": "flct.age"
+        },
+        {
+            "type": "simple_column",
+            "alias": "deceased",
+            "column": "pp.dead"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_id",
+            "column": "flct.location_id"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "flct.location_uuid"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "l.name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "encounter_datetime",
+            "column": "DATE_FORMAT(flct.encounter_datetime, '%Y-%m-%d')"
+        },
+        {
+            "type": "derived_column",
+            "alias": "self_refferal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(referred_by IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Referred_from_public_facility",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(referred_by IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Referred_from_private_sector",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(referred_by IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Community_mass_screening_event_refferal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(referred_by IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "have_nhif_cover",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(nhif_cover IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "dont_have_nhif_cover",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(nhif_cover IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_status_active",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(nhif_status IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_status_inactive",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(nhif_status IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Donors",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Government",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Parents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Self",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Siblings",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(who_pay_nhif IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Less_than_30_mins",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_duration IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_30_and_60_min",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_duration IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_1_and_2_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_duration IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_2_and_4_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_duration IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_4_and_8_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_duration IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_More_than_8_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_duration IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Walking",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_mode IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Matatu",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_mode IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Boda_Boda",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_mode IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Bus",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_mode IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Taxi",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_mode IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Private_car",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(travel_mode IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Catholic",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Protestant",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Islamic",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Traditionalism",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Hindu",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Buddhist",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Buddhist_None",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(religious_affiliation IN (7), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Not_applicable",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Never_married",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_married_monogamous",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_married_polygamous",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Living_with_partner",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Separated",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Divorced",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (7), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Widowed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(marital_status IN (8), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_None",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(patient_edu_level IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Pre_unit",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(patient_edu_level IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Primary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(patient_edu_level IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Secondary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(patient_edu_level IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Tertiary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(patient_edu_level IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Unemployed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Farmer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Formal_employment",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Truck_driver",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Housewife",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Teacher",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Casual_worker",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (7), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Civil_servant",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (8), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_self_employed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (9), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_student",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (10), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Health_professional",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (11), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(main_occupation IN (12), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_Less_than_1000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_1001_to_10000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_20001_to_30000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_10001_to_20000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_30001_to_40000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_40001_to_50000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_More_than_50000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(income_amount IN (7), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cigarettes_smoking_yes",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cigarettes_smoking IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cigarettes_smoking_no",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cigarettes_smoking IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cigarettes_smoking_stopped",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cigarettes_smoking IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "drink_alcohol_yes",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(drink_alcohol IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "drink_alcohol_no",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(drink_alcohol IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "drink_alcohol_stopped",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(drink_alcohol IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Beer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(alcohol_type IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Busaa",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(alcohol_type IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Changaa",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(alcohol_type IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Liquor",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(alcohol_type IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Wine",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(alcohol_type IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Self",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Parents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (2), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Siblings",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Children",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Paternal_grandparents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (5), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Maternal_grandparents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (6), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Paternal_uncles_or_aunties",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (7), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Maternal_uncles_or_aunties",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(family_mem IN (8), 1, NULL))"
+            }
+        }
+    ],
+    "filters": {
+        "conditionJoinOperator": "and",
+        "conditions": [
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.age >= ?",
+                "parameterName": "startAge"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.age <= ?",
+                "parameterName": "endAge"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "DATE(flct.encounter_datetime) >= ?",
+                "parameterName": "startDate"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "DATE(flct.encounter_datetime) <= ?",
+                "parameterName": "endDate"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.encounter_type in ?",
+                "parameterName": "encounterTypes"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.location_uuid in ?",
+                "parameterName": "locationUuids"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.gender in ?",
+                "parameterName": "genders"
+            },
+            {
+                "filterType": "tableColumns",
+                "conditionExpression": "flct.location_id not in (9)"
+            }
+        ]
+    },
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "flct.person_id",
+            "flct.location_id",
+            "DATE_FORMAT(flct.encounter_datetime, '%D-%M-%Y')"
+        ]
+    }
+}

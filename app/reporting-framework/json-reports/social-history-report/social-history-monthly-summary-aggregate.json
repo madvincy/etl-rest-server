@@ -1,0 +1,749 @@
+{
+    "name": "socialHistoryMonthlySummaryAggregate",
+    "version": "1.0",
+    "tag": "social_history_monthly_summary_aggregate",
+    "uses": [
+        {
+            "name": "socialHistoryMonthlySummaryBase",
+            "version": "1.0",
+            "type": "dataset_def"
+        }
+    ],
+    "sources": [
+        {
+            "dataSet": "socialHistoryMonthlySummaryBase",
+            "alias": "lct"
+        }
+    ],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "location_name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "location_uuid"
+        },
+        {
+            "type": "derived_column",
+            "alias": "encounter_datetime",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "date_format(lct.encounter_datetime, '%m-%Y')"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "self_refferal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(self_refferal)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Referred_from_public_facility",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Referred_from_public_facility)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Referred_from_private_sector",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Referred_from_private_sector)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Community_mass_screening_event_refferal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Community_mass_screening_event_refferal)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "have_nhif_cover",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(have_nhif_cover)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "dont_have_nhif_cover",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(dont_have_nhif_cover)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_status_active",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_status_active)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_status_inactive",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_status_inactive)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Donors",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Donors)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Government",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Government)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Parents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Parents)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Self",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Self)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Siblings",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Siblings)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Other)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "nhif_paid_by_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(nhif_paid_by_Other)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Less_than_30_mins",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_duration_Less_than_30_mins)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_30_and_60_min",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_duration_Between_30_and_60_min)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_1_and_2_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_duration_Between_1_and_2_hours)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_2_and_4_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_duration_Between_2_and_4_hours)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_Between_4_and_8_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_duration_Between_4_and_8_hours)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_duration_More_than_8_hours",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_duration_More_than_8_hours)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Walking",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_mode_Walking)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Matatu",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_mode_Matatu)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Boda_Boda",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_mode_Boda_Boda)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Bus",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_mode_Bus)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Taxi",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_mode_Taxi)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "travel_mode_Private_car",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(travel_mode_Private_car)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Catholic",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Catholic)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Protestant",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Protestant)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Islamic",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Islamic)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Traditionalism",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Traditionalism)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Hindu",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Hindu)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Buddhist",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Buddhist)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "religious_affiliation_Buddhist_None",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(religious_affiliation_Buddhist_None)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Not_applicable",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_Not_applicable)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Never_married",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_Never_married)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_married_monogamous",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_married_monogamous)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_married_polygamous",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_married_polygamous)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Living_with_partner",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_Living_with_partner)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Separated",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_Separated)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Divorced",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_Divorced)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "marital_status_Widowed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(marital_status_Widowed)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_None",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_edu_level_None)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Pre_unit",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_edu_level_Pre_unit)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Primary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_edu_level_Primary)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Secondary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_edu_level_Secondary)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_edu_level_Tertiary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_edu_level_Tertiary)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Unemployed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Unemployed)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Farmer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Farmer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Formal_employment",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Formal_employment)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Truck_driver",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Truck_driver)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Housewife",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Housewife)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Teacher",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Teacher)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Casual_worker",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Casual_worker)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Civil_servant",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Civil_servant)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_self_employed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_self_employed)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_student",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_student)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_Health_professional",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_Health_professional)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "main_occupation_other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(main_occupation_other)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_Less_than_1000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_Less_than_1000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_1001_to_10000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_1001_to_10000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_20001_to_30000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_20001_to_30000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_10001_to_20000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_10001_to_20000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_30001_to_40000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_30001_to_40000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_40001_to_50000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_40001_to_50000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "income_amount_More_than_50000_Ksh",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(income_amount_More_than_50000_Ksh)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cigarettes_smoking_yes",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cigarettes_smoking_yes)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cigarettes_smoking_no",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cigarettes_smoking_no)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cigarettes_smoking_stopped",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cigarettes_smoking_stopped)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "drink_alcohol_yes",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(drink_alcohol_yes)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "drink_alcohol_no",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(drink_alcohol_no)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "drink_alcohol_stopped",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(drink_alcohol_stopped)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Beer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(alcohol_type_Beer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Busaa",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(alcohol_type_Busaa)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Changaa",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(alcohol_type_Changaa)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Liquor",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(alcohol_type_Liquor)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "alcohol_type_Wine",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(alcohol_type_Wine)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Self",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Self)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Parents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Parents)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Siblings",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Siblings)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Children",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Children)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Paternal_grandparents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Paternal_grandparents)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Maternal_grandparents",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Maternal_grandparents)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Paternal_uncles_or_aunties",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Paternal_uncles_or_aunties)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "family_mem_with_cancer_Maternal_uncles_or_aunties",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(family_mem_with_cancer_Maternal_uncles_or_aunties)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "deceased",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(deceased)"
+            }
+        }
+    ],
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "location_id",
+            "year(lct.encounter_datetime)",
+            "month(lct.encounter_datetime)"
+        ],
+        "excludeParam": "excludeParam"
+    },
+    "dynamicJsonQueryGenerationDirectives": {
+        "patientListGenerator": {
+            "useTemplate": "social_history_patient_list_template",
+            "useTemplateVersion": "1.0",
+            "generatingDirectives": {
+                "joinDirectives": {
+                    "joinType": "INNER",
+                    "joinCondition": "<<base_column>> = <<template_column>>",
+                    "baseColumn": "person_id",
+                    "templateColumn": "person_id"
+                }
+            }
+        }
+    }
+}

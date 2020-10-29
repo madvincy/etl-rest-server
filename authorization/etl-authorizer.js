@@ -206,7 +206,6 @@ module.exports = authorizer;
 function _setCurrentUserPrivileges() {
     currentUserPrivileges = [];
     for (var i = 0; i < currentUser.privileges.length; i++) {
-        //console.log('Adding privilege: ', currentUser.privileges[i].display);
         currentUserPrivileges.push(currentUser.privileges[i].name);
     }
 }

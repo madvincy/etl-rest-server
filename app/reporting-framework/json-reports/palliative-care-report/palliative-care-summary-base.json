@@ -1,10 +1,11 @@
 {
-    "name": "lungCancerTreatmentMonthlySummaryBase",
+    "name": "palliativeCareSummaryBase",
     "version": "1.0",
-    "tag": "lung_cancer_treatment_monthly_summary_base",
+    "tag": "palliative_care_treatment_summary_base",
     "uses": [],
-    "sources": [{
-            "table": "etl.flat_lung_cancer_treatment",
+    "sources": [
+        {
+            "table": "etl.flat_general_test_treatment",
             "alias": "flct"
         },
         {
@@ -12,8 +13,7 @@
             "alias": "patient_name",
             "join": {
                 "type": "inner",
-                "joinCondition": "flct.person_id = patient_name.person_id AND (patient_name.voided is null OR patient_name.voided = 0)"
-
+                "joinCondition": "flct.person_id = patient_name.person_id and (patient_name.voided is null OR patient_name.voided = 0)"
             }
         },
         {
@@ -21,8 +21,7 @@
             "alias": "pp",
             "join": {
                 "type": "inner",
-                "joinCondition": "flct.person_id = pp.person_id AND (pp.voided is null OR pp.voided = 0)"
-
+                "joinCondition": "flct.person_id = pp.person_id and (pp.voided is null OR pp.voided = 0)"
             }
         },
         {
@@ -31,9 +30,7 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "flct.person_id = patient_id.patient_id and (patient_id.voided is null OR patient_id.voided = 0)"
-
             }
-
         },
         {
             "table": "openmrs.patient_program",
@@ -41,9 +38,7 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "flct.person_id = program.patient_id and (program.voided is null OR program.voided = 0)"
-
             }
-
         },
         {
             "table": "openmrs.location",
@@ -51,7 +46,6 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "l.location_id = flct.location_id"
-
             }
         },
         {
@@ -60,7 +54,6 @@
             "join": {
                 "type": "left",
                 "joinCondition": "fa.person_id = flct.person_id AND fa.next_clinical_encounter_datetime IS NULL"
-
             }
         },
         {
@@ -69,14 +62,14 @@
             "join": {
                 "type": "left",
                 "joinCondition": "flct.person_id = p.person_id and (p.voided is null OR p.voided = 0 and (p.person_attribute_type_id = 10))"
-
             }
         }
     ],
-    "columns": [{
+    "columns": [
+        {
             "type": "simple_column",
             "alias": "person_id",
-            "column": "distinct flct.person_id"
+            "column": "flct.person_id"
         },
         {
             "type": "derived_column",
@@ -135,211 +128,274 @@
             "column": "DATE_FORMAT(flct.encounter_datetime, '%Y-%m-%d')"
         },
         {
-            "type": "simple_column",
-            "alias": "metastasis_region",
-            "column": "flct.metastasis_region"
-        },
-        {
             "type": "derived_column",
-            "alias": "hiv_status",
+            "alias": "palliative_form_filled",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "case when hiv_status=1 then 'HIV Negative' when hiv_status=2 then 'HIV Positive' when hiv_status=3 then 'Unknown' else NULL end"
+                "expression": "if((flct.encounter_type IN (207)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "for_staging",
+            "alias": "palliative_plan_None",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "NULLIF(staging, null)"
+                "expression": "if((palliative_plan IN (1)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "referred_from",
-            "expressionType": "case_statement",
+            "alias": "palliative_plan_Bereavement",
+            "expressionType": "simple_expression",
             "expressionOptions": {
-                "caseOptions": [{
-                        "condition": "referred_from = 1",
-                        "value": "Pulmonary clinic"
-                    },
-                    {
-                        "condition": "referred_from = 2",
-                        "value": "Tuberculosis treatment or dot program"
-                    },
-                    {
-                        "condition": "referred_from = 3",
-                        "value": "Health centre hospitals"
-                    },
-                    {
-                        "condition": "referred_from = 4",
-                        "value": "Private health sector"
-                    },
-                    {
-                        "condition": "referred_from = 5",
-                        "value": "Radiology"
-                    },
-                    {
-                        "condition": "referred_from = 6",
-                        "value": "self"
-                    },
-                    {
-                        "condition": "referred_from = 7",
-                        "value": "Other non-coded"
-                    }
-                ]
+                "expression": "if((palliative_plan IN (2)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "enrolled_patients",
+            "alias": "palliative_plan_Daycare",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF ((program.date_completed IS NULL AND program.program_id IN(32)), 1, 0))"
+                "expression": "if((palliative_plan IN (3)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "active_patients",
+            "alias": "palliative_plan_Financial_Support",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0), 1, 0))"
+                "expression": "if((palliative_plan IN (4)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "lost_to_follow_up",
+            "alias": "palliative_plan_Counseling",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "IF(TIMESTAMPDIFF(day,fa.rtc_date,CURDATE()) >= 90 AND pp.dead = 0 ,1,NULL)"
+                "expression": "if((palliative_plan IN (5)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "non_small_cell_lung_cancer",
+            "alias": "palliative_plan_Legal_Aid",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(non_small_cell_ca_type IS NOT NULL, 1, NULL))"
+                "expression": "if((palliative_plan IN (6)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "epidermoid_carcinoma",
+            "alias": "palliative_plan_Nutritional_Support",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(non_small_cell_ca_type IN (1), 1, NULL))"
+                "expression": "if((palliative_plan IN (7)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "adenocarcinoma",
+            "alias": "palliative_plan_Nutritional_supplements",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(non_small_cell_ca_type IN (2), 1, NULL))"
+                "expression": "if((palliative_plan IN (8)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "large_cell_carcinoma",
+            "alias": "palliative_plan_Pain_or_Symptom_Management",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(non_small_cell_ca_type IN (3), 1, NULL))"
+                "expression": "if((palliative_plan IN (9)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "mixed_squamous",
+            "alias": "palliative_plan_Spiritual_Care",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(non_small_cell_ca_type IN (4), 1, NULL))"
+                "expression": "if((palliative_plan IN (10)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "small_cell_lung_cancer",
+            "alias": "palliative_reason_Bereavement",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(lung_cancer_type IN (2), 1, NULL))"
+                "expression": "if((palliative_reason IN (1)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "stage_one",
+            "alias": "palliative_reason_Care_support",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(staging IN (1), 1, NULL))"
+                "expression": "if((palliative_reason IN (2)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "stage_two",
+            "alias": "palliative_reason_End_of_life_care",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(staging IN (2), 1, NULL))"
+                "expression": "if((palliative_reason IN (3)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "stage_three",
+            "alias": "palliative_reason_Emotional_or_Psychological_support",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(staging IN (3), 1, NULL))"
+                "expression": "if((palliative_reason IN (4)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "stage_four",
+            "alias": "palliative_reason_Financial_Support",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(staging IN (4), 1, NULL))"
+                "expression": "if((palliative_reason IN (5)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "limited_stage",
+            "alias": "palliative_reason_Pain_or_symptom_control",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(staging IN (5), 1, NULL))"
+                "expression": "if((palliative_reason IN (6)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "extensive_stage",
+            "alias": "palliative_reason_Routine_care",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(staging IN (6), 1, NULL))"
+                "expression": "if((palliative_reason IN (7)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "chemotherapy",
+            "alias": "palliative_reason_Spiritual_Support",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(treatment_plan IN (1), 1, NULL))"
+                "expression": "if((palliative_reason IN (8)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "radiotherapy",
+            "alias": "palliative_reason_Other",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(treatment_plan IN (2), 1, NULL))"
+                "expression": "if((palliative_reason IN (9)), 1, null)"
             }
         },
         {
             "type": "derived_column",
-            "alias": "surgery",
+            "alias": "patient_referred",
             "expressionType": "simple_expression",
             "expressionOptions": {
-                "expression": "(IF(treatment_plan IN (3), 1, NULL))"
+                "expression": "if((patient_referred IN (1)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_not_referred",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "if((patient_referred IN (2)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "comorbid_illness_yes",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "if((comorbid_illness IN (1)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "comorbid_illness_no",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "if((comorbid_illness IN (2)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_positive",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "if((hiv_status IN (1)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_positive_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF( hiv_status IN (1) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_positive_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hiv_status IN (1) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_negative",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "if((hiv_status IN (2)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_negative_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF( hiv_status IN (2) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_negative_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hiv_status IN (2) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_unknown",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "if((hiv_status IN (3)), 1, null)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_unknown_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF( hiv_status IN (3) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hiv_status_unknown_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hiv_status IN (3) and flct.gender = 'f', 1, NULL))"
             }
         }
-
     ],
     "filters": {
         "conditionJoinOperator": "and",
-        "conditions": [{
+        "conditions": [
+            {
                 "filterType": "tableColumns",
                 "conditionExpression": "flct.age >= ?",
                 "parameterName": "startAge"
@@ -361,7 +417,8 @@
             },
             {
                 "filterType": "tableColumns",
-                "conditionExpression": "flct.encounter_type in (169)"
+                "conditionExpression": "flct.encounter_type in ?",
+                "parameterName": "encounterTypes"
             },
             {
                 "filterType": "tableColumns",
@@ -383,7 +440,8 @@
         "groupParam": "groupByParam",
         "columns": [
             "flct.person_id",
-            "DATE_FORMAT(flct.encounter_datetime, '%M-%Y')"
+            "flct.location_id",
+            "DATE_FORMAT(flct.encounter_datetime, '%D-%M-%Y')"
         ]
     }
 }

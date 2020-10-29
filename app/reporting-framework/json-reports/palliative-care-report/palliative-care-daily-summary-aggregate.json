@@ -1,0 +1,320 @@
+{
+    "name": "palliativeCareDailySummaryAggregate",
+    "version": "1.0",
+    "tag": "palliative_care_daily_summary_aggregate",
+    "uses": [{
+        "name": "PalliativeSummaryBase",
+        "version": "1.0",
+        "type": "dataset_def"
+    }],
+    "sources": [{
+        "dataSet": "palliativeCareSummaryBase",
+        "alias": "lct"
+    }],
+    "columns": [
+        {
+        "type": "simple_column",
+        "alias": "location_name",
+        "column": "location_name"
+    },
+    {
+        "type": "simple_column",
+        "alias": "location_uuid",
+        "column": "location_uuid"
+    },
+    {
+        "type": "derived_column",
+        "alias": "encounter_datetime",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "date_format(lct.encounter_datetime, '%m-%Y')"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_form_filled",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "count(palliative_form_filled)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_None",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_None )"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Bereavement",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Bereavement)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Daycare",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Daycare)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Financial_Support",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Financial_Support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Counseling",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Financial_Support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Legal_Aid",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Legal_Aid)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Nutritional_Support",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Nutritional_Support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Nutritional_supplements",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Nutritional_supplements)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Pain_or_Symptom_Management",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Pain_or_Symptom_Management)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_plan_Spiritual_Care",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_plan_Spiritual_Care)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Bereavement",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Bereavement)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Care_support",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Care_support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_End_of_life_care",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_End_of_life_care)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Emotional_or_Psychological_support",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Emotional_or_Psychological_support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Financial_Support",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Financial_Support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Pain_or_symptom_control",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Pain_or_symptom_control)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Routine_care",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Routine_care)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Spiritual_Support",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Spiritual_Support)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "palliative_reason_Other",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(palliative_reason_Other)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "patient_referred",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(patient_referred)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "patient_not_referred",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(patient_not_referred)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "comorbid_illness_yes",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(comorbid_illness_yes)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "comorbid_illness_no",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(comorbid_illness_no)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_positive",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_positive)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_positive_male",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_positive_male)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_positive_female",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_positive_female)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_negative",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_negative)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_negative_male",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_negative_male)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_negative_female",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_negative_female)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_unknown",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_unknown)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_unknown_male",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "(hiv_status_unknown_male)"
+        }
+    },
+    {
+        "type": "derived_column",
+        "alias": "hiv_status_unknown_female",
+        "expressionType": "simple_expression",
+        "expressionOptions": {
+            "expression": "sum(hiv_status_unknown_female)"
+        }
+    }
+],
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "location_id",
+            "DATE(lct.encounter_datetime)"
+        ],
+        "excludeParam": "excludeParam"
+    },
+    "dynamicJsonQueryGenerationDirectives": {
+        "patientListGenerator": {
+            "useTemplate": "general_cancer_treatment_patient_list_template",
+            "useTemplateVersion": "1.0",
+            "generatingDirectives": {
+                "joinDirectives": {
+                    "joinType": "INNER",
+                    "joinCondition": "<<base_column>> = <<template_column>>",
+                    "baseColumn": "person_id",
+                    "templateColumn": "person_id"
+                }
+            }
+        }
+    }
+}

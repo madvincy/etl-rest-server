@@ -1,0 +1,130 @@
+{
+    "name": "patientVitalsMonthlySummaryAggregate",
+    "version": "1.0",
+    "tag": "patient-vitals_monthly_summary_aggregate",
+    "uses": [{
+        "name": "patientVitalsMonthlySummaryBase",
+        "version": "1.0",
+        "type": "dataset_def"
+    }],
+    
+    "sources": [{
+        "dataSet": "patientVitalsMonthlySummaryBase",
+        "alias": "lct"
+    }],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "location_name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "location_uuid"
+        },
+        {
+            "type": "derived_column",
+            "alias": "encounter_datetime",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "date_format(lct.encounter_datetime, '%m-%Y')"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Abnormal_bmi_underweight",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Abnormal_bmi_underweight)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Abnormal_bmi_overweight",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Abnormal_bmi_overweight)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "normal_bmi",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(normal_bmi)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Abnormal_bmi_obese",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Abnormal_bmi_obese)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "normal_oxygen_sat",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(normal_oxygen_sat)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "abnormal_oxygen_sat",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(abnormal_oxygen_sat)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "abnormal_pulse",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(abnormal_pulse)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "normal_pulse",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(normal_pulse)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "high_abnormal_temperature",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(high_abnormal_temperature)"
+            }
+        }
+    ],
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "location_id",
+            "year(lct.encounter_datetime)",
+            "month(lct.encounter_datetime)"
+        ],
+        "excludeParam": "excludeParam"
+    },
+    "dynamicJsonQueryGenerationDirectives": {
+        "patientListGenerator": {
+            "useTemplate": "patient_vitals_patient_list_template",
+            "useTemplateVersion": "1.0",
+            "generatingDirectives": {
+                "joinDirectives": {
+                    "joinType": "INNER",
+                    "joinCondition": "<<base_column>> = <<template_column>>",
+                    "baseColumn": "person_id",
+                    "templateColumn": "person_id"
+                }
+            }
+        }
+    }
+}

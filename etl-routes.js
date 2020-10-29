@@ -67,6 +67,12 @@ import { CDMReportingService } from './service/cdm/cdm-reporting.service';
 import { PatientReferralService } from './service/patient-referral.service';
 import { CombinedBreastCervicalCancerMonthlySummary } from './service/combined-breast-cervical-cancer-monthly-summary.service';
 import { LungCancerTreatmentSummary } from './service/lung-cancer-treatment-summary.service';
+import { GeneralCancerTreatmentSummary } from './service/general-cancer-summary.service';
+import { SocialHistorySummary } from './service/social-history-summary.service';
+import { PalliativeCareSummary } from './service/palliative-care-summary.service';
+import { ProstateCancerMonthlySummaryService } from './service/prostate-cancer-summary.service';
+import { PatientVitalsSummary } from './service/patient-vitals-summary.service';
+
 import { SurgeService } from './service/surge-reports/surge-report.service';
 
 var patientReminderService = require('./service/patient-reminder.service.js');
@@ -423,6 +429,7 @@ module.exports = function () {
                                             combineRequestParams.endDate = combineRequestParams.startDate;
                                             let service = new PatientlistMysqlReport('dailyAppointmentsAggregate', combineRequestParams);
                                             service.generatePatientListReport(['patients']).then((result) => {
+                                                console.log(result);
                                                 let returnedResult = {};
                                                 returnedResult.schemas = result.schemas;
                                                 returnedResult.sqlQuery = result.sqlQuery;
@@ -450,15 +457,6 @@ module.exports = function () {
                 path: '/etl/daily-visits/{startDate}',
                 config: {
                     plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'query', //can be in either query or params so you have to specify
-                                name: 'locationUuids' //name of the location parameter
-                            }]
-                        }
                     },
                     handler: function (request, reply) {
                         if (request.query.locationUuids) {
@@ -1851,15 +1849,6 @@ module.exports = function () {
                 config: {
                     auth: 'simple',
                     plugins: {
-                        'hapiAuthorization': {
-                            role: privileges.canViewClinicDashBoard
-                        },
-                        'openmrsLocationAuthorizer': {
-                            locationParameter: [{
-                                type: 'params', //can be in either query or params so you have to specify
-                                name: 'uuid' //name of the location parameter
-                            }]
-                        }
                     },
                     handler: function (request, reply) {
                         dao.getClinicDailyVisits(request, reply);
@@ -3049,11 +3038,6 @@ module.exports = function () {
                 config: {
                     auth: 'simple',
                     handler: function (request, reply) {
-
-                        if (request.params.sub === 'patientList' &&
-                            !authorizer.hasPrivilege(privileges.canViewPatient)) {
-                            return reply(Boom.forbidden('Unauthorized'));
-                        }
 
                         var asyncRequests = 0; //this should be the number of async requests needed before they are triggered
 
@@ -4329,6 +4313,61 @@ module.exports = function () {
                 }
 
             },
+
+            {
+                method: 'GET',
+                path: '/etl/prostate-cancer-screening-numbers',
+                config: {
+                    auth: 'simple',
+                    handler: function (request, reply) {
+                        request.query.reportName = 'breast-cancer-monthly-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+                                let service = new ProstateCancerMonthlySummaryService();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get prostate cancer monthly screening summary details based on location and time filters',
+                    notes: 'Returns aggregates of prostate cancer screening',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/prostate-cancer-screening-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    handler: function (request, reply) {
+                        request.query.reportName = 'prostate-cancer-monthly-screening-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new ProstateCancerMonthlySummaryService();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get prostate cancer monthly screening summary patient list based on location and time filters',
+                    notes: 'Returns details of patients who underwent prostate cancer screenings',
+                    tags: ['api'],
+                }
+
+            },
             {
                 method: 'GET',
                 path: '/etl/combined-breast-cervical-cancer-screening-numbers',
@@ -4587,6 +4626,319 @@ module.exports = function () {
 
                     },
                     description: 'Get Lung cancer treatment monthly patient list based on location and time filters',
+                    notes: 'Returns details of patients who underwent lung cancer treatment',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/breast-cancer-treatment-numbers',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                        'hapiAuthorization': {
+                            role: privileges.canViewClinicDashBoard
+                        },
+                        'openmrsLocationAuthorizer': {
+                            locationParameter: [{
+                                type: 'query', //can be in either query or params so you have to specify
+                                name: 'locationUuids' //name of the location parameter
+                            }]
+                        }
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'lung-cancer-treatment-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+
+                                let service = new LungCancerTreatmentSummary();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get lung cancer treatment summary details based on location and time filters',
+                    notes: 'Returns aggregates of lung cancer treatment',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/breast-cancer-treatment-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                        'openmrsLocationAuthorizer': {
+                            locationParameter: [{
+                                type: 'query', //can be in either query or params so you have to specify
+                                name: 'locationUuids' //name of the location parameter
+                            }]
+                        }
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'lung-cancer-treatment-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new LungCancerTreatmentSummary();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get Lung cancer treatment monthly patient list based on location and time filters',
+                    notes: 'Returns details of patients who underwent lung cancer treatment',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/social-history-numbers',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'social-history-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+
+                                let service = new SocialHistorySummary();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get social history summary details based on location and time filters',
+                    notes: 'Returns aggregates of social history summary',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/social-history-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'social-history-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new SocialHistorySummary();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get Social history monthly patient list based on location and time filters',
+                    notes: 'Returns details of patients whose demographics form was filled',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/patient-vitals-treatment-numbers',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'patient-vitals-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+
+                                let service = new PatientVitalsSummary();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get patient vitals summary details based on location and time filters',
+                    notes: 'Returns aggregates of patient vitals summary',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/patient-vitals-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'patient-vitals-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new PatientVitalsSummary();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get patient vitals monthly patient list based on location and time filters',
+                    notes: 'Returns details of patients whose demographics form was filled',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/palliative-care-numbers',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'palliative-care-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+
+                                let service = new PalliativeCareSummary();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get palliative care summary details based on location and time filters',
+                    notes: 'Returns aggregates of palliative care summary',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/palliative-care-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'palliative-care-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new PalliativeCareSummary();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get palliative care monthly patient list based on location and time filters',
+                    notes: 'Returns details of patients whose demographics form was filled',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/general-cancer-treatment-numbers',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                        'hapiAuthorization': {
+                            role: privileges.canViewClinicDashBoard
+                        }
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'general-cancer-treatment-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'encounterTypes', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+
+                                let service = new GeneralCancerTreatmentSummary();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get general cancer treatment summary details based on location and time filters',
+                    notes: 'Returns aggregates of general  cancer treatment',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/general-cancer-treatment-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'general-cancer-treatment-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new GeneralCancerTreatmentSummary();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get general cancer treatment monthly patient list based on location and time filters',
                     notes: 'Returns details of patients who underwent lung cancer treatment',
                     tags: ['api'],
                 }
