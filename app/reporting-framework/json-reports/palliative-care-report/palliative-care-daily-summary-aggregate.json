@@ -8,7 +8,7 @@
         "type": "dataset_def"
     }],
     "sources": [{
-        "dataSet": "palliativeCareSummaryBase",
+        "dataSet": "palliativeCareMonthlySummaryBase",
         "alias": "lct"
     }],
     "columns": [
@@ -27,7 +27,7 @@
         "alias": "encounter_datetime",
         "expressionType": "simple_expression",
         "expressionOptions": {
-            "expression": "date_format(lct.encounter_datetime, '%m-%Y')"
+            "expression": "date_format(lct.encounter_datetime, '%d-%m-%Y')"
         }
     },
     {
@@ -43,7 +43,7 @@
         "alias": "palliative_plan_None",
         "expressionType": "simple_expression",
         "expressionOptions": {
-            "expression": "sum(palliative_plan_None )"
+            "expression": "sum(palliative_plan_None)"
         }
     },
     {

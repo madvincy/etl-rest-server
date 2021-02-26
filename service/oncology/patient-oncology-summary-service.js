@@ -86,7 +86,88 @@ function getPatientOncologyDiagnosis(request) {
             ['openmrs.person', 't2', 't2.person_id=t1.person_id']
         ],
         table: "openmrs.obs",
-        where: ["t2.uuid = ? and t1.concept_id in ? and t1.voided = ?", patientUuid, [9841, 9871, 6536, 9844, 6551, 9846, 6540, 9843], 0],
+        where: ["t2.uuid = ? and t1.concept_id in ? and t1.voided = ?", patientUuid, [
+            6529,
+6530,
+6531,
+6532,
+6533,
+6515,
+6516,
+176773,
+6517,
+6518,
+6519,
+176774,
+6537,
+6538,
+6539,
+6553,
+6552,
+8423,
+6541,
+6542,
+6543,
+6545,
+9842,
+8424,
+8425,
+9845,
+6547,
+6548,
+6549,
+6550,
+1226,
+6556,
+9870,
+2,
+6557,
+177154,
+177153,
+6781,
+507,
+6486,
+6487,
+6488,
+6489,
+6485,
+6514,
+6520,
+6528,
+6536,
+6551,
+6540,
+6544,
+216,
+9846,9841, 9871, 6536, 6522,
+            6523,
+            6524,
+            6525,
+            6526,
+            6527,
+            6568, 7176, 9844, 6551, 9846, 6540, 9843], 0],
+        offset: request.startIndex,
+        limit: request.limit
+    };
+
+    return db.queryDb(queryParts)
+}
+
+function getPatientAppointments(request) {
+    let patientUuid = request.uuid;
+    let queryParts = {
+        columns: "t1.concept_id,t1.value_datetime,obs_datetime, CONCAT(COALESCE(given_name), ' ', COALESCE(middle_name,' '), ' ', COALESCE(family_name)) as provider_name",
+        order: [{
+            column: 'encounter_id',
+            asc: false
+        }],
+        joins: [
+            ['openmrs.person', 't2', 't2.person_id=t1.person_id'],
+            ['openmrs.users', 't3', 't3.user_id=t1.creator'],
+            ['openmrs.person_name', 't4', 't4.person_id = t3.person_id']
+        ],
+        table: "openmrs.obs",
+        where: ["t2.uuid = ? and t1.concept_id in ? and t1.voided = ?", patientUuid, [5096], 0],
         offset: request.startIndex,
         limit: request.limit
     };
@@ -102,7 +183,7 @@ function getOncologyIntegratedProgramSnapshot(request) {
             column: 'encounter_id',
             asc: false
         }],
-        group:['t1.visit_id'],
+        group: ['t1.visit_id'],
         joins: [
             ['openmrs.visit', 't2', 't2.visit_id=t1.visit_id'],
             ['openmrs.visit_type', 't3', 't3.visit_type_id=t2.visit_type_id'],
@@ -110,11 +191,11 @@ function getOncologyIntegratedProgramSnapshot(request) {
             ['openmrs.location', 't5', 't5.location_id=t1.location_id'],
         ],
         table: "openmrs.encounter",
-      where: [
-        't4.uuid = ? and t2.visit_type_id in ? and t1.voided = ?',
-        patientUuid,
-        [5, 6, 70, 72, 71],
-        0],
+        where: [
+            't4.uuid = ? and t2.visit_type_id in ? and t1.voided = ?',
+            patientUuid,
+            [5, 6, 70, 72, 71],
+            0],
         offset: request.startIndex,
         limit: request.limit
     };
@@ -122,4 +203,4 @@ function getOncologyIntegratedProgramSnapshot(request) {
     return db.queryDb(queryParts)
 }
 
-export {generateMedsDataSet, getOncMeds, getPatientOncologyDiagnosis, getOncologyIntegratedProgramSnapshot}
+export { generateMedsDataSet, getOncMeds, getPatientOncologyDiagnosis, getPatientAppointments, getOncologyIntegratedProgramSnapshot }

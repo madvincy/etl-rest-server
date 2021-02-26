@@ -11,7 +11,8 @@
         "dataSet": "palliativeCareMonthlySummaryBase",
         "alias": "lct"
     }],
-    "columns": [{
+    "columns": [
+        {
         "type": "simple_column",
         "alias": "location_name",
         "column": "location_name"

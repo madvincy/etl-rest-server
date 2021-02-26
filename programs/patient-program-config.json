@@ -37,9 +37,18 @@
           }, {
             "uuid": "5fa823ce-7592-482f-a0aa-361abf326ade",
             "display": "TreatmentTriage"
-          },{
+          },
+          {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+         {
             "uuid": "dacdbe88-552a-479d-a7de-a6ebb032615b",
             "display": "Nuitrition"
+          },
+          {
+            "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+            "display": "Cadex"
           },
           {
             "uuid": "20cf1516-a431-45b8-997e-e3d366aec71e",
@@ -63,10 +72,23 @@
           {
             "uuid": "669f1ac2-11dc-45b9-af41-282dc12a206a",
             "display": "TreatmentReturn"
-          }, {
+          }, 
+          {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+          {
+            "uuid": "27acce6c-429e-4d12-be39-26fea4e1e4a9",
+            "display": "Post Treatment Encounter"
+          },
+          {
             "uuid": "5fa823ce-7592-482f-a0aa-361abf326ade",
             "display": "TreatmentTriage"
           }, 
+          {
+            "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+            "display": "Cadex"
+          },
           {
             "uuid": "c96fee8f-8a60-4f74-96b8-63eefdddaf73",
             "display": "Palliative"
@@ -76,11 +98,12 @@
             "display": "Nuitrition"
           },
           {
-            "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
+            "uuid": "94c45245-0c5e-455e-be2b-ced993c5b612",
             "display": "DEATHREPORT"
           }
         ]
-      } 
+      }
+
     ]
   },
   "37ff4124-91fd-49e6-8261-057ccfb4fcd0": {
@@ -112,6 +135,10 @@
             "display": "ONCOLOGYSCREENINGTRIAGE"
           },
           {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+          {
             "uuid": "9bc0fa73-474e-45ab-bdac-7282e95d856f",
             "display": "ONCOLOGYDYSPLASIA"
           },
@@ -120,6 +147,10 @@
             "uuid": "238625fc-8a25-44b2-aa5a-8bf48fa0e18d",
             "display": "ONCOLOGYVIA",
             "allowedIf": "gender === 'F'"
+          },
+          {
+            "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+            "display": "Cadex"
           },
           {
             "uuid": "f8e35989-74b7-4a18-87ac-31e98b8d9004",
@@ -150,6 +181,14 @@
               "display": "ONCOLOGYSCREENINGTRIAGE"
             },
             {
+              "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+              "display": "COMPASSIONATE"
+           },
+            {
+              "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+              "display": "Cadex"
+            },
+            {
               "uuid": "2a501226-543c-4f64-8a7a-f1426d7109f8",
               "display": "ICIPROSTATE",
               "allowedIf": "gender === 'M'"
@@ -163,15 +202,27 @@
       },
       {
         "uuid": "3f00bd7a-fab4-4cbd-984b-9fcb5d38e070",
-        "name": "Diagnosis",  
+        "name": "Diagnosis Visit",  
         "encounterTypes": [
           {
             "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
             "display": "DEATHREPORT"
           },
           {
-            "uuid": "00da8227-e7da-43c2-99b2-a4f237dd3924",
-            "display": "GYNPATHOLOGYRESULTS "
+            "uuid": "f8e35989-74b7-4a18-87ac-31e98b8d9004",
+            "display": "ONCOLOGYSCREENINGTRIAGE"
+          },
+          {
+            "uuid": "b8a06ba5-238f-4841-96b4-d8bfa3e10b19",
+            "display": "diagnosis"
+          },      
+          {
+            "uuid": "a2d6a8b6-ddd3-490d-8294-b53e42193c84",
+            "display": "SAMPLECOLLECTION"
+          },
+          {
+             "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+             "display": "COMPASSIONATE"
           },
           {
             "uuid": "a4c4dacc-11ff-4301-99a4-88d52c1390d5",
@@ -184,8 +235,16 @@
         "name": "Management visit",  
         "encounterTypes": [
           {
-            "uuid": "a4c4dacc-11ff-4301-99a4-88d52c1390d5",
-            "display": "ONCOLOGYCASEMANAGEMENT"
+            "uuid": "f8e35989-74b7-4a18-87ac-31e98b8d9004",
+            "display": "ONCOLOGYSCREENINGTRIAGE"
+          },
+          {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+          {
+            "uuid": "d7151f82-c1f3-4152-a605-2f9ea7414a79",
+            "display": "ICISECONDARYSCREENING"
           }
         ]
       },
@@ -194,15 +253,134 @@
         "name": "Sickle Cell Screening ",
         "encounterTypes": [
           {
-            "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
-            "display": "DEATHREPORT"
+            "uuid": "f8e35989-74b7-4a18-87ac-31e98b8d9004",
+            "display": "ONCOLOGYSCREENINGTRIAGE"
+          },
+          {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+          {
+            "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+            "display": "Cadex"
           },
           {
             "uuid": "bb1ad67a-5363-42fd-a53e-ba0047eb431c",
             "display": "SICKLECELLSCREENING"
+          },
+          {
+            "uuid": "df55584c-1350-11df-a1f1-0026b9348838",
+            "display": "DEATHREPORT"
           }
         ]
       }
+    ]
+  },
+  "e48b266e-4d80-41f8-a56a-a8ce5449ebc6": {
+    "name": " SICKLE CELL TREATMENT PROGRAM",
+    "incompatibleWith": [],
+    "dataDependencies": [
+      "patient",
+      "enrollment",
+      "patientEncounters"
+    ],
+    "enrollmentOptions": {
+      "requiredProgramQuestions": [],
+      "allowMultipleEnrollment": false,
+      "stateChangeEncounterTypes": {
+        "enrollment": [],
+        "transfer": [{
+          "uuid": "cbe2d31d-2201-44ce-b52e-fbd5dc7cff33",
+          "name": "AMPATH POC Transfer Out Form v0.01",
+          "required": true
+        }],
+        "discharge": [{
+          "uuid": "9765992c-6279-46cc-915b-452a73e7dab5",
+          "name": "AMPATH POC HIV Exit Care Form v1.1",
+          "required": true
+        }]
+      }
+    },
+    "visitTypes": [
+      {
+        "uuid": "8963d130-d8c7-4cf3-b8ef-adbf5f3816e9",
+        "name": "Sickle Cell Treatment Initial Visit",
+        "message": "Patient must not have a prior clinical encounter.",
+        "allowedIf": "isFirstOncologyVisit",
+        "encounterTypes": [
+          {     
+            "uuid": "ba5a15eb-576f-496b-a58d-e30b802a5da5",
+            "display": "Sickle Cell Treatment initial"
+          }, 
+          {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+         {
+            "uuid": "5fa823ce-7592-482f-a0aa-361abf326ade",
+            "display": "TreatmentTriage"
+          },{
+            "uuid": "dacdbe88-552a-479d-a7de-a6ebb032615b",
+            "display": "Nuitrition"
+          },
+          {
+            "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+            "display": "Cadex"
+          },
+          {
+            "uuid": "20cf1516-a431-45b8-997e-e3d366aec71e",
+            "display": "SocialHistory"
+          },
+          {
+            "uuid": "c96fee8f-8a60-4f74-96b8-63eefdddaf73",
+            "display": "Palliative"
+          },
+          {
+            "uuid": "94c45245-0c5e-455e-be2b-ced993c5b612",
+            "display": "DEATHREPORT"
+          }
+        ]
+      }, {
+        "uuid": "cfedf31e-95f4-4248-9b1f-42844b4e8f3b",
+        "name": "Sickle Cell Treatment Return Visit",
+        "message": "Patient must have a prior clinical encounter.",
+        "allowedIf": "!isFirstOncologyVisit",
+        "encounterTypes": [
+          {
+            "uuid": "3a0e7e4e-426e-4dc7-8f60-9114c43432eb",
+            "display": "Sickle Cell Treatment Return"
+          }, 
+          {
+            "uuid": "b9855629-8542-4777-b7e3-71f3a0a9d55d",
+            "display": "COMPASSIONATE"
+         },
+          {
+            "uuid": "27acce6c-429e-4d12-be39-26fea4e1e4a9",
+            "display": "Post Treatment Encounter"
+          },
+          {
+            "uuid": "5fa823ce-7592-482f-a0aa-361abf326ade",
+            "display": "TreatmentTriage"
+          }, 
+          {
+            "uuid": "977566dd-6c98-40e5-928f-512fb715d02a",
+            "display": "Cadex"
+          },
+          {
+            "uuid": "c96fee8f-8a60-4f74-96b8-63eefdddaf73",
+            "display": "Palliative"
+          },
+          {
+            "uuid": "dacdbe88-552a-479d-a7de-a6ebb032615b",
+            "display": "Nuitrition"
+          },
+          {
+            "uuid": "94c45245-0c5e-455e-be2b-ced993c5b612",
+            "display": "DEATHREPORT"
+          }
+        ]
+      }
+
     ]
   }
 }

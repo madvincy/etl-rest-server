@@ -522,7 +522,7 @@
      {"joinType":"JOIN","schema":"openmrs","tableName":"person","alias":"t3","joinExpression":"t3.person_id = t2.patient_id"},
      {"joinType":"JOIN","schema":"openmrs","tableName":"location","alias":"t5","joinExpression":"t2.location_id = t5.location_id"},
      {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"patient_identifier","alias":"t4","joinExpression":"t4.patient_id = t2.patient_id"},
-     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"person_attribute","alias":"contacts","joinExpression":"t3.person_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (10, 48)"},
+     {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"person_attribute","alias":"contacts","joinExpression":"t3.person_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (8, 11, 16)"},
      {"joinType":"LEFT OUTER JOIN","schema":"openmrs","tableName":"person_address","alias":"pa","joinExpression":"t3.person_id = pa.person_id"}
      ],
  "parameters": [

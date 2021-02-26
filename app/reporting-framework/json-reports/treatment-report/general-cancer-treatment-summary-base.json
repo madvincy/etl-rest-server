@@ -3437,6 +3437,31 @@
             }
         },
 
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type IN (13), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type IN (13) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type IN (13) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+
 
 
 
@@ -5363,6 +5388,116 @@
                 "expression": "(IF(breast_cancer IN (1), 1, NULL))"
             }
         },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (1) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (1) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (2) , 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (2) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (2) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (3) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (3) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (4) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (4) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+
+
 
 
 

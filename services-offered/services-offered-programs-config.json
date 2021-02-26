@@ -5,6 +5,10 @@
            {
                "uuid":"725b5193-3452-43fc-aca3-6a80432d9bfa",
                "name": "GENERAL TREATMENT PROGRAM"
+           },
+           {
+            "uuid":"e48b266e-4d80-41f8-a56a-a8ce5449ebc6",
+            "name": "SICKLE CELL TREATMENT PROGRAM"         
            }
        ]
    },

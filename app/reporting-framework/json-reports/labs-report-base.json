@@ -30,7 +30,7 @@
             "alias": "contacts",
             "join": {
                 "type": "LEFT",
-                "joinCondition": "t2.person_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (10, 48)"
+                "joinCondition": "t2.person_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (11)"
             }
         },
         {

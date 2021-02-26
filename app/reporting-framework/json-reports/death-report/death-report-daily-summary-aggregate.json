@@ -1,0 +1,325 @@
+{
+    "name": "ProstateCancerScreeningDailySummaryAggregate",
+    "version": "1.0",
+    "tag": "death_reprot_daily_summary_aggregate",
+    "uses": [
+        {
+            "name": "deathReportDailySummaryBase",
+            "version": "1.0",
+            "type": "dataset_def"
+        }
+    ],
+    "sources": [
+        {
+            "dataSet": "deathReportMonthlySummaryBase",
+            "alias": "lct"
+        }
+    ],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "location_name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "location_uuid"
+        },
+        {
+            "type": "derived_column",
+            "alias": "encounter_datetime",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "date_format(lct.encounter_datetime, '%d-%m-%Y')"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "not_deceased_error",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(not_deceased_error)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "provider_department_Outreach",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(provider_department_Outreach)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "provider_department_Outreach",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(provider_department_Outreach)"
+            }
+        },
+
+        {
+            "type": "derived_column",
+            "alias": "provider_department_Social_work",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(provider_department_Social_work)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "provider_department_Nutiritional_support",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(provider_department_Nutiritional_support)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "provider_department_Pychosocial_support",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(provider_department_Nutiritional_support)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "provider_department_Clinical_department",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(provider_department_Clinical_department)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_category_Adult",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_category_Adult)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_category_Pead",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_category_Pead)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_date_Confirmed",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_date_Confirmed)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_date_estimated",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_date_estimated)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "place_of_death_Home",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(place_of_death_Home)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "place_of_death_Hospital",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(place_of_death_Hospital)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "place_of_death_Unknown",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(place_of_death_Unknown)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "place_of_death_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(place_of_death_Other)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cause_of_death_Health_issues",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cause_of_death_Health_issues)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cause_of_death_Other_natural_issues",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cause_of_death_Other_natural_issues)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cause_of_death_Unkown",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cause_of_death_Unkown)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cause_of_death_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cause_of_death_Other)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_investigation_done_Yes",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_investigation_done_Yes)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_investigation_done_No",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_investigation_done_No)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_investigation_done_Unknown",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_investigation_done_Unknown)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_investigation_method_verbal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_investigation_method_verbal)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_investigation_method_postmoterm",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_investigation_method_postmoterm)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Spouse",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Spouse)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Sibling",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Sibling)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Mother",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Mother)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Friend",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Friend)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Grandparent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Grandparent)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Father",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Father)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Clinician_or_Health_worker",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Clinician_or_Health_worker)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Other_family_members",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Other_family_members)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "death_reported_by_Other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(death_reported_by_Other)"
+            }
+        }
+    ],
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "location_id",
+            "DATE(lct.encounter_datetime)"
+        ],
+        "excludeParam": "excludeParam"
+    },
+    "dynamicJsonQueryGenerationDirectives": {
+        "patientListGenerator": {
+            "useTemplate": "death_report_patient_list_template",
+            "useTemplateVersion": "1.0",
+            "generatingDirectives": {
+                "joinDirectives": {
+                    "joinType": "INNER",
+                    "joinCondition": "<<base_column>> = <<template_column>>",
+                    "baseColumn": "person_id",
+                    "templateColumn": "person_id"
+                }
+            }
+        }
+    }
+}

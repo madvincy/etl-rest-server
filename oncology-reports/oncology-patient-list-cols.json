@@ -1,126 +1,278 @@
- {
-     "142939b0-28a9-4649-baf9-a9d012bf3b3d" : {      
+{
+    "142939b0-28a9-4649-baf9-a9d012bf3b3d": {
         "program": "Breast Cancer",
         "report": "Breast Cancer Screening",
-        "indicators": [{
+        "indicators": [
+            {
                 "indicator": "total_breast_screened",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
+                    
                 ]
-
             },
             {
                 "indicator": "normal_breast_screening_findings",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "hiv_status" ,"patient_uuid", "screening_mode", "diagnostic_interval","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "hiv_status",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_breast_screening_findings_below_30yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_breast_screening_findings_30_to_40yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_breast_screening_findings_41_to_50yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_breast_screening_findings_51_to_69yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_breast_screening_findings_above_70yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_breast_screening_findings",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
-                ]
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid",
+                    "procedure_done"
 
+                
+                ]
             },
             {
                 "indicator": "abnormal_breast_screening_findings_below_30yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_breast_screening_findings_30_to_40yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_breast_screening_findings_41_to_50yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_breast_screening_findings_51_to_69yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_breast_screening_findings_above_70yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_breast_call_rate",
-                "patientListCols": [
-                ]
-
+                "patientListCols": []
             },
             {
                 "indicator": "normal_breast_call_rate",
-                "patientListCols": [
-                ]
-
+                "patientListCols": []
             },
             {
                 "indicator": "diagnostic_interval",
-                "patientListCols": [ "encounter_datetime" , "location_name", "identifiers" , "person_name" , "gender" , "age" , "phone_number", "diagnosis" ,
-                     "date_patient_informed_of_results" , "diagnostic_interval" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "diagnosis",
+                    "date_patient_informed_of_results",
+                    "diagnostic_interval",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "clients_staged_before_treatment",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "total_reffered_for_followup",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" ,"phone_number" ,"patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
             },
             {
                 "indicator": "biopsy_results_within_2wks",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "biopsy_results_within_2wks",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             }
         ]
     },
@@ -130,389 +282,2845 @@
         "indicators": [
             {
                 "indicator": "total_cervical_screened",
-                "patientListCols": ["encounter_datetime" , "location_name" ,"identifiers", "person_name" , "gender" , "age" , "type_of_abnormality" ,"procedure_done" ,"patient_uuid","date_patient_informed_of_results"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "type_of_abnormality",
+                    "procedure_done",
+                    "patient_uuid",
+                    "date_patient_informed_of_results"
                 ]
             },
             {
                 "indicator": "normal_cervical_screening",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers", "person_name" , "gender" , "age" ,"hiv_status",  "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_cervical_screening_below_30yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_cervical_screening_30_to_40yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_cervical_screening_41_to_50yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_cervical_screening_51_to_69yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "normal_cervical_screening_above_70yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_screening",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers", "person_name" , "gender", "age" , "hiv_status" , "phone_number" , "type_of_abnormality" ,
-                     "procedure_done" , "patient_uuid", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "procedure_done",
+                    "patient_uuid",
+                    "diagnostic_interval"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_screening_below_30yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" , "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "patient_uuid",
+                    "screening_mode",
+                    "diagnostic_interval"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_screening_30_to_40yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" ,"procedure_done", "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "procedure_done",
+                    "patient_uuid",
+                    "screening_mode",
+                    "diagnostic_interval"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_screening_41_to_50yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" ,"procedure_done", "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "procedure_done",
+                    "patient_uuid",
+                    "screening_mode",
+                    "diagnostic_interval"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_screening_51_to_69yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" ,"procedure_done", "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "procedure_done",
+                    "patient_uuid",
+                    "screening_mode",
+                    "diagnostic_interval"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_screening_above_70yrs",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "hiv_status" , "phone_number" ,"type_of_abnormality" ,"procedure_done", "patient_uuid", "screening_mode", "diagnostic_interval"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "hiv_status",
+                    "phone_number",
+                    "type_of_abnormality",
+                    "procedure_done",
+                    "patient_uuid",
+                    "screening_mode",
+                    "diagnostic_interval"
                 ]
-
             },
             {
                 "indicator": "abnormal_cervical_call_rate",
-                "patientListCols": [
-                ]
-
+                "patientListCols": []
             },
             {
                 "indicator": "normal_cervical_call_rate",
-                "patientListCols": [
-                ]
-
+                "patientListCols": []
             },
             {
                 "indicator": "diagnostic_interval",
-                "patientListCols": [ "encounter_datetime" , "location_name","identifiers","person_name","gender","age", "phone_number", "diagnosis" , "cancer_stage",
-                    "date_patient_informed_of_results" , "diagnostic_interval" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "diagnosis",
+                    "cancer_stage",
+                    "date_patient_informed_of_results",
+                    "diagnostic_interval",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "clients_staged_before_treatment",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "total_reffered_for_followup",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" ,  "phone_number" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "biopsy_results_within_2wks",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             }
         ]
     },
-    "b2837614-e144-4bec-abc2-e9f5e3116bb9" : {      
+    "b2837614-e144-4bec-abc2-e9f5e3116bb9": {
         "program": "Breast and Cervical Cancer Screening",
         "report": "Breast and Cervical Cancer Screening",
-        "indicators": [{
+        "indicators": [
+            {
                 "indicator": "total_breast_screened",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age" , "phone_number"  , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "total_cervical_screened",
-                "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender"  ,"patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "patient_uuid"
                 ]
-
             },
             {
                 "indicator": "total_breast_and_cervical_screened",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age" , "phone_number"  , "patient_uuid"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
                 ]
-
             }
         ]
     },
-    "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9" : {      
+    "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9": {
         "program": "Lung Cancer Treatment",
         "report": "Lung Cancer Treatment",
-        "indicators": [{
-            "indicator": "enrolled_patients",
-            "patientListCols": ["encounter_datetime", "location_name", "identifiers", "person_name", "gender", "age", "phone_number", "hiv_status"]
-
+        "indicators": [
+            {
+                "indicator": "enrolled_patients",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "hiv_status"
+                ]
             },
             {
                 "indicator": "deceased",
-                "patientListCols": ["encounter_datetime", "location_name", "identifiers", "person_name", "gender", "age", "phone_number"]
-
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
             },
             {
                 "indicator": "lost_to_follow_up",
-                "patientListCols": ["encounter_datetime", "location_name", "identifiers", "person_name", "gender", "age", "phone_number"]
-
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
             },
             {
                 "indicator": "active_patients",
-                "patientListCols": ["encounter_datetime", "location_name", "identifiers", "person_name", "gender", "age", "phone_number"]
-
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
             },
             {
                 "indicator": "for_staging",
-                "patientListCols": ["encounter_datetime", "location_name", "identifiers", "person_name", "gender", "age", "phone_number"]
-
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
             },
             {
                 "indicator": "referred_from_clinic",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number", "referred_from"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "referred_from"
                 ]
-
             },
             {
                 "indicator": "non_small_cell_lung_cancer",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "epidermoid_carcinoma",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "adenocarcinoma",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "large cell carcinoma",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "mixed squamous",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "small cell lung cancer",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "stage_one",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number ", "metastasis_region"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number ",
+                    "metastasis_region"
                 ]
             },
             {
                 "indicator": "stage_two",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number", "metastasis_region"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "metastasis_region"
                 ]
             },
             {
                 "indicator": "stage_three",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number", "metastasis_region"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "metastasis_region"
                 ]
             },
             {
                 "indicator": "stage_four",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number", "metastasis_region"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "metastasis_region"
                 ]
             },
             {
                 "indicator": "limited stage",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number", "metastasis_region"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "metastasis_region"
                 ]
             },
             {
                 "indicator": "extensive stage",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number", "metastasis_region"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "metastasis_region"
                 ]
             },
             {
                 "indicator": "chemotherapy",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "radiotherapy",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             },
             {
                 "indicator": "surgery",
-                "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age", "phone_number"
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cause_of_death_Health_issues",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cause_of_death_Other",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cause_of_death_Other_natural_issues",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cause_of_death_Unkown",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_date_Confirmed",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_date_estimated",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_investigation_done_No",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_investigation_done_Unknown",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_investigation_done_Yes",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_investigation_method_postmoterm",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_investigation_method_verbal",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Clinician_or_Health_worker",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Father",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Friend",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Grandparent",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Mother",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Other",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Other_family_member",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Sibling",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "death_reported_by_Spouse",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "encounter_datetime",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_category_Adult",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_category_Pead",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "place_of_death_Home",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "place_of_death_Hospital",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "place_of_death_Other",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "place_of_death_Unknown",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "provider_department_Clinical_department",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "provider_department_Nutiritional_support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "provider_department_Outreach",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "provider_department_Pychosocial_support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "provider_department_Social_work",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "Community_mass_screening_event_refferal",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "Referred_from_private_sector",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "Referred_from_public_facility",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "alcohol_type_Beer",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "alcohol_type_Busaa",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "alcohol_type_Changaa",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "alcohol_type_Liquor",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "alcohol_type_Wine",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cigarettes_smoking_no",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cigarettes_smoking_stopped",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "cigarettes_smoking_yes",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "deceased",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "dont_have_nhif_cover",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "drink_alcohol_no",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "drink_alcohol_stopped",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "drink_alcohol_yes",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Children",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Maternal_grandparents",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Maternal_uncles_or_aunties",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Parents",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Paternal_grandparents",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Paternal_uncles_or_aunties",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Self",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "family_mem_with_cancer_Siblings",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "have_nhif_cover",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_1001_to_10000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_10001_to_20000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_20001_to_30000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_30001_to_40000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_40001_to_50000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_Less_than_1000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "income_amount_More_than_50000_Ksh",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Casual_worker",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Civil_servant",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Farmer",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Formal_employment",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Health_professional",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Housewife",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Teacher",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Truck_driver",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_Unemployed",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_other",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_self_employed",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "main_occupation_student",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_Divorced",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_Living_with_partner",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_Never_married",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_Not_applicable",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_Separated",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_Widowed",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_married_monogamous",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "marital_status_married_polygamous",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_paid_by_Donors",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_paid_by_Government",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_paid_by_Other",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_paid_by_Parents",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_paid_by_Self",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_paid_by_Siblings",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_status_active",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "nhif_status_inactive",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_edu_level_None",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_edu_level_Pre_unit",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_edu_level_Primary",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_edu_level_Secondary",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_edu_level_Tertiary",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Buddhist",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Buddhist_None",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Catholic",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Hindu",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Islamic",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Protestant",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "religious_affiliation_Traditionalism",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "self_refferal",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_duration_Between_1_and_2_hours",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_duration_Between_2_and_4_hours",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_duration_Between_4_and_8_hours",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_duration_Between_30_and_60_min",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_duration_Less_than_30_mins",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_duration_More_than_8_hours",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_mode_Boda_Boda",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_mode_Bus",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_mode_Matatu",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_mode_Private_car",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_mode_Taxi",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "travel_mode_Walking",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "comorbid_illness_no",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "comorbid_illness_yes",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "encounter_datetime",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_negative",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_negative_female",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_negative_male",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_positive",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_positive_female",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_positive_male",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_unknown",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_unknown_female",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "hiv_status_unknown_male",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "location_name",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "location_uuid",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_form_filled",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Bereavement",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Counseling",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Daycare",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Financial_Support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Legal_Aid",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_None",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Nutritional_Support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Nutritional_supplements",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Pain_or_Symptom_Management",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_plan_Spiritual_Care",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Bereavement",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Care_support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Emotional_or_Psychological_support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_End_of_life_care",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Financial_Support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Other",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Pain_or_symptom_control",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Routine_care",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "palliative_reason_Spiritual_Support",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_not_referred",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {
+                "indicator": "patient_referred",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+            {   "indicator": "Abnormal_bmi_obese",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "Abnormal_bmi_overweight",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "Abnormal_bmi_underweight",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "abnormal_oxygen_sat",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "abnormal_pulse",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "high_abnormal_temperature",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "normal_bmi",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "normal_oxygen_sat",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
+                ]
+            },
+   {   "indicator": "normal_pulse",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number"
                 ]
             }
         ]
     },
-    "b2db2bdf-67e9-42c5-858c-c7e435742ef5" : {  
-    "program": "Lung Cancer",
-    "report": "Lung Cancer Screening",
-    "indicators": [{
-            "indicator": "total_lung_screened",
-            "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" ,  "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "walk_in",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "referred_from_clinic",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "referred_from"
-            ]
-
-        },
-        {
-            "indicator": "cigarette_smoking",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "pack_years"
-            ]
-
-        },
-        {
-            "indicator": "tobacco_use",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "chemical_exposure",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "asbestos_exposure",
-            "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "hiv_positive",
-            "patientListCols": [ "encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" ,"phone_number" ,"patient_uuid"
-            ]
-        },
-        {
-            "indicator": "hiv_negative",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "hiv_status_unknown",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "tb_treatment_received",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "no_tb_treatment",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid"
-            ]
-
-        },
-        {
-            "indicator": "normal_xray_results",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "imaging_results_description"
-            ]
-
-        },
-        {
-            "indicator": "abnormal_xray_results",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "imaging_results_description"
-            ]
-
-        },
-        {
-            "indicator": "indication_of_lung_mass_from_ct_findings",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "imaging_results_description"
-            ]
-
-        },
-        {
-            "indicator": "indication_of_mediastial_mass_from_ct_findings",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "imaging_results_description"
-            ]
-
-        },
-        {
-            "indicator": "indication_of_pleural_mass_from_ct_findings",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "phone_number" , "patient_uuid", "imaging_results_description"
-            ]
-
-        },
-        {
-            "indicator": "non_respiratory_disease",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "patient_uuid", "biopsy_result", "biopsy_workup_date", "diagnosis_date", "imaging_results_description", "diagnosis_interval", "referrals"
-            ]
-
-        },
-        {
-            "indicator": "biopsy_done",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "patient_uuid", "biopsy_result", "biopsy_workup_date", "diagnosis_date", "imaging_results_description", "diagnosis_interval", "referrals"
-            ]
-
-        },
-        {
-            "indicator": "biopsy_not_done",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "patient_uuid", "biopsy_result", "biopsy_workup_date", "diagnosis_date", "imaging_results_description", "diagnosis_interval", "referrals"
-            ]
-
-        },
-        {
-            "indicator": "non_small_cell_lung_cancer",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "patient_uuid", "biopsy_result", "biopsy_workup_date", "diagnosis_date", "imaging_results_description", "diagnosis_interval", "referrals"
-            ]
-
-        },
-        {
-            "indicator": "small_cell_lung_cancer",
-            "patientListCols": ["encounter_datetime" , "location_name" , "identifiers" , "person_name" , "gender" , "age" , "patient_uuid", "biopsy_result", "biopsy_workup_date", "diagnosis_date", "imaging_results_description", "diagnosis_interval", "referrals"
-            ]
-
-        }
-    ]  
-}  
+    "b2db2bdf-67e9-42c5-858c-c7e435742ef5": {
+        "program": "Lung Cancer",
+        "report": "Lung Cancer Screening",
+        "indicators": [
+            {
+                "indicator": "total_lung_screened",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "walk_in",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "referred_from_clinic",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "referred_from"
+                ]
+            },
+            {
+                "indicator": "cigarette_smoking",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "pack_years"
+                ]
+            },
+            {
+                "indicator": "tobacco_use",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "chemical_exposure",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "asbestos_exposure",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "hiv_positive",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "hiv_negative",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "hiv_status_unknown",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "tb_treatment_received",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "no_tb_treatment",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid"
+                ]
+            },
+            {
+                "indicator": "normal_xray_results",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "imaging_results_description"
+                ]
+            },
+            {
+                "indicator": "abnormal_xray_results",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "imaging_results_description"
+                ]
+            },
+            {
+                "indicator": "indication_of_lung_mass_from_ct_findings",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "imaging_results_description"
+                ]
+            },
+            {
+                "indicator": "indication_of_mediastial_mass_from_ct_findings",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "imaging_results_description"
+                ]
+            },
+            {
+                "indicator": "indication_of_pleural_mass_from_ct_findings",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "phone_number",
+                    "patient_uuid",
+                    "imaging_results_description"
+                ]
+            },
+            {
+                "indicator": "non_respiratory_disease",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "patient_uuid",
+                    "biopsy_result",
+                    "biopsy_workup_date",
+                    "diagnosis_date",
+                    "imaging_results_description",
+                    "diagnosis_interval",
+                    "referrals"
+                ]
+            },
+            {
+                "indicator": "biopsy_done",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "patient_uuid",
+                    "biopsy_result",
+                    "biopsy_workup_date",
+                    "diagnosis_date",
+                    "imaging_results_description",
+                    "diagnosis_interval",
+                    "referrals"
+                ]
+            },
+            {
+                "indicator": "biopsy_not_done",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "patient_uuid",
+                    "biopsy_result",
+                    "biopsy_workup_date",
+                    "diagnosis_date",
+                    "imaging_results_description",
+                    "diagnosis_interval",
+                    "referrals"
+                ]
+            },
+            {
+                "indicator": "non_small_cell_lung_cancer",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "patient_uuid",
+                    "biopsy_result",
+                    "biopsy_workup_date",
+                    "diagnosis_date",
+                    "imaging_results_description",
+                    "diagnosis_interval",
+                    "referrals"
+                ]
+            },
+            {
+                "indicator": "small_cell_lung_cancer",
+                "patientListCols": [
+                    "encounter_datetime",
+                    "location_name",
+                    "identifiers",
+                    "person_name",
+                    "gender",
+                    "age",
+                    "patient_uuid",
+                    "biopsy_result",
+                    "biopsy_workup_date",
+                    "diagnosis_date",
+                    "imaging_results_description",
+                    "diagnosis_interval",
+                    "referrals"
+                ]
+            }
+        ]
+    }
 }

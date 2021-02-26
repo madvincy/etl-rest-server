@@ -1,12 +1,21 @@
 [
 
   {
-    "program": "General Cancer Treatment report",
+    "program": "General Cancer Treatment reports",
     "uuid": "725b5193-3452-43fc-aca3-6a80432d9bfa",
     "reports": [{
       "name": "G1. General Cancer Treatment  numbers",
       "type": "general-cancer-treatment-numbers",
       "description": "General Cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
+    }]
+  },
+  {
+    "program": "Patient Social-History Reports",
+    "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
+    "reports": [{
+      "name": "S1. Patient Social-History",
+      "type": "social-history-numbers",
+      "description": "Cervical cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
     }]
   },
   {
@@ -19,7 +28,7 @@
     }]
   },
   {
-    "program": "Palliative Care Report",
+    "program": "Palliative Care Reports",
     "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
     "reports": [{
       "name": "P1. Palliative numbers",
@@ -28,12 +37,12 @@
     }]
   },
   {
-    "program": "Patient Social-History Reports",
+    "program": "Death Reports",
     "uuid": "1a5a9a8d-f4a8-4c48-b63a-22f84530b4b9",
     "reports": [{
-      "name": "S1. Patient Social-History",
-      "type": "social-history-numbers",
-      "description": "Cervical cancer treatment numbers contains the following indicators - total patients, walk-in, referred from clinic, diagnosis without procedures done, diagnosis with procedures, non-small cell lung cancer, epidermoid carcinoma / squamous cell carcinoma, adenocarcinoma, large cell carcinoma, mixed squamous, small cell lung cancer, stage I, stage II, stage III, stage IV, limited stage, extensive stage, chemotherapy, radiotherapy, surgery"
+      "name": "D1. Death Report numbers",
+      "type": "death-report-numbers",
+      "description": "Death Report numbers contains the following indicators - total patients who have died, provider_department, patient_category, date_of_death, confirmed_estimated, death_place, death_location, cause_of_death, other_death_cause,  death_investigation_done, investigation_method,  death_reported_by"
     }]
   }
 

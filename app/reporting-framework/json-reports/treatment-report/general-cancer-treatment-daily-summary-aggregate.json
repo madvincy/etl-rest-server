@@ -5345,7 +5345,7 @@
         },
         {
             "type": "derived_column",
-            "alias": "breast_cancer",
+            "alias": "breast_cancer_type",
             "expressionType": "simple_expression",
             "expressionOptions": {
                 "expression": "sum(breast_cancer)"
@@ -5381,6 +5381,47 @@
             "expressionType": "simple_expression",
             "expressionOptions": {
                 "expression": "ROUND(sum(breast_cancer_female)/sum(breast_cancer)*100,2)"
+            }
+        },
+
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Hematologic_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Hematologic_cancer_male)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_male_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(Hematologic_cancer_male)/sum(Hematologic_cancer)*100,2)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(Hematologic_cancer_female)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_female_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(Hematologic_cancer_female)/sum(Hematologic_cancer)*100,2)"
             }
         },
         {
@@ -7967,6 +8008,178 @@
                 "expression": "ROUND(sum(other_breast_cancer_female)/sum(other_breast_cancer)*100,2)"
             }
         },
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Hemophilia_A)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Hemophilia_A_male)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_male_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_Hemophilia_A_male)/sum(hematological_Hemophilia_A)*100,2)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Hemophilia_A_female)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_female_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_Hemophilia_A_female)/sum(hematological_Hemophilia_A)*100,2)"
+            }
+        },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Hemophilia_B)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Hemophilia_B_male)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_male_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_Hemophilia_B_male)/sum(hematological_Hemophilia_B)*100,2)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Hemophilia_B_female)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_female_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_Hemophilia_B_female)/sum(hematological_Hemophilia_B)*100,2)"
+            }
+        },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Sickle_cell_disease)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Sickle_cell_disease_male)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_male_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_Sickle_cell_disease_male)/sum(hematological_Sickle_cell_disease)*100,2)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_Sickle_cell_disease_female)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_female_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_Sickle_cell_disease_female)/sum(hematological_Sickle_cell_disease)*100,2)"
+            }
+        },
+
+
+
+        {
+            "type": "derived_column",
+            "alias": "hematological_other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_other)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_other_male)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_male_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_other_male)/sum(hematological_other)*100,2)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological_other_female)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_female_percent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "ROUND(sum(hematological_other_female)/sum(hematological_other)*100,2)"
+            }
+        },
+
+        
         {
             "type": "derived_column",
             "alias": "retinoblastoma",
@@ -9045,6 +9258,278 @@
             "expressionType": "simple_expression",
             "expressionOptions": {
                 "expression": "ROUND(sum(deceased_female)/sum(deceased)*100,2)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_general",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(sys_general)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_genitourinary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(sys_genitourinary)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_muscoskeletal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(sys_muscoskeletal)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_cardiopulmonary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(sys_cardiopulmonary)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_gastrointestinal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(sys_gastrointestinal)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_condition",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(patient_condition)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "ecog_performance",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(ecog_performance)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "general_exam",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(general_exam)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "chest",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(chest)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "breast_findings",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(breast_findings)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "breast_finding_location",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(breast_finding_location)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "abdomenexam",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(abdomenexam)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "method_of_diagnosis",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(method_of_diagnosis)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "diagnosis_on_biopsy",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(diagnosis_on_biopsy)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cancer_type)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_sarcoma",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(type_of_sarcoma)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_GU",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(type_of_GU)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_GI_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(type_of_GI_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "head_and_neck_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(head_and_neck_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "gynecologic_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(gynecologic_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "lympoma_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(lympoma_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "skin_cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(skin_cancer_type)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "breast_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(breast_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "other_solid_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(other_solid_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_leukemeia",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(type_of_leukemeia)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "non_cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(non_cancer_type)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(hematological)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "new_or_recurrence_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(new_or_recurrence_cancer)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cancer_stage",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(cancer_stage)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "overall_cancer_staging",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(overall_cancer_staging)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "past_treatment_plan",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(past_treatment_plan)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "treatment_plan",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(treatment_plan)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "referral_ordered",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(referral_ordered)"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "heent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "sum(heent)"
             }
         }
     ],

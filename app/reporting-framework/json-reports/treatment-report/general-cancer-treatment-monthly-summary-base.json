@@ -14,7 +14,6 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "flct.person_id = patient_name.person_id AND (patient_name.voided is null OR patient_name.voided = 0)"
-
             }
         },
         {
@@ -23,7 +22,6 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "flct.person_id = pp.person_id AND (pp.voided is null OR pp.voided = 0)"
-
             }
         },
         {
@@ -32,9 +30,7 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "flct.person_id = patient_id.patient_id and (patient_id.voided is null OR patient_id.voided = 0)"
-
             }
-
         },
         {
             "table": "openmrs.patient_program",
@@ -42,9 +38,7 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "flct.person_id = program.patient_id and (program.voided is null OR program.voided = 0)"
-
             }
-
         },
         {
             "table": "openmrs.location",
@@ -52,7 +46,6 @@
             "join": {
                 "type": "inner",
                 "joinCondition": "l.location_id = flct.location_id"
-
             }
         },
         {
@@ -61,7 +54,6 @@
             "join": {
                 "type": "left",
                 "joinCondition": "fa.person_id = flct.person_id AND fa.next_clinical_encounter_datetime IS NULL"
-
             }
         },
         {
@@ -70,11 +62,11 @@
             "join": {
                 "type": "left",
                 "joinCondition": "flct.person_id = p.person_id and (p.voided is null OR p.voided = 0 and (p.person_attribute_type_id = 11))"
-
             }
         }
     ],
-    "columns": [{
+    "columns": [
+        {
             "type": "simple_column",
             "alias": "person_id",
             "column": "distinct flct.person_id"
@@ -140,8 +132,8 @@
             "alias": "stage_four_patients_aged_30_to_40yrs",
             "expressionType": "simple_expression",
             "expressionOptions": {
-            "expression": "if((overall_cancer_staging IN (4)) and age >= 30 and age <= 40, 1, null)"
-                       }
+                "expression": "if((overall_cancer_staging IN (4)) and age >= 30 and age <= 40, 1, null)"
+            }
         },
         {
             "type": "derived_column",
@@ -167,7 +159,6 @@
                 "expression": "(IF ((pp.dead = 1) and flct.gender = 'f' , 1, 0))"
             }
         },
-
         {
             "type": "derived_column",
             "alias": "active_patients",
@@ -216,7 +207,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age <= 20 and flct.gender = 'f', 1, 0))"
             }
         },
-
         {
             "type": "derived_column",
             "alias": "active_patients_btwn_21_30",
@@ -241,8 +231,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age >= 21 and age <= 30 and flct.gender = 'f', 1, 0))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "active_patients_btwn_31_40",
@@ -267,9 +255,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age >= 31 and age <= 40 and flct.gender = 'f', 1, 0))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "active_patients_btwn_41_50",
@@ -294,10 +279,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age >= 41 and age <= 50 and flct.gender = 'f', 1, 0))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "active_patients_btwn_51_60",
@@ -322,10 +303,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age >= 51 and age <= 60 and flct.gender = 'f', 1, 0))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "active_patients_btwn_61_70",
@@ -350,11 +327,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age >= 61 and age <= 70 and flct.gender = 'f', 1, 0))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "active_patients_above_70",
@@ -379,8 +351,6 @@
                 "expression": "(IF ((program.date_completed IS NULL AND pp.dead = 0) and age >= 71 and flct.gender = 'f', 1, 0))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "lost_to_follow_up",
@@ -405,7 +375,6 @@
                 "expression": "IF(TIMESTAMPDIFF(day,fa.rtc_date,CURDATE()) >= 90 AND pp.dead = 0 and flct.gender = 'f',1,NULL)"
             }
         },
-        
         {
             "type": "derived_column",
             "alias": "purpose_of_visit_initial",
@@ -430,8 +399,6 @@
                 "expression": "(IF(purpose_of_visit IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "purpose_of_visit_return",
@@ -456,7 +423,6 @@
                 "expression": "(IF(purpose_of_visit IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
         {
             "type": "derived_column",
             "alias": "feeling_well",
@@ -481,10 +447,6 @@
                 "expression": "(IF(chief_complaint IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "having_symptoms",
@@ -509,9 +471,6 @@
                 "expression": "(IF(chief_complaint IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_normal",
@@ -536,8 +495,6 @@
                 "expression": "(IF(sys_general IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_fatique",
@@ -562,8 +519,6 @@
                 "expression": "(IF(sys_general IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_fever",
@@ -588,10 +543,6 @@
                 "expression": "(IF(sys_general IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-    
         {
             "type": "derived_column",
             "alias": "sys_general_jaundice",
@@ -616,10 +567,6 @@
                 "expression": "(IF(sys_general IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_night_sweat",
@@ -644,12 +591,6 @@
                 "expression": "(IF(sys_general IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_pain",
@@ -674,12 +615,6 @@
                 "expression": "(IF(sys_general IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_pallor",
@@ -704,11 +639,6 @@
                 "expression": "(IF(sys_general IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_weight_loss",
@@ -733,11 +663,6 @@
                 "expression": "(IF(sys_general IN (8) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_general_other",
@@ -762,11 +687,6 @@
                 "expression": "(IF(sys_general IN (9) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_normal",
@@ -791,11 +711,6 @@
                 "expression": "(IF(sys_genitourinary IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_dysuria",
@@ -820,12 +735,6 @@
                 "expression": "(IF(sys_genitourinary IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_hematuria",
@@ -850,11 +759,6 @@
                 "expression": "(IF(sys_genitourinary IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_lower_abdominal_pain",
@@ -879,14 +783,6 @@
                 "expression": "(IF(sys_genitourinary IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
-
-        
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating",
@@ -903,9 +799,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating_btwn_21_30",
@@ -914,9 +807,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating_btwn_31_40",
@@ -925,10 +815,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating_btwn_41_50",
@@ -937,10 +823,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating_btwn_51_60",
@@ -949,10 +831,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating_btwn_61_70",
@@ -961,7 +839,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menstruating_above_70",
@@ -970,12 +847,6 @@
                 "expression": "(IF (sys_genitourinary IN (5) and age > 70, 1, 0))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal",
@@ -992,10 +863,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age <= 20, 1, 0))"
             }
         },
-        
-      
-       
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal_btwn_21_30",
@@ -1004,9 +871,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal_btwn_31_40",
@@ -1015,10 +879,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal_btwn_41_50",
@@ -1027,10 +887,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal_btwn_51_60",
@@ -1039,10 +895,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal_btwn_61_70",
@@ -1051,7 +903,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_menopausal_above_70",
@@ -1060,9 +911,6 @@
                 "expression": "(IF (sys_genitourinary IN (6) and age > 70, 1, 0))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_oliguria",
@@ -1087,9 +935,6 @@
                 "expression": "(IF(sys_genitourinary IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_polyuria",
@@ -1114,10 +959,6 @@
                 "expression": "(IF(sys_genitourinary IN (8) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_testicular_mass",
@@ -1142,12 +983,6 @@
                 "expression": "(IF(sys_genitourinary IN (9) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_genitourinary_urine_urgency",
@@ -1172,10 +1007,14 @@
                 "expression": "(IF(sys_genitourinary IN (10) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
+        {
+            "type": "derived_column",
+            "alias": "heent",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(heent is not null, 1, NULL))"
+            }
+        },
         {
             "type": "derived_column",
             "alias": "heent_normal",
@@ -1200,11 +1039,6 @@
                 "expression": "(IF(heent IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "heent_hearing_difficulties",
@@ -1229,10 +1063,6 @@
                 "expression": "(IF(heent IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "heent_swallowing_difficulties",
@@ -1257,11 +1087,6 @@
                 "expression": "(IF(heent IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "heent_swelling",
@@ -1286,10 +1111,6 @@
                 "expression": "(IF(heent IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "heent_vision_difficulties",
@@ -1314,12 +1135,6 @@
                 "expression": "(IF(heent IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "heent_other",
@@ -1344,11 +1159,6 @@
                 "expression": "(IF(heent IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_muscoskeletal_normal",
@@ -1373,12 +1183,6 @@
                 "expression": "(IF(sys_muscoskeletal IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_muscoskeletal_leg_edema",
@@ -1403,10 +1207,6 @@
                 "expression": "(IF(sys_muscoskeletal IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_muscoskeletal_leg_ulcers",
@@ -1431,12 +1231,6 @@
                 "expression": "(IF(sys_muscoskeletal IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_muscoskeletal_pain_lower_extermities",
@@ -1461,10 +1255,6 @@
                 "expression": "(IF(sys_muscoskeletal IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_muscoskeletal_swelling",
@@ -1489,12 +1279,6 @@
                 "expression": "(IF(sys_muscoskeletal IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_muscoskeletal_other",
@@ -1519,13 +1303,6 @@
                 "expression": "(IF(sys_muscoskeletal IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_normal",
@@ -1550,12 +1327,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_cough",
@@ -1580,11 +1351,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_chest_pains",
@@ -1609,11 +1375,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_breathing_difficulty",
@@ -1638,7 +1399,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_palpitations",
@@ -1663,10 +1423,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_breath_shortness",
@@ -1691,9 +1447,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_cardiopulmonary_other",
@@ -1718,10 +1471,6 @@
                 "expression": "(IF(sys_cardiopulmonary IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_gastrointestinal_normal",
@@ -1746,10 +1495,6 @@
                 "expression": "(IF(sys_gastrointestinal IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_gastrointestinal_abdominal_pain",
@@ -1774,10 +1519,6 @@
                 "expression": "(IF(sys_gastrointestinal IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_gastrointestinal_constipation",
@@ -1802,9 +1543,6 @@
                 "expression": "(IF(sys_gastrointestinal IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_gastrointestinal_dysphagia",
@@ -1829,10 +1567,6 @@
                 "expression": "(IF(sys_gastrointestinal IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_gastrointestinal_jaundice",
@@ -1857,10 +1591,6 @@
                 "expression": "(IF(sys_gastrointestinal IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sys_gastrointestinal_poor_appetite",
@@ -1885,10 +1615,6 @@
                 "expression": "(IF(sys_gastrointestinal IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "patient_condition_fair",
@@ -1913,11 +1639,6 @@
                 "expression": "(IF(patient_condition IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "patient_condition_sick_looking",
@@ -1942,10 +1663,6 @@
                 "expression": "(IF(patient_condition IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ecog_performance_normal_symtomatic_ambulatory",
@@ -1970,10 +1687,6 @@
                 "expression": "(IF(ecog_performance IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ecog_performance_debilated_half_day_bedridden",
@@ -1998,10 +1711,6 @@
                 "expression": "(IF(ecog_performance IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ecog_performance_debilated_more_than_half_day_bedridden",
@@ -2026,11 +1735,6 @@
                 "expression": "(IF(ecog_performance IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ecog_performance_fully_bedridden",
@@ -2055,10 +1759,6 @@
                 "expression": "(IF(ecog_performance IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_not_done",
@@ -2083,11 +1783,6 @@
                 "expression": "(IF(general_exam IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-        
         {
             "type": "derived_column",
             "alias": "general_exam_normal",
@@ -2112,13 +1807,6 @@
                 "expression": "(IF(general_exam IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_cyanosis",
@@ -2143,11 +1831,6 @@
                 "expression": "(IF(general_exam IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_edema",
@@ -2172,10 +1855,6 @@
                 "expression": "(IF(general_exam IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_dehydration",
@@ -2200,10 +1879,6 @@
                 "expression": "(IF(general_exam IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_temporal_wasting",
@@ -2228,10 +1903,6 @@
                 "expression": "(IF(general_exam IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_pallor",
@@ -2256,10 +1927,6 @@
                 "expression": "(IF(general_exam IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_pains",
@@ -2284,10 +1951,6 @@
                 "expression": "(IF(general_exam IN (8) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_fatique",
@@ -2312,11 +1975,6 @@
                 "expression": "(IF(general_exam IN (9) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_jaundice",
@@ -2341,10 +1999,6 @@
                 "expression": "(IF(general_exam IN (10) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_night_sweats",
@@ -2369,10 +2023,6 @@
                 "expression": "(IF(general_exam IN (11) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_weight_loss",
@@ -2397,10 +2047,6 @@
                 "expression": "(IF(general_exam IN (12) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "general_exam_other",
@@ -2425,12 +2071,6 @@
                 "expression": "(IF(general_exam IN (13) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "chest_exam_not_done",
@@ -2455,10 +2095,6 @@
                 "expression": "(IF(chest IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "chest_exam_normal",
@@ -2483,12 +2119,6 @@
                 "expression": "(IF(chest IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "chest_exam_abnormal",
@@ -2513,11 +2143,6 @@
                 "expression": "(IF(chest IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_exam_note_done",
@@ -2542,10 +2167,6 @@
                 "expression": "(IF(breast_findings IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_findings_normal",
@@ -2570,11 +2191,6 @@
                 "expression": "(IF(breast_findings IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_findings_abnormal",
@@ -2599,10 +2215,6 @@
                 "expression": "(IF(breast_findings IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_findings_location_right",
@@ -2627,10 +2239,6 @@
                 "expression": "(IF(breast_finding_location IN (1) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_findings_location_left",
@@ -2655,10 +2263,6 @@
                 "expression": "(IF(breast_finding_location IN (2) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_findings_location_cyclic",
@@ -2683,12 +2287,6 @@
                 "expression": "(IF(breast_finding_location IN (3) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "abdomenexam_notdone",
@@ -2713,11 +2311,6 @@
                 "expression": "(IF(abdomenexam IN (1) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "abdomenexam_normal",
@@ -2742,10 +2335,6 @@
                 "expression": "(IF(abdomenexam IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "abdomenexam_abnormal",
@@ -2770,11 +2359,6 @@
                 "expression": "(IF(abdomenexam IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "diagnosis_method_priorclinicalrecords",
@@ -2799,10 +2383,6 @@
                 "expression": "(IF(method_of_diagnosis IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "diagnosis_method_lab_findingsreview",
@@ -2827,9 +2407,6 @@
                 "expression": "(IF(method_of_diagnosis IN (2)and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "diagnosis_method_clinically",
@@ -2854,11 +2431,6 @@
                 "expression": "(IF(method_of_diagnosis IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "diagnosis_method_peripheral_blood_film",
@@ -2883,9 +2455,6 @@
                 "expression": "(IF(method_of_diagnosis IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "diagnosis_method_bone_marrow_aspiration",
@@ -2910,11 +2479,6 @@
                 "expression": "(IF(method_of_diagnosis IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "diagnosis_method_biopsy",
@@ -2939,10 +2503,6 @@
                 "expression": "(IF(method_of_diagnosis IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_fna",
@@ -2967,11 +2527,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_core_needle",
@@ -2996,11 +2551,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_excisional",
@@ -3025,10 +2575,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_skin_punch",
@@ -3053,11 +2599,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_bone_marrow",
@@ -3082,9 +2623,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_ultrasound_guided",
@@ -3109,12 +2647,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "biopsy_type_ct_guided_biopsy",
@@ -3139,12 +2671,6 @@
                 "expression": "(IF(diagnosis_on_biopsy IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "sarcoma",
@@ -3169,10 +2695,6 @@
                 "expression": "(IF(cancer_type IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "gu_cancer",
@@ -3197,13 +2719,6 @@
                 "expression": "(IF(cancer_type IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "gi_cancer",
@@ -3228,10 +2743,6 @@
                 "expression": "(IF(cancer_type IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "head_neck",
@@ -3256,10 +2767,6 @@
                 "expression": "(IF(cancer_type IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "gynecological_cancer",
@@ -3292,9 +2799,6 @@
                 "expression": "(IF (cancer_type IN (5) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "gynecological_cancer_btwn_21_30",
@@ -3303,9 +2807,6 @@
                 "expression": "(IF (cancer_type IN (5) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "gynecological_cancer_btwn_31_40",
@@ -3314,10 +2815,6 @@
                 "expression": "(IF (cancer_type IN (5) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "gynecological_cancer_btwn_41_50",
@@ -3326,10 +2823,6 @@
                 "expression": "(IF (cancer_type IN (5) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "gynecological_cancer_btwn_51_60",
@@ -3338,10 +2831,6 @@
                 "expression": "(IF (cancer_type IN (5) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "gynecological_cancer_btwn_61_70",
@@ -3350,7 +2839,6 @@
                 "expression": "(IF (cancer_type IN (5) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "gynecological_cancer_above_70",
@@ -3359,10 +2847,6 @@
                 "expression": "(IF (cancer_type IN (5) and age > 70, 1, 0))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "lympoma",
@@ -3387,11 +2871,6 @@
                 "expression": "(IF(cancer_type IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "skin_cancer",
@@ -3416,10 +2895,6 @@
                 "expression": "(IF(cancer_type IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "breast_cancer",
@@ -3444,10 +2919,30 @@
                 "expression": "(IF(cancer_type IN (8) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type IN (13), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type IN (13) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "Hematologic_cancer_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type IN (13) and flct.gender = 'f', 1, NULL))"
+            }
+        },
         {
             "type": "derived_column",
             "alias": "leaukemia",
@@ -3472,11 +2967,6 @@
                 "expression": "(IF(cancer_type IN (9) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_solid_cancer",
@@ -3501,10 +2991,6 @@
                 "expression": "(IF(cancer_type IN (10) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_cancer",
@@ -3529,11 +3015,6 @@
                 "expression": "(IF(cancer_type IN (11) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "non_cancer",
@@ -3558,12 +3039,6 @@
                 "expression": "(IF(cancer_type IN (12) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "kaposi_sarcoma",
@@ -3588,11 +3063,6 @@
                 "expression": "(IF(type_of_sarcoma IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "soft_tissue_sarcoma",
@@ -3617,11 +3087,6 @@
                 "expression": "(IF(type_of_sarcoma IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "osteogenic_sarcoma",
@@ -3646,10 +3111,6 @@
                 "expression": "(IF(type_of_sarcoma IN (3) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ewings_sarcoma",
@@ -3674,11 +3135,6 @@
                 "expression": "(IF(type_of_sarcoma IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "rhabdomyo",
@@ -3703,12 +3159,6 @@
                 "expression": "(IF(type_of_sarcoma IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_sarcoma",
@@ -3733,12 +3183,6 @@
                 "expression": "(IF(type_of_sarcoma IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "bladder_cancer",
@@ -3763,9 +3207,6 @@
                 "expression": "(IF(type_of_gu IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "renal_cell_cancer",
@@ -3790,10 +3231,6 @@
                 "expression": "(IF(type_of_gu IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "penile_cancer",
@@ -3810,9 +3247,6 @@
                 "expression": "(IF (type_of_gu IN (3) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "penile_cancer_btwn_21_30",
@@ -3821,9 +3255,6 @@
                 "expression": "(IF (type_of_gu IN (3) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "penile_cancer_btwn_31_40",
@@ -3832,10 +3263,6 @@
                 "expression": "(IF (type_of_gu IN (3) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "penile_cancer_btwn_41_50",
@@ -3844,10 +3271,6 @@
                 "expression": "(IF (type_of_gu IN (3) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "penile_cancer_btwn_51_60",
@@ -3856,10 +3279,6 @@
                 "expression": "(IF (type_of_gu IN (3) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "penile_cancer_btwn_61_70",
@@ -3868,7 +3287,6 @@
                 "expression": "(IF (type_of_gu IN (3) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "penile_cancer_above_70",
@@ -3893,9 +3311,6 @@
                 "expression": "(IF(type_of_gu IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "wilms_tumor",
@@ -3920,10 +3335,6 @@
                 "expression": "(IF(type_of_gu IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "prostate",
@@ -3940,9 +3351,6 @@
                 "expression": "(IF (type_of_gu IN (5) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "prostate_btwn_21_30",
@@ -3951,9 +3359,6 @@
                 "expression": "(IF (type_of_gu IN (5) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "prostate_btwn_31_40",
@@ -3962,10 +3367,6 @@
                 "expression": "(IF (type_of_gu IN (5) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "prostate_btwn_41_50",
@@ -3974,10 +3375,6 @@
                 "expression": "(IF (type_of_gu IN (5) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "prostate_btwn_51_60",
@@ -3986,10 +3383,6 @@
                 "expression": "(IF (type_of_gu IN (5) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "prostate_btwn_61_70",
@@ -3998,7 +3391,6 @@
                 "expression": "(IF (type_of_gu IN (5) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "prostate_above_70",
@@ -4023,10 +3415,6 @@
                 "expression": "(IF(type_of_gu IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "testes",
@@ -4043,9 +3431,6 @@
                 "expression": "(IF (type_of_gu IN (6) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "testes_btwn_21_30",
@@ -4054,9 +3439,6 @@
                 "expression": "(IF (type_of_gu IN (6) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "testes_btwn_31_40",
@@ -4065,10 +3447,6 @@
                 "expression": "(IF (type_of_gu IN (6) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "testes_btwn_41_50",
@@ -4077,10 +3455,6 @@
                 "expression": "(IF (type_of_gu IN (6) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "testes_btwn_51_60",
@@ -4089,10 +3463,6 @@
                 "expression": "(IF (type_of_gu IN (6) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "testes_btwn_61_70",
@@ -4101,7 +3471,6 @@
                 "expression": "(IF (type_of_gu IN (6) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "testes_above_70",
@@ -4126,9 +3495,6 @@
                 "expression": "(IF(type_of_gu IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "other_gu_cancer",
@@ -4153,10 +3519,6 @@
                 "expression": "(IF(type_of_gu IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-        
-
         {
             "type": "derived_column",
             "alias": "esophageal",
@@ -4181,10 +3543,6 @@
                 "expression": "(IF(type_of_gi_cancer and flct.gender = 'f' IN (1), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "gastric_cancer",
@@ -4209,10 +3567,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (2) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "pancreatic_cancer",
@@ -4237,9 +3591,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (3) and flct.gender = 'm', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "cholangiocarcinoma",
@@ -4264,9 +3615,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "colon_cancer",
@@ -4291,9 +3639,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "rectal_cancer",
@@ -4318,9 +3663,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "anal_cancer",
@@ -4345,10 +3687,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "hepatocellular",
@@ -4373,8 +3711,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (8) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "other_gi_cancer",
@@ -4399,10 +3735,6 @@
                 "expression": "(IF(type_of_gi_cancer IN (9) and flct.gender = 'f', 1, NULL))"
             }
         },
-        
-
-
-
         {
             "type": "derived_column",
             "alias": "thyroid_cancer",
@@ -4427,11 +3759,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "squamous_cell_nasopharynx",
@@ -4456,9 +3783,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "squamous_cell_oropharynx",
@@ -4483,10 +3807,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "squamous_cell_hypopharynx",
@@ -4511,10 +3831,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "squamous_cell_laryngeal",
@@ -4539,11 +3855,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "Squamous_cell_NOS",
@@ -4568,11 +3879,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (6) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_head_and_neck_cancer",
@@ -4597,10 +3903,6 @@
                 "expression": "(IF(head_and_neck_cancer IN (7) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma",
@@ -4617,9 +3919,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_btwn_21_30",
@@ -4628,9 +3927,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_btwn_31_40",
@@ -4639,10 +3935,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_btwn_41_50",
@@ -4651,10 +3943,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_btwn_51_60",
@@ -4663,10 +3951,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_btwn_61_70",
@@ -4675,7 +3959,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_above_70",
@@ -4684,8 +3967,6 @@
                 "expression": "(IF (gynecologic_cancer IN (1) and age > 70, 1, 0))"
             }
         },
-       
-
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_male",
@@ -4697,15 +3978,11 @@
         {
             "type": "derived_column",
             "alias": "choriocarcinoma_female",
-            "expressionType": "simple_expression", 
+            "expressionType": "simple_expression",
             "expressionOptions": {
                 "expression": "(IF(gynecologic_cancer IN (1) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "cervical",
@@ -4722,9 +3999,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "cervical_btwn_21_30",
@@ -4733,9 +4007,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "cervical_btwn_31_40",
@@ -4744,10 +4015,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "cervical_btwn_41_50",
@@ -4756,10 +4023,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "cervical_btwn_51_60",
@@ -4768,10 +4031,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "cervical_btwn_61_70",
@@ -4780,7 +4039,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "cervical_above_70",
@@ -4789,8 +4047,6 @@
                 "expression": "(IF (gynecologic_cancer IN (2) and age > 70, 1, 0))"
             }
         },
-       
-
         {
             "type": "derived_column",
             "alias": "cervical_male",
@@ -4807,9 +4063,6 @@
                 "expression": "(IF(gynecologic_cancer IN (2) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "uterine",
@@ -4826,9 +4079,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "uterine_btwn_21_30",
@@ -4837,9 +4087,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "uterine_btwn_31_40",
@@ -4848,10 +4095,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "uterine_btwn_41_50",
@@ -4860,10 +4103,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "uterine_btwn_51_60",
@@ -4872,10 +4111,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "uterine_btwn_61_70",
@@ -4884,7 +4119,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "uterine_above_70",
@@ -4893,8 +4127,6 @@
                 "expression": "(IF (gynecologic_cancer IN (3) and age > 70, 1, 0))"
             }
         },
-       
-
         {
             "type": "derived_column",
             "alias": "uterine_male",
@@ -4911,10 +4143,6 @@
                 "expression": "(IF(gynecologic_cancer IN (3) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ovarian",
@@ -4931,9 +4159,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "ovarian_btwn_21_30",
@@ -4942,9 +4167,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "ovarian_btwn_31_40",
@@ -4953,10 +4175,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "ovarian_btwn_41_50",
@@ -4965,10 +4183,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "ovarian_btwn_51_60",
@@ -4977,10 +4191,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "ovarian_btwn_61_70",
@@ -4989,7 +4199,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "ovarian_above_70",
@@ -4998,8 +4207,6 @@
                 "expression": "(IF (gynecologic_cancer IN (4) and age > 70, 1, 0))"
             }
         },
-       
-
         {
             "type": "derived_column",
             "alias": "ovarian_male",
@@ -5016,9 +4223,6 @@
                 "expression": "(IF(gynecologic_cancer IN (4) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer",
@@ -5035,9 +4239,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age <= 20, 1, 0))"
             }
         },
-      
-       
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_btwn_21_30",
@@ -5046,9 +4247,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age >= 21 and age <= 30, 1, 0))"
             }
         },
-      
-
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_btwn_31_40",
@@ -5057,10 +4255,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age >= 31 and age <= 40, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_btwn_41_50",
@@ -5069,10 +4263,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age >= 41 and age <= 50, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_btwn_51_60",
@@ -5081,10 +4271,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age >= 51 and age <= 60, 1, 0))"
             }
         },
-      
-
-
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_btwn_61_70",
@@ -5093,7 +4279,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age >= 61 and age <= 70, 1, 0))"
             }
         },
-       
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_above_70",
@@ -5102,8 +4287,6 @@
                 "expression": "(IF (gynecologic_cancer IN (5) and age > 70, 1, 0))"
             }
         },
-       
-
         {
             "type": "derived_column",
             "alias": "other_gynecologic_cancer_male",
@@ -5120,8 +4303,6 @@
                 "expression": "(IF(gynecologic_cancer IN (5) and flct.gender = 'f', 1, NULL))"
             }
         },
-
-
         {
             "type": "derived_column",
             "alias": "non_hodgkin",
@@ -5146,10 +4327,6 @@
                 "expression": "(IF(lympoma_cancer IN (1), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "Hodgkin",
@@ -5174,10 +4351,6 @@
                 "expression": "(IF(lympoma_cancer IN (2), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "Burkitt",
@@ -5202,9 +4375,6 @@
                 "expression": "(IF(lympoma_cancer IN (3), 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "Other_lympoma_cancer",
@@ -5229,10 +4399,6 @@
                 "expression": "(IF(lympoma_cancer IN (4), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "squamous_cell_male",
@@ -5257,11 +4423,6 @@
                 "expression": "(IF(skin_cancer IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "basal_cell",
@@ -5286,10 +4447,6 @@
                 "expression": "(IF(skin_cancer IN (2), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "melanoma_male",
@@ -5314,10 +4471,6 @@
                 "expression": "(IF(skin_cancer IN (3), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_skin_cancer_male",
@@ -5342,11 +4495,6 @@
                 "expression": "(IF(skin_cancer IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "inflammatory_male",
@@ -5371,10 +4519,102 @@
                 "expression": "(IF(breast_cancer IN (1), 1, NULL))"
             }
         },
-
-
-
-
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (1), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (1) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_A_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (1) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (2) , 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (2) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Hemophilia_B_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (2) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (3), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (3) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_Sickle_cell_disease_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (3) and flct.gender = 'f', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (4), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_male",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (4) and flct.gender = 'm', 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological_other_female",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological IN (4) and flct.gender = 'f', 1, NULL))"
+            }
+        },
         {
             "type": "derived_column",
             "alias": "ductal_cell_carcinoma_male",
@@ -5399,10 +4639,6 @@
                 "expression": "(IF(breast_cancer IN (2), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_breast_cancer_male",
@@ -5427,9 +4663,6 @@
                 "expression": "(IF(breast_cancer IN (3), 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "retinoblastoma_male",
@@ -5454,11 +4687,6 @@
                 "expression": "(IF(other_solid_cancer IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "neuroblastoma_male",
@@ -5483,9 +4711,6 @@
                 "expression": "(IF(other_solid_cancer IN (2), 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "lung_cancer_female",
@@ -5510,9 +4735,6 @@
                 "expression": "(IF(other_solid_cancer IN (3), 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "other_solid_male",
@@ -5537,11 +4759,6 @@
                 "expression": "(IF(other_solid_cancer IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "chronic_myelogenous_leukemia_male",
@@ -5566,12 +4783,6 @@
                 "expression": "(IF(type_of_leukemeia IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "chronic_lymphocytic_leukemia_male",
@@ -5596,10 +4807,6 @@
                 "expression": "(IF(type_of_leukemeia IN (2), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "acute_myelogenous_leukemia_male",
@@ -5624,9 +4831,6 @@
                 "expression": "(IF(type_of_leukemeia IN (3), 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "acute_lyphocytic_leukemia_male",
@@ -5651,12 +4855,6 @@
                 "expression": "(IF(type_of_leukemeia IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_leukemia_male",
@@ -5681,10 +4879,6 @@
                 "expression": "(IF(type_of_leukemeia IN (5), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "iron_deficiency_anemia_male",
@@ -5709,11 +4903,6 @@
                 "expression": "(IF(non_cancer IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "aplastic_anemia_male",
@@ -5738,11 +4927,6 @@
                 "expression": "(IF(non_cancer IN (2), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "anaplastic_anemia_male",
@@ -5767,10 +4951,6 @@
                 "expression": "(IF(non_cancer IN (3), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "hemolytic_anemia_male",
@@ -5795,13 +4975,6 @@
                 "expression": "(IF(non_cancer IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "ttp_or_hus_male",
@@ -5826,11 +4999,6 @@
                 "expression": "(IF(non_cancer IN (5), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_none_cancer_male",
@@ -5855,10 +5023,6 @@
                 "expression": "(IF(non_cancer IN (6), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "new_cancer_male",
@@ -5883,11 +5047,6 @@
                 "expression": "(IF(new_or_recurrence_cancer IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "recurrence_cancer_male",
@@ -5912,11 +5071,6 @@
                 "expression": "(IF(new_or_recurrence_cancer IN (2), 1, NULL))"
             }
         },
-
-
-
-
-        
         {
             "type": "derived_column",
             "alias": "no_past_treatment_plan_male",
@@ -5941,12 +5095,6 @@
                 "expression": "(IF(past_treatment_plan IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_surgery_male",
@@ -5971,11 +5119,6 @@
                 "expression": "(IF(past_treatment_plan IN (2), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_radiationtherapy_male",
@@ -6000,10 +5143,6 @@
                 "expression": "(IF(past_treatment_plan IN (3), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_chemotherapy_male",
@@ -6028,10 +5167,6 @@
                 "expression": "(IF(past_treatment_plan IN (4), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_homonaltherapy_male",
@@ -6056,11 +5191,6 @@
                 "expression": "(IF(past_treatment_plan IN (5), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_targetedtherapies_male",
@@ -6085,10 +5215,6 @@
                 "expression": "(IF(past_treatment_plan IN (6), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_biologicaltherapy_male",
@@ -6113,12 +5239,6 @@
                 "expression": "(IF(past_treatment_plan IN (7), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "past_treatment_traditionalmedicine_male",
@@ -6143,12 +5263,6 @@
                 "expression": "(IF(past_treatment_plan IN (8), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_past_treatment_male",
@@ -6173,11 +5287,6 @@
                 "expression": "(IF(past_treatment_plan IN (9), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "no_refferal_ordered_male",
@@ -6202,11 +5311,6 @@
                 "expression": "(IF(referral_ordered IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "palitive_care_referral_male",
@@ -6231,10 +5335,6 @@
                 "expression": "(IF(referral_ordered IN (2), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "surgery_referral_male",
@@ -6259,11 +5359,6 @@
                 "expression": "(IF(referral_ordered IN (3), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "nutritional_support_male",
@@ -6288,11 +5383,6 @@
                 "expression": "(IF(referral_ordered IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "radiotherapy_referral_male",
@@ -6317,12 +5407,6 @@
                 "expression": "(IF(referral_ordered IN (5), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "physical_therapy_referral_male",
@@ -6347,12 +5431,6 @@
                 "expression": "(IF(referral_ordered IN (6), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "social_worker_referral_male",
@@ -6377,12 +5455,6 @@
                 "expression": "(IF(referral_ordered IN (7), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "family_planning_referral_male",
@@ -6407,11 +5479,6 @@
                 "expression": "(IF(referral_ordered IN (8), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "other_referral_male",
@@ -6419,7 +5486,7 @@
             "expressionOptions": {
                 "expression": "(IF(referral_ordered IN (9) and flct.gender = 'm', 1, NULL))"
             }
-        },  
+        },
         {
             "type": "derived_column",
             "alias": "other_referral_female",
@@ -6427,8 +5494,7 @@
             "expressionOptions": {
                 "expression": "(IF(referral_ordered IN (9) and flct.gender = 'f', 1, NULL))"
             }
-        },  
-
+        },
         {
             "type": "derived_column",
             "alias": "other_referral",
@@ -6436,11 +5502,7 @@
             "expressionOptions": {
                 "expression": "(IF(referral_ordered IN (9), 1, NULL))"
             }
-        },  
-
-
-
-
+        },
         {
             "type": "derived_column",
             "alias": "unknown_cancer_stage_male",
@@ -6465,11 +5527,6 @@
                 "expression": "(IF(cancer_stage IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "complete_staging_male",
@@ -6494,13 +5551,6 @@
                 "expression": "(IF(cancer_stage IN (2), 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "DURIE_SALMON_SYSTEM_male",
@@ -6525,12 +5575,6 @@
                 "expression": "(IF(cancer_stage IN (3), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "staging_not_applicable_male",
@@ -6555,11 +5599,6 @@
                 "expression": "(IF(cancer_stage IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "stage_one_male",
@@ -6584,13 +5623,6 @@
                 "expression": "(IF(overall_cancer_staging IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "stage_two_male",
@@ -6615,11 +5647,6 @@
                 "expression": "(IF(overall_cancer_staging IN (2), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "stage_three_male",
@@ -6644,11 +5671,6 @@
                 "expression": "(IF(overall_cancer_staging IN (3), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "stage_four_male",
@@ -6673,13 +5695,6 @@
                 "expression": "(IF(overall_cancer_staging IN (4), 1, NULL))"
             }
         },
-
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "limited_stage_male",
@@ -6704,12 +5719,6 @@
                 "expression": "(IF(overall_cancer_staging IN (5), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "extensive_stage_male",
@@ -6734,12 +5743,6 @@
                 "expression": "(IF(overall_cancer_staging IN (6), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "for_staging_male",
@@ -6764,11 +5767,6 @@
                 "expression": "(NULLIF(overall_cancer_staging, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "No_treatment_plan_male",
@@ -6793,12 +5791,6 @@
                 "expression": "(IF(treatment_plan IN (1), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "surgery_male",
@@ -6823,11 +5815,6 @@
                 "expression": "(IF(treatment_plan IN (2), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "radiationtherapy_male",
@@ -6852,11 +5839,6 @@
                 "expression": "(IF(treatment_plan IN (3), 1, NULL))"
             }
         },
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "chemotherapy_male",
@@ -6881,10 +5863,6 @@
                 "expression": "(IF(treatment_plan IN (4), 1, NULL))"
             }
         },
-
-
-
-
         {
             "type": "derived_column",
             "alias": "hormonaltherapy_male",
@@ -6909,12 +5887,6 @@
                 "expression": "(IF(treatment_plan IN (5), 1, NULL))"
             }
         },
-
-
-
-
-
-
         {
             "type": "derived_column",
             "alias": "targetedtherapy_male",
@@ -6939,9 +5911,6 @@
                 "expression": "(IF(treatment_plan IN (6), 1, NULL))"
             }
         },
-
-
-
         {
             "type": "derived_column",
             "alias": "biologicaltherapy_male",
@@ -6965,12 +5934,284 @@
             "expressionOptions": {
                 "expression": "(IF(treatment_plan IN (7), 1, NULL))"
             }
+        },
+        {
+            "type": "derived_column",
+            "alias": "biologicaltherapy",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(treatment_plan IN (7), 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_general",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(sys_general is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_genitourinary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(sys_genitourinary is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_muscoskeletal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(sys_muscoskeletal is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_cardiopulmonary",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(sys_cardiopulmonary is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "sys_gastrointestinal",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(sys_gastrointestinal is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "patient_condition",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(patient_condition is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "ecog_performance",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(ecog_performance is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "general_exam",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(general_exam is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "chest",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(chest is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "breast_findings",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(breast_findings is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "breast_finding_location",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(breast_finding_location is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "abdomenexam",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(abdomenexam is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "method_of_diagnosis",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(method_of_diagnosis is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "diagnosis_on_biopsy",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(diagnosis_on_biopsy is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_type is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_sarcoma",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(type_of_sarcoma is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_GU",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(type_of_GU is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_GI_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(type_of_GI_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "head_and_neck_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(head_and_neck_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "gynecologic_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(gynecologic_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "lympoma_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(lympoma_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "skin_cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(skin_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "breast_cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(breast_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "other_solid_cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(other_solid_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "type_of_leukemeia",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(type_of_leukemeia is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "non_cancer_type",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(non_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "hematological",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(hematological is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "new_or_recurrence_cancer",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(new_or_recurrence_cancer is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "cancer_stage",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(cancer_stage is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "overall_cancer_staging",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(overall_cancer_staging is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "past_treatment_plan",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(past_treatment_plan is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "treatment_plan",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(treatment_plan is not null, 1, NULL))"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "referral_ordered",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "(IF(referral_ordered is not null, 1, NULL))"
+            }
         }
-
     ],
     "filters": {
         "conditionJoinOperator": "and",
-        "conditions": [{
+        "conditions": [
+            {
                 "filterType": "tableColumns",
                 "conditionExpression": "flct.age >= ?",
                 "parameterName": "startAge"

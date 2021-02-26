@@ -72,6 +72,7 @@ import { SocialHistorySummary } from './service/social-history-summary.service';
 import { PalliativeCareSummary } from './service/palliative-care-summary.service';
 import { ProstateCancerMonthlySummaryService } from './service/prostate-cancer-summary.service';
 import { PatientVitalsSummary } from './service/patient-vitals-summary.service';
+import { DeathReportSummary } from './service/death-report-summary.service';
 
 import { SurgeService } from './service/surge-reports/surge-report.service';
 
@@ -4944,6 +4945,71 @@ module.exports = function () {
                 }
 
             },
+
+            {
+                method: 'GET',
+                path: '/etl/death-report-numbers',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                        'hapiAuthorization': {
+                            role: privileges.canViewClinicDashBoard
+                        }
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'death-report-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let reportParams = etlHelpers.getReportParams('breast-cancer-summary-dataset',
+                                    ['startDate', 'endDate', 'period', 'locationUuids', 'encounterTypes', 'indicators', 'genders', 'startAge', 'endAge'],
+                                    requestParams);
+
+                                let service = new DeathReportSummary();
+                                service.getAggregateReport(reportParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    console.error('Error: ', error);
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get death report summary details based on location and time filters',
+                    notes: 'Returns aggregates of deaths  reported',
+                    tags: ['api'],
+                }
+
+            },
+            {
+                method: 'GET',
+                path: '/etl/death-report-numbers-patient-list',
+                config: {
+                    auth: 'simple',
+                    plugins: {
+                    },
+                    handler: function (request, reply) {
+                        request.query.reportName = 'death-report-treatment-summary';
+                        preRequest.resolveLocationIdsToLocationUuids(request,
+                            function () {
+                                let requestParams = Object.assign({}, request.query, request.params);
+                                let service = new DeathReportSummary();
+                                service.getPatientListReport(requestParams).then((result) => {
+                                    reply(result);
+                                }).catch((error) => {
+                                    reply(error);
+                                });
+                            });
+
+                    },
+                    description: 'Get death report monthly patient list based on location and time filters',
+                    notes: 'Returns details of patients who died',
+                    tags: ['api'],
+                }
+
+            },
+
+
             {
                 method: 'GET',
                 path: '/etl/kibana-dashboards',

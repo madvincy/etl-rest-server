@@ -1,0 +1,65 @@
+{
+    "name": "generalCancerTreatmentShorterDailySummaryAggregate",
+    "version": "1.0",
+    "tag": "general_cancer_treatment_shorter_daily_summary_aggregate",
+    "uses": [{
+        "name": "generalCancerTreatmentSummaryBase",
+        "version": "1.0",
+        "type": "dataset_def"
+    }],
+    "sources": [{
+        "dataSet": "generalCancerTreatmentSummaryBase",
+        "alias": "lct"
+    }],
+    "columns": [
+        {
+            "type": "simple_column",
+            "alias": "location_name",
+            "column": "location_name"
+        },
+        {
+            "type": "simple_column",
+            "alias": "location_uuid",
+            "column": "location_uuid"
+        },
+        {
+            "type": "derived_column",
+            "alias": "encounter_datetime",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "date_format(lct.encounter_datetime, '%d-%m-%Y')"
+            }
+        },
+        {
+            "type": "derived_column",
+            "alias": "enrolled_patients",
+            "expressionType": "simple_expression",
+            "expressionOptions": {
+                "expression": "count(enrolled_patients)"
+            }
+        }
+
+    ],
+    "groupBy": {
+        "groupParam": "groupByParam",
+        "columns": [
+            "location_id",
+            "DATE(lct.encounter_datetime)"
+        ],
+        "excludeParam": "excludeParam"
+    },
+    "dynamicJsonQueryGenerationDirectives": {
+        "patientListGenerator": {
+            "useTemplate": "general_cancer_treatment_patient_list_template",
+            "useTemplateVersion": "1.0",
+            "generatingDirectives": {
+                "joinDirectives": {
+                    "joinType": "INNER",
+                    "joinCondition": "<<base_column>> = <<template_column>>",
+                    "baseColumn": "person_id",
+                    "templateColumn": "person_id"
+                }
+            }
+        }
+    }
+}

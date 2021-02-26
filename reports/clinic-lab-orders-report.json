@@ -97,7 +97,7 @@
         "schema": "openmrs",
         "tableName": "person_attribute",
         "alias": "contacts",
-        "joinExpression": "t1.patient_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (10, 48)"
+        "joinExpression": "t1.patient_id = contacts.person_id AND (contacts.voided IS NULL || contacts.voided = 0) AND contacts.person_attribute_type_id in (11)"
       },
       {
         "joinType": "LEFT OUTER JOIN",

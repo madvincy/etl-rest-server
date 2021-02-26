@@ -121,6 +121,13 @@ import * as palliative_care_monthly_summary_base from './json-reports/palliative
 import * as palliative_care_patient_list_template from './json-reports/palliative-care-report/palliative-care-patient-list-template.json';
 import * as palliative_care_summary_base from './json-reports/palliative-care-report/palliative-care-summary-base.json'
 
+
+import * as death_report_daily_summary_aggregate from './json-reports/death-report/death-report-daily-summary-aggregate.json';
+import * as death_report_monthly_summary_aggregate from './json-reports/death-report/death-report-monthly-summary-aggregate.json'
+import * as death_report_monthly_summary_base from './json-reports/death-report/death-report-monthly-summary-base.json';
+import * as death_report_patient_list_template from './json-reports/death-report/death-report-patient-list-template.json';
+import * as death_report_summary_base from './json-reports/death-report/death-report-summary-base.json'
+
 import * as cervical_cancer_daily_screening_summary_aggregate from './json-reports/cervical-cancer-daily-screening-summary-aggregate.json';
 import * as cervical_cancer_monthly_screening_summary_aggregate from './json-reports/cervical-cancer-monthly-screening-summary-aggregate.json';
 import * as cervical_cancer_monthly_screening_summary_base from './json-reports/cervical-cancer-monthly-screening-summary-base.json';
@@ -201,7 +208,7 @@ export class BaseMysqlReport {
 
                             that.reportQuery = sqlQuery;
                             // run query
-                            console.log('Query', that.reportQuery );
+                            console.log('Query', that.reportQuery);
                             that.executeReportQuery(that.reportQuery)
                                 .then((result) => {
                                     return that.transFormResults(that.reportSchemas, result);
@@ -470,17 +477,17 @@ export class BaseMysqlReport {
                     });
                     break;
 
-                    case 'prostateCancerDailySummaryAggregate':
-                        resolve({
-                            main: this.cloneJsonSchema(prostate_cancer_daily_screening_summary_aggregate),
-                            prostateCancerScreeningMonthlySummaryBase: this.cloneJsonSchema(prostate_cancer_screening_monthly_summary_base)
-                        });
-                    case 'prostateCancerMonthlySummaryAggregate':
-                        resolve({
-                            main: this.cloneJsonSchema(prostate_cancer_monthly_screening_summary_aggregate),
-                            prostateCancerScreeningMonthlySummaryBase: this.cloneJsonSchema(prostate_cancer_screening_monthly_summary_base)
-                        });
-                        break;
+                case 'prostateCancerDailySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(prostate_cancer_daily_screening_summary_aggregate),
+                        prostateCancerScreeningMonthlySummaryBase: this.cloneJsonSchema(prostate_cancer_screening_monthly_summary_base)
+                    });
+                case 'prostateCancerMonthlySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(prostate_cancer_monthly_screening_summary_aggregate),
+                        prostateCancerScreeningMonthlySummaryBase: this.cloneJsonSchema(prostate_cancer_screening_monthly_summary_base)
+                    });
+                    break;
 
 
                 case 'generalCancerTreatmentMonthlySummaryAggregate':
@@ -500,7 +507,7 @@ export class BaseMysqlReport {
                         main: this.cloneJsonSchema(general_cancer_treatment_patient_list_template)
                     });
                     break;
-                    
+
 
 
                 case 'socialHistoryMonthlySummaryAggregate':
@@ -525,7 +532,7 @@ export class BaseMysqlReport {
 
 
 
-                    case 'patientVitalsMonthlySummaryAggregate':
+                case 'patientVitalsMonthlySummaryAggregate':
                     resolve({
                         main: this.cloneJsonSchema(patient_vitals_monthly_summary_aggregate),
                         patientVitalsMonthlySummaryBase: this.cloneJsonSchema(patient_vitals_monthly_summary_base)
@@ -546,23 +553,41 @@ export class BaseMysqlReport {
 
 
 
-                    case 'palliativeCareMonthlySummaryAggregate':
-                        resolve({
-                            main: this.cloneJsonSchema(palliative_care_monthly_summary_aggregate),
-                            palliativeCareMonthlySummaryBase: this.cloneJsonSchema(palliative_care_monthly_summary_base)
-                        });
-                        break;
-                    case 'palliativeCareDailySummaryAggregate':
-                        resolve({
-                            main: this.cloneJsonSchema(palliative_care_daily_summary_aggregate),
-                            palliativeCareSummaryBase: this.cloneJsonSchema(palliative_care_summary_base)
-                        });
-                        break;
-                    case 'palliative_care_patient_list_template':
-                        resolve({
-                            main: this.cloneJsonSchema(palliative_care_patient_list_template)
-                        });
-                        break;
+                case 'palliativeCareMonthlySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(palliative_care_monthly_summary_aggregate),
+                        palliativeCareMonthlySummaryBase: this.cloneJsonSchema(palliative_care_monthly_summary_base)
+                    });
+                    break;
+                case 'palliativeCareDailySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(palliative_care_daily_summary_aggregate),
+                        palliativeCareMonthlySummaryBase: this.cloneJsonSchema(palliative_care_monthly_summary_base)
+                    });
+                    break;
+                case 'palliative_care_patient_list_template':
+                    resolve({
+                        main: this.cloneJsonSchema(palliative_care_patient_list_template)
+                    });
+                    break;
+
+                case 'deathReportMonthlySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(death_report_monthly_summary_aggregate),
+                        deathReportMonthlySummaryBase: this.cloneJsonSchema(death_report_monthly_summary_base)
+                    });
+                    break;
+                case 'deathReportDailySummaryAggregate':
+                    resolve({
+                        main: this.cloneJsonSchema(death_report_daily_summary_aggregate),
+                        deathReportMonthlySummaryBase: this.cloneJsonSchema(death_report_monthly_summary_base)
+                    });
+                    break;
+                case 'death_report_patient_list_template':
+                    resolve({
+                        main: this.cloneJsonSchema(death_report_patient_list_template)
+                    });
+                    break;
 
 
                 case 'lungCancerTreatmentMonthlySummaryAggregate':
@@ -598,7 +623,7 @@ export class BaseMysqlReport {
                         main: this.cloneJsonSchema(breast_cancer_patient_list_template)
                     });
                     break;
-                    case 'prostate_cancer_patient_list_template':
+                case 'prostate_cancer_patient_list_template':
                     resolve({
                         main: this.cloneJsonSchema(prostate_cancer_patient_list_template)
                     });
@@ -693,11 +718,11 @@ export class BaseMysqlReport {
                     });
                     break;
                 case 'referral-patient-peer-navigator-list':
-                        resolve({
-                            main: this.cloneJsonSchema(referral_peer_aggregate),
-                            referralDatasetbase: this.cloneJsonSchema(referral_patient_list_peer_base)
-                        });
-                        break;
+                    resolve({
+                        main: this.cloneJsonSchema(referral_peer_aggregate),
+                        referralDatasetbase: this.cloneJsonSchema(referral_patient_list_peer_base)
+                    });
+                    break;
                 case 'surgeDailyReport':
                     resolve({
                         main: this.cloneJsonSchema(surge_daily_report_aggregate),
@@ -725,7 +750,7 @@ export class BaseMysqlReport {
                     resolve({
                         main: this.cloneJsonSchema(appointment_adherence)
                     });
-                break;
+                    break;
                 case 'retentionAppointmentAdherenceAggregate':
                     resolve({
                         main: this.cloneJsonSchema(retention_appointment_adherence_aggregate),
@@ -733,29 +758,29 @@ export class BaseMysqlReport {
                     });
                     break;
                 case 'retentionDefaulterTracingAggregate':
-                resolve({
-                    main: this.cloneJsonSchema(retention_defaulter_tracing_aggregate),
-                    retentionDefaulterTracingBase:this.cloneJsonSchema(retention_defaulter_tracing_base)
-                });
-                   break;
+                    resolve({
+                        main: this.cloneJsonSchema(retention_defaulter_tracing_aggregate),
+                        retentionDefaulterTracingBase: this.cloneJsonSchema(retention_defaulter_tracing_base)
+                    });
+                    break;
                 case 'retentionVisitsAggregate':
-                   resolve({
-                       main: this.cloneJsonSchema(retention_visits_aggregate),
-                       retentionVisitsBase:this.cloneJsonSchema(retention_visits_base),
-                       retentionInterventionCohort: this.cloneJsonSchema(retention_intervention_cohort),
-                   });
-                      break;
+                    resolve({
+                        main: this.cloneJsonSchema(retention_visits_aggregate),
+                        retentionVisitsBase: this.cloneJsonSchema(retention_visits_base),
+                        retentionInterventionCohort: this.cloneJsonSchema(retention_intervention_cohort),
+                    });
+                    break;
                 case 'retentionLtfuAggregate':
-                      resolve({
-                          main: this.cloneJsonSchema(retention_ltfu_aggregate),
-                          retentionLtfuBase:this.cloneJsonSchema(retention_ltfu_base)
-                      });
-                         break;
+                    resolve({
+                        main: this.cloneJsonSchema(retention_ltfu_aggregate),
+                        retentionLtfuBase: this.cloneJsonSchema(retention_ltfu_base)
+                    });
+                    break;
                 case 'retention-report-patient-list-template':
-                resolve({
-                    main: this.cloneJsonSchema(retention_report_patient_list_template)
-                });
-                   break;
+                    resolve({
+                        main: this.cloneJsonSchema(retention_report_patient_list_template)
+                    });
+                    break;
                 default:
                     reject('Unknown report ', reportName);
                     break;
